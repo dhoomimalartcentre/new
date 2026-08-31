@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { artists, awards, exhibitions, fairs, gallery, works } from "@/lib/content";
 import { Address, R } from "@/components/ui";
+import { PhotoStrip } from "@/components/PhotoStrip";
 
 /* ------------------------------------------------------------------ bits */
 
@@ -59,7 +60,7 @@ export default function Home() {
         <div className="wrap">
           <div className="col">
             <R className="hero__head">
-              <h1 className="display">India's first gallery of modern art</h1>
+              <h1 className="display">India’s first ‘private’ gallery.</h1>
             </R>
 
             <div className="hero__foot">
@@ -108,17 +109,7 @@ export default function Home() {
                     </Link>
 
                     <div className="exhibit__bar">
-                      <div className="avatars">
-                        {e.photos.map((src) => (
-                          <Image
-                            key={src}
-                            src={src}
-                            alt={`${e.title} — installation view`}
-                            width={84}
-                            height={84}
-                          />
-                        ))}
-                      </div>
+                      <PhotoStrip photos={e.photos} title={e.title} />
                       <Link href="/exhibitions" className="pill">
                         + Read more
                       </Link>

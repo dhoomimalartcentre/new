@@ -1156,6 +1156,25 @@ a.row:hover {
   gap: 8px;
 }
 
+.avatars__btn {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  line-height: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.avatars__btn:hover {
+  opacity: 0.75;
+}
+
+.avatars__btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
 .avatars img {
   width: 42px;
   height: 42px;
@@ -1166,6 +1185,87 @@ a.row:hover {
 
 .avatars:hover img {
   filter: grayscale(0);
+}
+
+/* ------------------------------------------------------------- lightbox */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 56px);
+  background: rgba(12, 12, 12, 0.94);
+  animation: lb-in 0.25s var(--ease);
+  cursor: zoom-out;
+}
+
+@keyframes lb-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox__figure {
+  margin: 0;
+  max-width: min(1200px, 100%);
+  cursor: default;
+}
+
+.lightbox__figure img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - clamp(90px, 12vw, 150px));
+  object-fit: contain;
+}
+
+.lightbox__figure figcaption {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.3s var(--ease);
+}
+
+.lightbox__close:hover,
+.lightbox__nav:hover {
+  opacity: 1;
+}
+
+.lightbox__close {
+  top: clamp(14px, 2.4vw, 30px);
+  right: clamp(14px, 2.4vw, 30px);
+  font-size: 26px;
+  padding: 8px;
+}
+
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  padding: 12px 16px;
+}
+
+.lightbox__nav--prev { left: clamp(4px, 1.6vw, 24px); }
+.lightbox__nav--next { right: clamp(4px, 1.6vw, 24px); }
+
+@media (max-width: 620px) {
+  .lightbox__nav { font-size: 24px; padding: 10px; }
 }
 
 .pill {

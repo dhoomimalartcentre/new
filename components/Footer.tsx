@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="col lfooter__grid">
           <div>
-            <p className="lfooter__word">India&rsquo;s first gallery of modern art</p>
+            <p className="lfooter__word">India&rsquo;s first &lsquo;private&rsquo; gallery.</p>
             <p className="lfooter__addr">
               {gallery.address.map((l) => (
                 <span key={l}>

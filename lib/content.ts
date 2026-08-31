@@ -10,7 +10,7 @@ export const gallery = {
     ["Sunday & Holidays", "Closed"],
   ],
   intro:
-    "Founded in 1936 by Ram Babu as Dhoomimal Dharam Das Gallery in Connaught Place, Dhoomimal Art Centre is India's first gallery of modern art. Across three generations it has stood beside artists from Sailoz Mookherjea and B.C. Sanyal to M.F. Husain and Tyeb Mehta, and today, under Mohit Jain, continues to champion contemporary Indian painting and sculpture from the same address it began on.",
+    "Founded in 1936 by Ram Babu as Dhoomimal Dharam Das Gallery in Connaught Place, Dhoomimal Art Centre is India's first private gallery of modern art. Across three generations it has stood beside artists from Sailoz Mookherjea and B.C. Sanyal to M.F. Husain and Tyeb Mehta, and today, under Mohit Jain, continues to champion contemporary Indian painting and sculpture from the same address it began on.",
 };
 
 export const contacts: { dept: string; email: string }[] = [

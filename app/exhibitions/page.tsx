@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { exhibitions, type Exhibition } from "@/lib/content";
 import { R } from "@/components/ui";
+import { PhotoStrip } from "@/components/PhotoStrip";
 
 export const metadata: Metadata = {
   title: "Exhibitions — Dhoomimal Art Centre",
@@ -30,17 +31,7 @@ function Card({ e, i }: { e: Exhibition; i: number }) {
       </Link>
 
       <div className="exhibit__bar">
-        <div className="avatars">
-          {e.photos.map((src) => (
-            <Image
-              key={src}
-              src={src}
-              alt={`${e.title} — installation view`}
-              width={84}
-              height={84}
-            />
-          ))}
-        </div>
+        <PhotoStrip photos={e.photos} title={e.title} />
         <Link href="/exhibitions" className="pill">
           + Read more
         </Link>

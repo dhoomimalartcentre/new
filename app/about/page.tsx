@@ -121,7 +121,7 @@ export default function AboutPage() {
 
         {/* --------------------------------------------------------- body */}
         <R>
-          <h2 className="abouth2">India's first gallery of modern art</h2>
+          <h2 className="abouth2">India’s first ‘private’ gallery.</h2>
         </R>
 
         <div className="aboutcols">
