@@ -22,7 +22,7 @@
   --serif: "Instrument Serif", "Times New Roman", Times, Georgia, serif;
 
   /* metrics */
-  --pad: clamp(20px, 2.4vw, 40px);
+  --pad: clamp(16px, 1.5vw, 24px);
   --gutter: clamp(0px, 17vw, 300px); /* reserved right margin */
   --header-h: 76px;
 
@@ -116,7 +116,7 @@ p {
 
 .display {
   font-size: clamp(2.4rem, 4.35vw, 5.4rem);
-  line-height: 1.06;
+  line-height: 1.02;
   letter-spacing: -0.03em;
 }
 
@@ -134,7 +134,7 @@ p {
 
 .lead {
   font-size: 16px;
-  line-height: 1.52;
+  line-height: 1.22;
   letter-spacing: -0.008em;
   max-width: 46ch;
 }
@@ -470,8 +470,8 @@ p {
 }
 
 .hero__head h1 {
-  text-align: left;
-  max-width: 13ch;
+  text-align: right;
+  max-width: 16ch;
 }
 
 .hero__foot {
@@ -490,7 +490,7 @@ p {
 
 .hero__addr {
   text-align: left;
-  line-height: 1.5;
+  line-height: 1.22;
   white-space: nowrap;
 }
 
@@ -1319,15 +1319,15 @@ a.row:hover {
 .exhibit__desc {
   text-align: left;
   font-size: 16px;
-  line-height: 1.52;
+  line-height: 1.22;
   margin-top: clamp(22px, 2.6vw, 40px);
 }
 
 @media (min-width: 860px) {
   .exhibit__desc {
-    margin-left: 34%;
-    max-width: 46ch;
-    text-align: center;
+    margin-left: auto;
+    max-width: 56ch;
+    text-align: right;
   }
 }
 
@@ -1751,7 +1751,7 @@ a.row:hover {
 
 @media (min-width: 760px) {
   .excard .exhibit__desc {
-    margin-left: 21%;
+    margin-left: auto;
   }
 }
 
