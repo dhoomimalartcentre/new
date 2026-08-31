@@ -72,13 +72,31 @@ do this).
 Fonts load from Google Fonts via `<link>` in `app/layout.tsx`. Swap the two
 font names there and in `--sans` / `--serif` to rebrand.
 
-## Images
+## Images and the hover effect
 
-`public/art/` holds procedurally generated, black-and-white placeholder
-artwork, gallery interiors and studio scenes — they carry the layout but are
-not real photography. The reference site uses black-and-white photography
-throughout, so keep replacements greyscale. Replace them with real files of the same name and nothing else
-needs to change; `next/image` handles sizing.
+`public/art/` holds procedurally generated **colour** placeholder artwork,
+gallery interiors and studio scenes — they carry the layout but are not real
+photography.
+
+The reference site stores colour photography and desaturates it in CSS, so a
+photo greys out at rest and returns to full colour on hover. That is done in
+`app/globals.css`:
+
+```css
+.frame img            { filter: grayscale(1); transition: filter .6s; }
+.frame--hover:hover img { filter: grayscale(0); }
+```
+
+`.frame--hover` is on every image that links somewhere, so only interactive
+images light up. Two deliberate exceptions:
+
+- **Collection artworks** (`.ccard__img`) are `filter: none` — artwork is
+  always shown in true colour, matching the reference.
+- **About-page figures** use plain `.frame` with no `--hover`, so they stay
+  desaturated.
+
+Keep replacement files in **colour**. Do not pre-desaturate them — the CSS does
+that, and a greyscale source file has no colour left to reveal on hover.
 
 Note: `next/image` caches optimised variants in `.next/cache/images`. After
 swapping images, delete that folder or the old versions keep being served.

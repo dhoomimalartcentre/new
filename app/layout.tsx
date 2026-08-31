@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Heynar Mastow — The finest gallery in London centre",
+  title: "Dhoomimal Art Centre — India's First Gallery of Modern Art",
   description:
-    "Inspired by the websites of top art galleries in the world, Heynar Mastow is a premium template for galleries seeking elegance and function.",
+    "Dhoomimal Art Centre, established 1936 in Connaught Place, New Delhi — India's oldest gallery of modern and contemporary Indian art.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <Header />
         <main>{children}</main>
         <Footer />

@@ -10,16 +10,16 @@ const cols = [
     { label: "Art Fairs", href: "/art-fairs" },
   ],
   [
-    { label: "News", href: "/about" },
-    { label: "Videos", href: "/about" },
+    { label: "Art Blog", href: "/about" },
+    { label: "Image Gallery", href: "/about" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Residency", href: "/about#residency" },
+    { label: "Collector's Corner", href: "/about#residency" },
   ],
   [
-    { label: "Insta", href: "#" },
-    { label: "X (Twitter)", href: "#" },
-    { label: "YouTube", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/dhoomimalartcentre" },
+    { label: "X (Twitter)", href: "https://twitter.com/dhoomimal" },
+    { label: "Facebook", href: "https://www.facebook.com/dhoomimalonline" },
   ],
 ];
 
@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="col lfooter__grid">
           <div>
-            <p className="lfooter__word">Finest gallery in London centre</p>
+            <p className="lfooter__word">India&rsquo;s first gallery of modern art</p>
             <p className="lfooter__addr">
               {gallery.address.map((l) => (
                 <span key={l}>
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <p className="lfooter__mark">
-          hm <span aria-hidden />
+          dac <span aria-hidden />
         </p>
       </div>
     </footer>

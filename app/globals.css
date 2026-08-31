@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Heynar Mastow — design system
+   Dhoomimal Art Centre — design system
    White ground, neo-grotesque display type, serif wordmark, hairline rules.
    ========================================================================== */
 
@@ -250,6 +250,15 @@ p {
   text-transform: lowercase;
   white-space: nowrap;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__mark {
+  width: clamp(26px, 2.1vw, 34px);
+  height: auto;
+  flex-shrink: 0;
 }
 
 .nav {
@@ -420,11 +429,14 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1.4s var(--ease);
+  filter: grayscale(1);
+  transition: transform 1.4s var(--ease), filter 0.6s var(--ease);
 }
 
+/* interactive images return to full colour on hover */
 .frame--hover:hover img {
   transform: scale(1.035);
+  filter: grayscale(0);
 }
 
 .r-4-5 {
@@ -1111,7 +1123,7 @@ a.row:hover {
 @media (min-width: 860px) {
   .exsec {
     grid-template-columns: 26% minmax(0, 1fr);
-    gap: 0;
+    gap: clamp(32px, 5vw, 88px);
   }
 }
 
@@ -1149,6 +1161,11 @@ a.row:hover {
   height: 42px;
   object-fit: cover;
   filter: grayscale(1);
+  transition: filter 0.6s var(--ease);
+}
+
+.avatars:hover img {
+  filter: grayscale(0);
 }
 
 .pill {
@@ -1208,8 +1225,9 @@ a.row:hover {
 
 @media (min-width: 860px) {
   .exhibit__desc {
-    margin-left: 30%;
-    text-align: right;
+    margin-left: 34%;
+    max-width: 46ch;
+    text-align: center;
   }
 }
 
@@ -1690,6 +1708,12 @@ a.row:hover {
   width: 100%;
   height: auto;
   transition: transform 1.4s var(--ease);
+}
+
+/* the collection shows artwork in true colour, never desaturated */
+.ccard__img img,
+.ccard__img:hover img {
+  filter: none;
 }
 
 .ccard__img:hover img {

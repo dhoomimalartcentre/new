@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { gallery, nav } from "@/lib/content";
@@ -34,6 +35,14 @@ export default function Header() {
       <header className={`header${scrolled ? " is-scrolled" : ""}`}>
         <div className="wrap header__inner">
           <Link href="/" className="brand">
+            <Image
+              src="/brand/mark.svg"
+              alt=""
+              width={36}
+              height={36}
+              className="brand__mark"
+              priority
+            />
             {gallery.name}
           </Link>
 

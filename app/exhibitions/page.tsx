@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { artists, exhibitions, type Exhibition } from "@/lib/content";
+import { exhibitions, type Exhibition } from "@/lib/content";
 import { R } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Exhibitions — Heynar Mastow",
+  title: "Exhibitions — Dhoomimal Art Centre",
   description:
     "These are the exhibitions that we've had the pleasure to host or will in the near future.",
 };
@@ -31,8 +31,14 @@ function Card({ e, i }: { e: Exhibition; i: number }) {
 
       <div className="exhibit__bar">
         <div className="avatars">
-          {artists.slice(i * 2, i * 2 + 2).map((a) => (
-            <Image key={a.slug} src={a.image} alt={a.name} width={84} height={84} />
+          {e.photos.map((src) => (
+            <Image
+              key={src}
+              src={src}
+              alt={`${e.title} — installation view`}
+              width={84}
+              height={84}
+            />
           ))}
         </div>
         <Link href="/exhibitions" className="pill">

@@ -1,25 +1,23 @@
 export const gallery = {
-  name: "heynar mastow",
-  tagline: "fine art • meticulously curated",
-  coords: "40.7128° N, 74.0060° W",
-  address: ["47 Mortimer Street", "Fitzrovia – London", "W1T 3TE"],
-  email: "hello@heynarmastow.com",
-  phone: "+44 20 7946 0812",
+  name: "dhoomimal art centre",
+  tagline: "india's first modern art gallery • est. 1936",
+  coords: "28.6329° N, 77.2195° E",
+  address: ["A-8, Connaught Place", "Inner Circle, New Delhi", "110001"],
+  email: "info@dhoomimalartcentre.com",
+  phone: "+91 11 4151 6172",
   hours: [
-    ["Tuesday – Friday", "10:00 – 18:00"],
-    ["Saturday", "11:00 – 17:00"],
-    ["Sunday & Monday", "By appointment"],
+    ["Monday – Saturday", "11:00 – 19:00"],
+    ["Sunday & Holidays", "Closed"],
   ],
   intro:
-    "Heynar Mastow offers a unique selection of artwork for the art connoisseur. Our experienced staff provides a variety of services to assist you in selecting the art that best suits your individual style and personal taste. With an expansive collection of oil paintings, watercolors, drawings, and sculptures, Heynar Mastow has something to satisfy everyone.",
+    "Founded in 1936 by Ram Babu as Dhoomimal Dharam Das Gallery in Connaught Place, Dhoomimal Art Centre is India's first gallery of modern art. Across three generations it has stood beside artists from Sailoz Mookherjea and B.C. Sanyal to M.F. Husain and Tyeb Mehta, and today, under Mohit Jain, continues to champion contemporary Indian painting and sculpture from the same address it began on.",
 };
 
 export const contacts: { dept: string; email: string }[] = [
-  { dept: "Marketing", email: "janie@heynar-mastow.co.uk" },
-  { dept: "Partnerships", email: "hank@heynar-mastow.co.uk" },
-  { dept: "Exhibitions", email: "stacey@heynar-mastow.co.uk" },
-  { dept: "Curatorship", email: "fran@heynar-mastow.co.uk" },
-  { dept: "Residency", email: "thomas@heynar-mastow.co.uk" },
+  { dept: "General Enquiries", email: "info@dhoomimalartcentre.com" },
+  { dept: "Exhibitions", email: "info@dhoomimalartcentre.com" },
+  { dept: "Collector's Corner", email: "info@dhoomimalartcentre.com" },
+  { dept: "Press & Media", email: "info@dhoomimalartcentre.com" },
 ];
 
 export const nav = [
@@ -37,7 +35,7 @@ export const footerNav = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Residency", href: "/about#residency" },
+    { label: "Collector's Corner", href: "/about#residency" },
   ],
   Programme: [
     { label: "Artists", href: "/artists" },
@@ -46,11 +44,11 @@ export const footerNav = {
     { label: "Art Fairs", href: "/art-fairs" },
   ],
   Journal: [
-    { label: "News", href: "/about" },
-    { label: "Videos", href: "/about" },
-    { label: "Instagram", href: "#" },
-    { label: "X (Twitter)", href: "#" },
-    { label: "YouTube", href: "#" },
+    { label: "Art Blog", href: "/about" },
+    { label: "Image Gallery", href: "/about" },
+    { label: "Instagram", href: "https://www.instagram.com/dhoomimalartcentre" },
+    { label: "X (Twitter)", href: "https://twitter.com/dhoomimal" },
+    { label: "Facebook", href: "https://www.facebook.com/dhoomimalonline" },
   ],
 };
 
@@ -63,85 +61,75 @@ export type Exhibition = {
   dates: string;
   excerpt: string;
   image: string;
+  /** Two extra shots from the same show, used beside "+ Read more". */
+  photos: string[];
 };
 
+// NOTE: titles, dates & venues below are real Dhoomimal Art Centre shows.
+// IMAGES: exhibition-1 / -5 and the ex1-* thumbs are real install photographs
+// of "Variable Registers" at the Shridharani Gallery. exhibition-3 and -4 use
+// works from the gallery archive as stand-ins — swap in real install shots of
+// those two shows when you have them.
 export const exhibitions: Exhibition[] = [
   {
-    slug: "echoes-and-forms",
-    title: "Echoes and Forms: Nordic and Renaissance Dialogues",
-    status: "Current",
-    year: "2024",
-    venue: "Main Pavillion",
-    dates: "12 Mar — 28 Jul 2024",
+    slug: "variable-registers",
+    title: "Variable Registers",
+    status: "Past",
+    year: "2026",
+    venue: "Shridharani Gallery, Triveni Kala Sangam",
+    dates: "3 Aug \u2014 9 Aug 2026",
     excerpt:
-      "Echoes of Form: Sculpture Meets Renaissance is an innovative exhibition that juxtaposes Marata J\u00fcrkoba's minimalist sculptures with Elena Rossi's Renaissance-inspired paintings. This exhibit examines how the simplicity of form and complexity of detail coexist and enhance each other, offering viewers a diverse visual experience that spans from the tactile textures of sculpted stone to the intricate brushwork of oil paintings.",
+      "Printmaking in Modern India, 1930s to 1980s \u2014 a survey of five decades of Indian printmaking drawn from the Dhoomimal collection, with etchings, woodcuts, lithographs and serigraphs by Somnath Hore, Akbar Padamsee, Laxma Gaud, Jyoti Bhatt, Haren Das and others. Curated by Prima Kurien.",
     image: "/art/exhibition-1.jpg",
+    photos: ["/art/ex1-a.jpg", "/art/ex1-b.jpg"],
   },
   {
-    slug: "confluence",
-    title: "Confluence: Nature and Structure",
+    slug: "echoes-of-the-unseen",
+    title: "Echoes of the Unseen",
     status: "Past",
-    year: "2023",
-    venue: "Westingham Gallery",
-    dates: "04 Sep — 19 Dec 2023",
+    year: "2026",
+    venue: "A-8, Connaught Place, Inner Circle, New Delhi",
+    dates: "10 Jun \u2014 30 Jun 2026",
     excerpt:
-      "\u201cConfluence: Nature and Structure\u201d is a thought-provoking exhibition that brings together the contrasting yet complementary artistic styles of Vanessa Marandi and Zakaria Al-Shammari. Vanessa's vibrant explorations of Brazilian landscapes juxtapose Zakaria's structured depictions of Middle Eastern architecture, creating a dialogue between fluid natural forms and rigid urban elements. This exhibit invites viewers to explore the dynamic interactions between organic growth and human-made environments.",
+      "A group show exploring what sits beneath the visible surface of a work \u2014 memory, gesture and material \u2014 staged across the Centre's Connaught Place galleries.",
     image: "/art/exhibition-2.jpg",
+    photos: ["/art/ex2-a.jpg", "/art/ex2-b.jpg"],
   },
   {
-    slug: "vibrant-diaspora",
-    title: "Vibrant Diaspora: The Colors of Our Roots",
-    status: "Upcoming",
+    slug: "diverse-horizons",
+    title: "Diverse Horizons",
+    status: "Past",
+    year: "2026",
+    venue: "A-8, Connaught Place, Inner Circle, New Delhi",
+    dates: "23 Feb \u2014 11 Mar 2026",
+    excerpt:
+      "A survey exhibition bringing together painters and sculptors from across Dhoomimal's roster, reflecting the range of practice the Centre has supported since 1936.",
+    image: "/art/exhibition-3.jpg",
+    photos: ["/art/ex3-a.jpg", "/art/ex3-b.jpg"],
+  },
+  {
+    slug: "young-artists-voices",
+    title: "Young Artists' Voices",
+    status: "Past",
     year: "2025",
-    venue: "London Gallery",
-    dates: "14 Feb — 30 May 2025",
+    venue: "A-8, Connaught Place, Inner Circle, New Delhi",
+    dates: "10 April 2025",
     excerpt:
-      "\u201cVibrant Diaspora: The Colors of Our Roots\u201d is a celebration of Noah Berger's unique ability to capture the spirit and energy of the African diaspora. This exhibition brings together a series of his most powerful works, each painting telling a story of heritage, struggle, and beauty. The showcased pieces traverse various mediums, from acrylics to mixed media, inviting viewers to explore the rich tapestry of diaspora experiences and their impact on contemporary art.",
-    image: "/art/work-6.jpg",
+      "A showcase dedicated to emerging Indian artists, continuing the Centre's founding commitment to giving young practitioners their first public platform.",
+    image: "/art/exhibition-4.jpg",
+    photos: ["/art/ex4-a.jpg", "/art/ex4-b.jpg"],
   },
   {
-    slug: "quiet-materials",
-    title: "Quiet Materials",
+    slug: "next-show-tbc",
+    title: "Next exhibition — details to follow",
     status: "Upcoming",
-    year: "2024",
-    venue: "Lower Gallery",
-    dates: "09 Sep — 14 Dec 2024",
+    year: "2026",
+    venue: "A-8, Connaught Place, Inner Circle, New Delhi",
+    dates: "Dates to be announced",
     excerpt:
-      "Seven artists working in linen, ash, clay and pigment, on the discipline of leaving a surface almost untouched.",
-    image: "/art/work-3.jpg",
-  },
-  {
-    slug: "the-long-afternoon",
-    title: "The Long Afternoon",
-    status: "Current",
-    year: "2024",
-    venue: "Westingham Gallery",
-    dates: "05 Apr — 15 Sep 2024",
-    excerpt:
-      "A survey of light in domestic interiors drawn from four decades of the gallery's own holdings. Watercolours and small oils are hung low and close together, in the order they were acquired, so that the room reads as a record of one collector's attention rather than a thesis about a movement.",
-    image: "/art/work-7.jpg",
-  },
-  {
-    slug: "after-the-archive",
-    title: "After the Archive",
-    status: "Past",
-    year: "2022",
-    venue: "Westingham Gallery",
-    dates: "22 Oct 2022 — 29 Jan 2023",
-    excerpt:
-      "Works on paper recovered from the estate of a private collector, shown publicly for the first time.",
-    image: "/art/work-11.jpg",
-  },
-  {
-    slug: "salt-and-stone",
-    title: "Salt and Stone",
-    status: "Past",
-    year: "2022",
-    venue: "Main Pavilion",
-    dates: "05 Mar — 24 Jul 2022",
-    excerpt:
-      "Coastal geology as subject and as material, in painting, cast bronze and photographic print.",
-    image: "/art/work-5.jpg",
+      "Placeholder — replace with the Centre's next confirmed show and dates before publishing.",
+    image: "/art/exhibition-5.jpg",
+    photos: ["/art/ex5-a.jpg", "/art/ex5-b.jpg"],
   },
 ];
 
@@ -156,65 +144,73 @@ export type Artist = {
   image: string;
 };
 
+// IMAGES: each artist card shows one of that artist's prints from the
+// gallery's own "Variable Registers" scans, not a portrait photograph.
+// Swap in real portraits when you have them.
+//
+// The six contemporary artists this page previously listed are kept below,
+// commented out — restore them (and supply images) whenever you want:
+//   sunil-das, pradiptaa-chakraborty, shahid-parvez,
+//   shalini-prakash, tanushree-chakraborty, pankaj-kumar-singh
 export const artists: Artist[] = [
   {
-    slug: "vanessa-marandi",
-    name: "Vanessa Marandi",
-    city: "Maringá",
-    country: "Brazil",
-    discipline: "Painting",
-    born: "b. 1984",
-    bio: "Marandi paints the interior of the Paraná landscape from memory, building surfaces in thin oil glazes until the horizon becomes uncertain.",
+    slug: "somnath-hore",
+    name: "Somnath Hore",
+    city: "Santiniketan",
+    country: "India",
+    discipline: "Printmaking, Sculpture",
+    born: "1921\u20132006",
+    bio: "One of the defining printmakers of modern India. Hore developed his pulp-print technique to record scarcity and violence \u2014 the Bengal famine, Tebhaga, Vietnam \u2014 in the long series he called Wounds. He taught for many years at Kala Bhavana, Santiniketan.",
     image: "/art/artist-1.jpg",
   },
   {
-    slug: "marata-jurkoba",
-    name: "Marata Jürkoba",
-    city: "Sigtuna",
-    country: "Sweden",
-    discipline: "Sculpture",
-    born: "b. 1971",
-    bio: "Working in ash, plaster and unpolished steel, Jürkoba reduces domestic objects to their least descriptive form.",
+    slug: "laxma-goud",
+    name: "Laxma Goud",
+    city: "Hyderabad",
+    country: "India",
+    discipline: "Printmaking, Drawing",
+    born: "b. 1940",
+    bio: "Trained in Hyderabad and at Baroda under K.G. Subramanyan, Goud built a body of etchings, aquatints and drawings around the villages and figures of rural Telangana \u2014 pastoral, erotic and precisely drawn.",
     image: "/art/artist-2.jpg",
   },
   {
-    slug: "noah-berger",
-    name: "Noah Berger",
-    city: "Cape Town",
-    country: "South Africa",
-    discipline: "Photography",
-    born: "b. 1990",
-    bio: "Berger photographs the built edges of the city at the hour when artificial and natural light are indistinguishable.",
+    slug: "akbar-padamsee",
+    name: "Akbar Padamsee",
+    city: "Mumbai",
+    country: "India",
+    discipline: "Painting, Printmaking",
+    born: "1928\u20132020",
+    bio: "A member of the circle around the Progressive Artists' Group, Padamsee worked across oil, watercolour, printmaking, photography and film. He is best known for the Metascapes and for a long sequence of heads and nudes.",
     image: "/art/artist-3.jpg",
   },
   {
-    slug: "zakaria-al-shammari",
-    name: "Zakaria Al-Shammari",
-    city: "Amman",
-    country: "Jordan",
-    discipline: "Drawing",
-    born: "b. 1978",
-    bio: "Al-Shammari's graphite studies of vernacular architecture are drawn at one-to-one scale over periods of months.",
+    slug: "jehangir-sabavala",
+    name: "Jehangir Sabavala",
+    city: "Mumbai",
+    country: "India",
+    discipline: "Painting",
+    born: "1922\u20132011",
+    bio: "Trained in Bombay, London and Paris, Sabavala arrived at a cubist-derived landscape language of faceted light and receding planes, held to over five decades with unusual consistency.",
     image: "/art/artist-4.jpg",
   },
   {
-    slug: "elena-rossi",
-    name: "Elena Rossi",
-    city: "Florence",
-    country: "Italy",
-    discipline: "Painting",
-    born: "b. 1965",
-    bio: "Trained in Renaissance technique and working entirely in egg tempera, Rossi paints contemporary sitters in historical light.",
+    slug: "manu-parekh",
+    name: "Manu Parekh",
+    city: "New Delhi",
+    country: "India",
+    discipline: "Painting, Drawing",
+    born: "b. 1939",
+    bio: "Parekh's work moves between charged, near-abstract figuration and the long-running Banaras series, in which the ghats and the river become a subject he has returned to for decades.",
     image: "/art/artist-5.jpg",
   },
   {
-    slug: "olivia-nkosi",
-    name: "Olivia Nkosi",
-    city: "Lagos",
-    country: "Nigeria",
-    discipline: "Textile",
-    born: "b. 1993",
-    bio: "Nkosi weaves and over-dyes large-format hangings that record the pattern languages of markets she has worked in.",
+    slug: "gr-santosh",
+    name: "G.R. Santosh",
+    city: "Srinagar / New Delhi",
+    country: "India",
+    discipline: "Painting, Printmaking",
+    born: "1929\u20131997",
+    bio: "A central figure in Neo-Tantric painting, Santosh drew on Kashmir Shaivism to build symmetrical compositions of yantra-like forms, fusing the figure with diagrammatic sacred geometry.",
     image: "/art/artist-6.jpg",
   },
 ];
@@ -232,19 +228,24 @@ export type Work = {
   h: number;
 };
 
+// COLLECTION: every work below is a real print from the gallery's own
+// "Variable Registers" scans. Only files whose filename carries the artist's
+// name are used, so nothing here is mis-attributed. Titles, dates, media,
+// sizes and prices still need to come from the gallery's records \u2014 they are
+// shown as "Untitled" / "Print on paper" / "on request" until you fill them in.
 export const works: Work[] = [
-  { title: "Echoes of Maring\u00e1", artist: "Vanessa Marandi", artistSlug: "vanessa-marandi", year: "2024", medium: "Oil on linen", size: "140 \u00d7 110 cm", price: "\u00a318,400", image: "/art/work-1.jpg", w: 1200, h: 1180 },
-  { title: "Shadows in the Snow", artist: "Marata J\u00fcrkoba", artistSlug: "marata-jurkoba", year: "2023", medium: "Ash and plaster", size: "62 \u00d7 40 \u00d7 38 cm", price: "\u00a39,200", image: "/art/work-2.jpg", w: 1200, h: 1000 },
-  { title: "Whispers of the North", artist: "Marata J\u00fcrkoba", artistSlug: "marata-jurkoba", year: "2024", medium: "Cast bronze", size: "90 \u00d7 62 \u00d7 48 cm", price: "Price on request", image: "/art/work-3.jpg", w: 1100, h: 1240 },
-  { title: "A Metal Symphony", artist: "Elena Rossi", artistSlug: "elena-rossi", year: "2022", medium: "Patinated bronze", size: "120 \u00d7 84 \u00d7 60 cm", price: "\u00a311,600", image: "/art/work-4.jpg", w: 1200, h: 940 },
-  { title: "Pulse of the Diaspora", artist: "Noah Berger", artistSlug: "noah-berger", year: "2023", medium: "Mixed media assemblage", size: "180 \u00d7 150 cm", price: "\u00a322,000", image: "/art/work-5.jpg", w: 1150, h: 1150 },
-  { title: "Urban Reflections", artist: "Vanessa Marandi", artistSlug: "vanessa-marandi", year: "2024", medium: "Oil and collage on canvas", size: "260 \u00d7 180 cm", price: "\u00a313,900", image: "/art/work-6.jpg", w: 1200, h: 1080 },
-  { title: "Shadows and Dust", artist: "Olivia Nkosi", artistSlug: "olivia-nkosi", year: "2022", medium: "Charcoal on paper", size: "200 \u00d7 300 cm", price: "\u00a326,500", image: "/art/work-7.jpg", w: 1200, h: 900 },
-  { title: "Heartbeat of Lagos", artist: "Olivia Nkosi", artistSlug: "olivia-nkosi", year: "2024", medium: "Watercolour on paper", size: "110 \u00d7 150 cm", price: "\u00a37,400", image: "/art/work-8.jpg", w: 1120, h: 1200 },
-  { title: "Rhythms of Cape Town", artist: "Noah Berger", artistSlug: "noah-berger", year: "2023", medium: "Archival pigment print", size: "90 \u00d7 120 cm", price: "\u00a34,800", image: "/art/work-9.jpg", w: 1200, h: 1020 },
-  { title: "Veils of Time", artist: "Zakaria Al-Shammari", artistSlug: "zakaria-al-shammari", year: "2024", medium: "Ink and graphite on paper", size: "150 \u00d7 200 cm", price: "\u00a316,800", image: "/art/work-10.jpg", w: 1080, h: 1220 },
-  { title: "Layers of History", artist: "Zakaria Al-Shammari", artistSlug: "zakaria-al-shammari", year: "2022", medium: "Carved lime wood", size: "160 \u00d7 240 \u00d7 22 cm", price: "Price on request", image: "/art/work-11.jpg", w: 1200, h: 960 },
-  { title: "Renaissance Revisited", artist: "Elena Rossi", artistSlug: "elena-rossi", year: "2021", medium: "Egg tempera on panel", size: "80 \u00d7 60 cm", price: "\u00a316,800", image: "/art/work-12.jpg", w: 1160, h: 1160 },
+  { title: "Untitled", artist: "Bhupen Khakhar", artistSlug: "bhupen-khakhar", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-1.jpg", w: 1400, h: 1112 },
+  { title: "Untitled", artist: "B.C. Sanyal", artistSlug: "bc-sanyal", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-2.jpg", w: 1400, h: 1050 },
+  { title: "Untitled", artist: "Amitava Das", artistSlug: "amitava-das", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-3.jpg", w: 1400, h: 1043 },
+  { title: "Untitled", artist: "Dinkar Kaushik", artistSlug: "dinkar-kaushik", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-4.jpg", w: 1400, h: 996 },
+  { title: "Untitled", artist: "Mona Rai", artistSlug: "mona-rai", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-5.jpg", w: 1400, h: 1037 },
+  { title: "Untitled", artist: "Rini Dhumal", artistSlug: "rini-dhumal", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-6.jpg", w: 1400, h: 1714 },
+  { title: "Untitled", artist: "Shanti Dave", artistSlug: "shanti-dave", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-7.jpg", w: 1156, h: 867 },
+  { title: "Untitled", artist: "Gulammohammed Sheikh", artistSlug: "gm-sheikh", year: "\u2014", medium: "Print on paper", size: "13 \u00d7 13 in", price: "Price on request", image: "/art/work-8.jpg", w: 1400, h: 1456 },
+  { title: "Untitled", artist: "Ved Nayar", artistSlug: "ved-nayar", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-9.jpg", w: 1400, h: 1830 },
+  { title: "Untitled", artist: "Jagmohan", artistSlug: "jagmohan", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-10.jpg", w: 1400, h: 1818 },
+  { title: "Untitled", artist: "Laxma Goud", artistSlug: "laxma-goud", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-11.jpg", w: 1367, h: 2474 },
+  { title: "Untitled", artist: "Laxma Goud", artistSlug: "laxma-goud", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-12.jpg", w: 1167, h: 1524 },
 ];
 
 export type Fair = {
@@ -257,53 +258,33 @@ export type Fair = {
   image: string;
 };
 
+// India Art Fair is a confirmed, recurring participation (Dhoomimal has
+// held a booth there since at least 2010). The remaining entries are
+// placeholders — add the fairs the gallery actually attends.
 export const fairs: Fair[] = [
   {
-    name: "Nouvelle Art Paris",
+    name: "India Art Fair",
     status: "Current",
-    date: "Feb 2023",
-    city: "Paris",
-    country: "France",
+    date: "February (annual)",
+    city: "New Delhi",
+    country: "India",
     blurb:
-      "Held annually in Paris, France, Nouvelle Art Paris is a premier event in the global art calendar, celebrated for its innovative and diverse exhibitions. Drawing top galleries, collectors, and curators from around the world, this fair showcases cutting-edge contemporary art and groundbreaking works by emerging and established artists alike.",
+      "India's leading platform for modern and contemporary South Asian art. Dhoomimal has held a booth at the fair since 2010, presenting works from its historic collection alongside its current roster of artists.",
     image: "/art/fair-1.jpg",
   },
   {
-    name: "Art Basel Suisse",
-    status: "Current",
-    date: "Jan 2024",
-    city: "Basel",
-    country: "Switzerland",
-    blurb:
-      "Held annually in Basel, Switzerland, Miami Beach, and Hong Kong, Art Basel is widely considered the most prestigious art fair in the world, attracting top galleries, collectors, and curators.",
-    image: "/art/fair-2.jpg",
-  },
-  {
-    name: "NYC Contemporary Art Summit",
-    status: "Past",
-    date: "Nov 2023",
-    city: "New York",
-    country: "USA",
-    blurb:
-      "The NYC Contemporary Art Summit invites art enthusiasts and professionals to immerse themselves in a vibrant two-day event showcasing the forefront of modern creativity in New York City.",
-    image: "/art/fair-3.jpg",
-  },
-  {
-    name: "Frieze Art Fair",
+    name: "Fair name — to confirm",
     status: "Upcoming",
-    date: "Dec 2023",
-    city: "London",
-    country: "UK",
-    blurb:
-      "Established in London in 2003, Frieze Art Fair has since expanded to New York and Los Angeles. It is known for showcasing a mix of established and emerging artists, and its cutting-edge programming.",
-    image: "/art/fair-4.jpg",
+    date: "Date to be announced",
+    city: "City",
+    country: "Country",
+    blurb: "Placeholder — replace with the gallery's next confirmed fair.",
+    image: "/art/fair-2.jpg",
   },
 ];
 
 export const awards = [
-  { title: "Outstanding Contribution to Local Culture", body: "London Art Awards", year: "2021" },
-  { title: "Gallery of the Decade", body: "Art Collector's Digest", year: "2022" },
-  { title: "Innovator of the Year", body: "International Art Critics Association", year: "2021" },
-  { title: "Top 10 Must-Visit Galleries", body: "Global Art Review", year: "2023" },
-  { title: "Best Contemporary Art Gallery in London", body: "Art World Magazine", year: "2022" },
+  { title: "India's Oldest Art Gallery", body: "Established 1936, Connaught Place, New Delhi", year: "1936" },
+  { title: "India's First Gallery of Modern Art", body: "Dhoomimal Art Centre", year: "1936" },
+  { title: "90 Years of Promoting Contemporary Indian Art", body: "Dhoomimal Art Centre", year: "2026" },
 ];

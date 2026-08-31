@@ -59,7 +59,7 @@ export default function Home() {
         <div className="wrap">
           <div className="col">
             <R className="hero__head">
-              <h1 className="display">The finest gallery in London centre</h1>
+              <h1 className="display">India's first gallery of modern art</h1>
             </R>
 
             <div className="hero__foot">
@@ -109,11 +109,11 @@ export default function Home() {
 
                     <div className="exhibit__bar">
                       <div className="avatars">
-                        {artists.slice(i * 2, i * 2 + 2).map((a) => (
+                        {e.photos.map((src) => (
                           <Image
-                            key={a.slug}
-                            src={a.image}
-                            alt={a.name}
+                            key={src}
+                            src={src}
+                            alt={`${e.title} — installation view`}
                             width={84}
                             height={84}
                           />

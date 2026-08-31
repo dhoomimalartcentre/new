@@ -5,7 +5,7 @@ import { fairs, type Fair } from "@/lib/content";
 import { R } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Art Fairs — Heynar Mastow",
+  title: "Art Fairs — Dhoomimal Art Centre",
   description:
     "These are the art fairs we will have the pleasure to be part of in the upcoming future, or have been part of at some point in time.",
 };

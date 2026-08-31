@@ -3,9 +3,9 @@ import { contacts } from "@/lib/content";
 import { R } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Contact — Heynar Mastow",
+  title: "Contact — Dhoomimal Art Centre",
   description:
-    "Drop us a line — we'll get back to you as soon as possible. 47 Mortimer Street, Fitzrovia, London W1T 3TE.",
+    "Drop us a line — we'll get back to you as soon as possible. A-8, Connaught Place, Inner Circle, New Delhi 110001.",
 };
 
 export default function ContactPage() {
