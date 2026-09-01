@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { gallery, milestones } from "@/lib/content";
+import { gallery, milestones, profile } from "@/lib/content";
 import { R } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -129,6 +129,42 @@ export default function AboutPage() {
           <R delay={90}>{bodyColB}</R>
         </div>
 
+
+        {/* ----------------------------------------------- gallery profile */}
+        <section className="gp" aria-labelledby="gp-head">
+          <div className="gp__text">
+            <R>
+              <p className="eyebrow" id="gp-head">
+                {profile.eyebrow}
+              </p>
+            </R>
+            <R delay={70}>
+              <p className="gp__lead">{profile.lead}</p>
+            </R>
+            <R delay={120}>
+              <div className="gp__body">
+                {profile.paragraphs.map((t) => (
+                  <p key={t.slice(0, 24)}>{t}</p>
+                ))}
+              </div>
+            </R>
+          </div>
+
+          <R delay={90} className="gp__figwrap">
+            <figure className="gp__fig">
+              <div className="frame" style={{ aspectRatio: "1200 / 888" }}>
+                <Image
+                  src={profile.image}
+                  alt={profile.caption}
+                  width={1200}
+                  height={888}
+                  sizes="(max-width: 900px) 94vw, 42vw"
+                />
+              </div>
+              <figcaption className="capt">{profile.caption}</figcaption>
+            </figure>
+          </R>
+        </section>
 
         {/* ----------------------------------------------------- history */}
         <section className="story" aria-labelledby="story-head">
