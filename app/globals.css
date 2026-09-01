@@ -2362,3 +2362,42 @@ a.row:hover {
     margin-left: auto;
   }
 }
+
+/* ------------------------------------------------ about: gallery profile */
+
+.gp {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(26px, 3vw, 48px);
+  margin-top: clamp(56px, 7vw, 120px);
+}
+
+@media (min-width: 900px) {
+  .gp {
+    grid-template-columns: minmax(0, 1fr) 42%;
+    gap: clamp(34px, 4.4vw, 78px);
+    align-items: start;
+  }
+}
+
+.gp__lead {
+  font-size: clamp(1.25rem, 1.9vw, 1.8rem);
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  margin: clamp(16px, 1.8vw, 26px) 0 clamp(18px, 2vw, 30px);
+  max-width: 26ch;
+}
+
+.gp__body p {
+  font-size: 14.5px;
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.gp__body p + p {
+  margin-top: clamp(12px, 1.3vw, 20px);
+}
+
+.gp__fig {
+  margin: 0;
+}
