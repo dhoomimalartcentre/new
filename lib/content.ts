@@ -283,6 +283,22 @@ export const fairs: Fair[] = [
   },
 ];
 
+// The "Gallery Profile" narrative, in the gallery's own words from
+// dhoomimalartcentre.com/about-us. Photograph: Mahender and Sushma Jain.
+export const profile = {
+  eyebrow: "Gallery profile",
+  lead:
+    "Mahender Jain, fondly known as Miki in the art world, took to the passion of his father and tried to create a global platform for Indian contemporary art, carrying exhibitions to different parts of the world in the sixties besides India.",
+  paragraphs: [
+    "Working with eminent artists like Shanti Dave, M.F. Husain, Tyeb Mehta and B. Prabha, to name a few, and joined in the work by his wife Sushma.",
+    "He discovered many artists from all parts of India and exhibited their works. The large number of rather important expositions that Mahender put up may well be deemed landmarks on the Delhi art scene.",
+    "Theirs were the days when art or artists hardly had a \u2018film star\u2019 status. The works of the same, once less known artists are now almost household words.",
+    "Mahender also encouraged galleries like Cymroza Art Gallery, Mumbai, 1974; Chitrakoot Gallery, Calcutta, 1987; and House of B. Prabha & B. Vithal, New Delhi, 1987, on their onset. Mahender Jain passed away untimely in 1987, and Sushma continued running the show with the same vision, devotion and passion.",
+  ],
+  image: "/art/profile-miki.jpg",
+  caption: "Mahender and Sushma Jain",
+};
+
 export type Milestone = {
   id: string;
   year: string;
