@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { gallery } from "@/lib/content";
+import { gallery, milestones } from "@/lib/content";
 import { R } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -128,6 +128,56 @@ export default function AboutPage() {
           <R>{bodyColA}</R>
           <R delay={90}>{bodyColB}</R>
         </div>
+
+
+        {/* ----------------------------------------------------- history */}
+        <section className="story" aria-labelledby="story-head">
+          <R>
+            <h2 className="abouth2" id="story-head">
+              Our history
+            </h2>
+          </R>
+
+          <R delay={80}>
+            <p className="story__lede">
+              For close to ninety years the Dhoomimal name has promoted
+              contemporary Indian art from A&#8209;8, Connaught Place. What
+              follows is the gallery&rsquo;s own record &mdash; three
+              generations, one address.
+            </p>
+          </R>
+
+          <ol className="tl">
+            {milestones.map((m, i) => (
+              <R
+                key={m.id}
+                as="li"
+                delay={(i % 2) * 80}
+                className={`tl__row ${i % 2 ? "tl__row--flip" : ""}`}
+              >
+                <figure className="tl__fig">
+                  <div className="frame" style={{ aspectRatio: "4 / 3" }}>
+                    <Image
+                      src={m.image}
+                      alt={m.caption}
+                      width={1100}
+                      height={825}
+                      sizes="(max-width: 860px) 94vw, 40vw"
+                    />
+                  </div>
+                </figure>
+
+                <div className="tl__text">
+                  <p className="tl__year">{m.year}</p>
+                  {m.heading !== "Early Years" && (
+                    <h3 className="tl__heading">{m.heading}</h3>
+                  )}
+                  <p className="tl__caption">{m.caption}</p>
+                </div>
+              </R>
+            ))}
+          </ol>
+        </section>
 
         {/* -------------------------------------------------------- visit */}
         <div className="visit">

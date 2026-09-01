@@ -283,6 +283,183 @@ export const fairs: Fair[] = [
   },
 ];
 
+export type Milestone = {
+  id: string;
+  year: string;
+  heading: string;
+  caption: string;
+  image: string;
+};
+
+// The gallery's own history, as published on dhoomimalartcentre.com/about-us.
+// Captions are the gallery's, lightly regularised for spelling and spacing.
+//
+// IMAGES: each entry expects /art/history-NN.jpg. Any that are missing simply
+// render as an empty frame with the caption beneath — drop the period
+// photographs into public/art/ under these exact names as you find them.
+export const milestones: Milestone[] = [
+  {
+    id: "01",
+    year: "1936",
+    heading: "The Beginning",
+    caption:
+      "Ram Babu, a Sunday painter himself known as Kagazis, ran a stationery business, very popular with the government and diplomatic circles, and founded Dhoomimal Dharam Das Gallery in Connaught Place. It was his passion for art and artists which shaped the gallery into an institution that stood by young artists in exposing their work. He was a man of rare independence of mind.",
+    image: "/art/history-01.jpg",
+  },
+  {
+    id: "02",
+    year: "1960",
+    heading: "Early Years",
+    caption:
+      "Mr Mahender Jain with Mr Rajiv Gandhi and Mrs Indira Gandhi.",
+    image: "/art/history-02.jpg",
+  },
+  {
+    id: "03",
+    year: "1962",
+    heading: "Early Years",
+    caption:
+      "Mahender Jain at JFK Airport with the mural executed by Shanti Dave.",
+    image: "/art/history-03.jpg",
+  },
+  {
+    id: "04",
+    year: "1964",
+    heading: "Early Years",
+    caption:
+      "Mr Mahender Jain with Dr Zakir Husain, then President of India, at the New York gallery holding the M.F. Husain exhibition.",
+    image: "/art/history-04.jpg",
+  },
+  {
+    id: "05",
+    year: "1967",
+    heading: "Early Years",
+    caption:
+      "An exhibition mounted by Mahender and Sushma at the Hilton Hotel, USA.",
+    image: "/art/history-05.jpg",
+  },
+  {
+    id: "06",
+    year: "1971",
+    heading: "Early Years",
+    caption:
+      "Mahender Jain with Dr Karan Singh.",
+    image: "/art/history-06.jpg",
+  },
+  {
+    id: "07",
+    year: "1972",
+    heading: "Early Years",
+    caption:
+      "The gallery space.",
+    image: "/art/history-07.jpg",
+  },
+  {
+    id: "08",
+    year: "1972",
+    heading: "Early Years",
+    caption:
+      "Mrs Sonia Gandhi, M. Sivanesan and Mrs Indira Gandhi at the gallery.",
+    image: "/art/history-08.jpg",
+  },
+  {
+    id: "09",
+    year: "1985",
+    heading: "Early Years",
+    caption:
+      "Mahender at restoration.",
+    image: "/art/history-09.jpg",
+  },
+  {
+    id: "10",
+    year: "1985",
+    heading: "Early Years",
+    caption:
+      "Mr Mahender with Mr M.F. Husain at the solo exhibition of Mr Pirajee Sagara.",
+    image: "/art/history-10.jpg",
+  },
+  {
+    id: "11",
+    year: "1986",
+    heading: "Early Years",
+    caption:
+      "Mr G.R. Santosh and Mr Mahender Jain (behind), Mr Surya Prakash and Mr P.N. Mago (front) at Dhoomimal.",
+    image: "/art/history-11.jpg",
+  },
+  {
+    id: "12",
+    year: "1987",
+    heading: "Early Years",
+    caption:
+      "Mahender Jain with Mr Farooq Abdullah at Dhoomimal Art Centre.",
+    image: "/art/history-12.jpg",
+  },
+  {
+    id: "13",
+    year: "1990",
+    heading: "Early Years",
+    caption:
+      "Mr Masunori Fukuoka, Anshu, Mrs Sushma Jain and Mohit.",
+    image: "/art/history-13.jpg",
+  },
+  {
+    id: "14",
+    year: "1997",
+    heading: "Early Years",
+    caption:
+      "Mr B.C. Sanyal at the tenth anniversary show remembering Mahender Jain, in conversation with Mohit Jain.",
+    image: "/art/history-14.jpg",
+  },
+  {
+    id: "15",
+    year: "2004",
+    heading: "Early Years",
+    caption:
+      "Mrs Maneka Gandhi with Jiten Hazarika at the Centre.",
+    image: "/art/history-15.jpg",
+  },
+  {
+    id: "16",
+    year: "2010",
+    heading: "Early Years",
+    caption:
+      "India Art Fair display at the Dhoomimal Art Centre booth.",
+    image: "/art/history-16.jpg",
+  },
+  {
+    id: "17",
+    year: "2011",
+    heading: "Early Years",
+    caption:
+      "A tribute to M.F. Husain — a walk from the Centre to the Sahmat office at Rafi Marg.",
+    image: "/art/history-17.jpg",
+  },
+  {
+    id: "18",
+    year: "2011",
+    heading: "Early Years",
+    caption:
+      "“Memoirs of an Era”, homage to Sushma Jain.",
+    image: "/art/history-18.jpg",
+  },
+  {
+    id: "19",
+    year: "2017",
+    heading: "Early Years",
+    caption:
+      "Remembering Sailoz Mookherjea on the twentieth anniversary of Mr Mahender Jain. In frame, students of Sailoz: Mr Nand Katyal, Mr Suraj Ghai, Mr Om Prakash, Mr Paramjeet Singh, Mrs Arpita Singh and Mr Rajesh Mehra.",
+    image: "/art/history-19.jpg",
+  },
+  {
+    id: "20",
+    year: "2019",
+    heading: "Early Years",
+    caption:
+      "Shashi Tharoor inaugurating the solo exhibition by Pradiptaa Chakraborty.",
+    image: "/art/history-20.jpg",
+  },
+];
+
 export const awards = [
   { title: "India's Oldest Art Gallery", body: "Established 1936, Connaught Place, New Delhi", year: "1936" },
   { title: "India's First Gallery of Modern Art", body: "Dhoomimal Art Centre", year: "1936" },
