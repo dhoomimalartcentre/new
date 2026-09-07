@@ -36,7 +36,7 @@ function Shots({ shots, cols }: { shots: Shot[]; cols: 2 | 3 }) {
       {shots.map((im, k) => (
         <R key={im.src + k} delay={(k % 2) * 80}>
           <figure>
-            <div className="frame" style={{ aspectRatio: "4 / 3" }}>
+            <div className="frame frame--hover" style={{ aspectRatio: "4 / 3" }}>
               <Image
                 src={im.src}
                 alt={im.caption}
@@ -96,7 +96,7 @@ export default async function ExhibitionPage({
 
           <R delay={90} className="xhead__figwrap">
             <figure>
-              <div className="frame r-16-9">
+              <div className="frame frame--hover r-16-9">
                 <Image
                   src={e.image}
                   alt={e.title}

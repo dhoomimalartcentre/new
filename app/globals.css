@@ -2549,9 +2549,10 @@ a.row:hover {
   list-style: none;
   margin: clamp(14px, 1.6vw, 22px) 0 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0 clamp(20px, 2.4vw, 40px);
+  /* multi-column so the names read DOWN each column, alphabetically,
+     the way the exhibition's own list is set */
+  columns: 180px 6;
+  column-gap: clamp(20px, 2.4vw, 40px);
 }
 
 .xlist li {
@@ -2560,6 +2561,7 @@ a.row:hover {
   border-bottom: 1px solid var(--line-soft);
   padding-bottom: 6px;
   margin-bottom: 6px;
+  break-inside: avoid;
 }
 
 /* ---- explore other exhibitions ---- */
