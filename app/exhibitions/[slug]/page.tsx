@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { exhibitions } from "@/lib/content";
+import { exhibitions, type Shot } from "@/lib/content";
 import { R } from "@/components/ui";
 
 type Params = { slug: string };
@@ -30,6 +30,29 @@ export async function generateMetadata({
   };
 }
 
+function Shots({ shots, cols }: { shots: Shot[]; cols: 2 | 3 }) {
+  return (
+    <div className={`xshots xshots--${cols}`}>
+      {shots.map((im, k) => (
+        <R key={im.src + k} delay={(k % 2) * 80}>
+          <figure>
+            <div className="frame" style={{ aspectRatio: "4 / 3" }}>
+              <Image
+                src={im.src}
+                alt={im.caption}
+                width={1400}
+                height={1050}
+                sizes={cols === 3 ? "(max-width:760px) 94vw, 31vw" : "(max-width:760px) 94vw, 47vw"}
+              />
+            </div>
+            <figcaption className="capt">{im.caption}</figcaption>
+          </figure>
+        </R>
+      ))}
+    </div>
+  );
+}
+
 export default async function ExhibitionPage({
   params,
 }: {
@@ -40,73 +63,96 @@ export default async function ExhibitionPage({
   if (i === -1) notFound();
 
   const e = exhibitions[i];
-  const next = exhibitions[(i + 1) % exhibitions.length];
-  const paragraphs = e.body?.length ? e.body : [e.excerpt];
+
+  const sections =
+    e.sections?.length
+      ? e.sections
+      : [{ heading: "About this exhibition", body: e.body ?? [e.excerpt] }];
+
+  const others = exhibitions.filter((x) => x.slug !== e.slug).slice(0, 2);
 
   return (
     <>
       {/* ------------------------------------------------------------ head */}
-      <header className="wrap exdetail__head">
-        <R>
-          <Link href="/exhibitions" className="backlink">
-            <span aria-hidden>←</span> All exhibitions
-          </Link>
-        </R>
+      <header className="wrap xhead">
+        <div className="xhead__grid">
+          <R className="xhead__left">
+            <h1 className="xhead__title">{e.title}</h1>
+            <p className="xhead__year">{e.year}</p>
 
-        <div className="exdetail__grid">
-          <R delay={60}>
-            <p className="exdetail__status">{e.status}</p>
-            <h1>{e.title}</h1>
+            {e.curator && (
+              <div className="xcurator">
+                <p className="eyebrow">Curator</p>
+                <p className="xcurator__name">{e.curator}</p>
+              </div>
+            )}
+
+            <p className="xhead__meta">
+              {e.dates}
+              <br />
+              {e.venue}
+            </p>
           </R>
 
-          <R delay={120} className="exdetail__facts">
-            <dl>
-              <div>
-                <dt>Dates</dt>
-                <dd>{e.dates}</dd>
+          <R delay={90} className="xhead__figwrap">
+            <figure>
+              <div className="frame r-16-9">
+                <Image
+                  src={e.image}
+                  alt={e.title}
+                  width={1800}
+                  height={1012}
+                  priority
+                  sizes="(max-width: 900px) 94vw, 56vw"
+                />
               </div>
-              <div>
-                <dt>Venue</dt>
-                <dd>{e.venue}</dd>
-              </div>
-              {e.curator && (
-                <div>
-                  <dt>Curated by</dt>
-                  <dd>{e.curator}</dd>
-                </div>
-              )}
-            </dl>
+              <figcaption className="capt">
+                {e.featuredCaption ?? `${e.title} • ${e.year}`}
+              </figcaption>
+            </figure>
           </R>
         </div>
       </header>
 
-      {/* ----------------------------------------------------------- image */}
-      <R className="wrap exdetail__hero">
-        <div className="frame r-16-9">
-          <Image
-            src={e.image}
-            alt={e.title}
-            width={1800}
-            height={1012}
-            priority
-            sizes="100vw"
-          />
-        </div>
-      </R>
+      {/* ------------------------------------------------------ lead images */}
+      {e.leadImages?.length ? (
+        <section className="wrap xlead">
+          <Shots shots={e.leadImages} cols={2} />
+          {e.leadNote && (
+            <R delay={80}>
+              <p className="xnote">{e.leadNote}</p>
+            </R>
+          )}
+        </section>
+      ) : null}
 
-      {/* ------------------------------------------------------------ text */}
-      <section className="wrap exdetail__body">
-        <div className="col">
+      {/* -------------------------------------------------------- sections */}
+      {sections.map((sec, n) => (
+        <section key={sec.heading} className="wrap xsec">
           <R>
-            <div className="exdetail__prose">
-              {paragraphs.map((t) => (
+            <h2 className="xsec__h">{sec.heading}</h2>
+          </R>
+
+          <R delay={70}>
+            <div className="xsec__cols">
+              {sec.body.map((t) => (
                 <p key={t.slice(0, 24)}>{t}</p>
               ))}
             </div>
           </R>
 
-          {e.artistsShown?.length ? (
-            <R delay={80} className="exdetail__artists">
+          {sec.images?.length ? (
+            <Shots shots={sec.images} cols={sec.images.length >= 3 ? 3 : 2} />
+          ) : null}
+
+          {sec.note && (
+            <R delay={80}>
+              <p className="xnote">{sec.note}</p>
+            </R>
+          )}
+
+          {n === sections.length - 1 && e.artistsShown?.length ? (
+            <R delay={80} className="xlist">
               <p className="eyebrow">Artists shown</p>
               <ul>
                 {e.artistsShown.map((name) => (
@@ -115,45 +161,54 @@ export default async function ExhibitionPage({
               </ul>
             </R>
           ) : null}
-        </div>
-      </section>
-
-      {/* --------------------------------------------------------- gallery */}
-      {e.photos.length > 0 && (
-        <section className="wrap exdetail__gallery">
-          <R>
-            <p className="grouplabel">Installation views</p>
-          </R>
-          <div className="exdetail__shots">
-            {e.photos.map((src, n) => (
-              <R key={src} delay={(n % 2) * 90}>
-                <div className="frame" style={{ aspectRatio: "4 / 3" }}>
-                  <Image
-                    src={src}
-                    alt={`${e.title} — installation view ${n + 1}`}
-                    width={1400}
-                    height={1050}
-                    sizes="(max-width: 760px) 94vw, 47vw"
-                  />
-                </div>
-              </R>
-            ))}
-          </div>
         </section>
-      )}
+      ))}
 
-      {/* ------------------------------------------------------------ next */}
-      <section className="wrap exdetail__next">
-        <hr className="rule" />
-        <R>
-          <p className="eyebrow">Next exhibition</p>
-          <Link href={`/exhibitions/${next.slug}`} className="exdetail__nextlink">
-            {next.title}
+      {/* --------------------------------------------------------- related */}
+      <section className="wrap xmore">
+        <R className="xmore__head">
+          <h2>
+            Explore other
+            <br />
+            exhibitions
+          </h2>
+          <Link href="/exhibitions" className="link">
+            View all our exhibitions
             <span className="arrow" aria-hidden>
               →
             </span>
           </Link>
         </R>
+
+        {others.map((o, n) => (
+          <R key={o.slug} as="article" delay={(n % 2) * 90} className="xmore__card">
+            <Link
+              href={`/exhibitions/${o.slug}`}
+              className="frame frame--hover r-16-9 xmore__img"
+            >
+              <Image
+                src={o.image}
+                alt={o.title}
+                width={1600}
+                height={900}
+                sizes="(max-width: 860px) 100vw, 72vw"
+              />
+            </Link>
+
+            <div className="xmore__bar">
+              <Link href={`/exhibitions/${o.slug}`} className="pill">
+                + Read more
+              </Link>
+            </div>
+
+            <h3>{o.title}</h3>
+            <p className="exhibit__meta">
+              {o.year} • {o.venue}
+            </p>
+            <p className="exhibit__desc">{o.excerpt}</p>
+            <hr className="rule" />
+          </R>
+        ))}
       </section>
 
       <div className="wrap backhome">

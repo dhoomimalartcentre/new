@@ -70,6 +70,25 @@ export type Exhibition = {
   artistsShown?: string[];
   /** Optional. Curator credit. */
   curator?: string;
+  /** Optional. Caption under the big image at the top of the show's page. */
+  featuredCaption?: string;
+  /** Optional. Image row directly under the title block. */
+  leadImages?: Shot[];
+  /** Optional. Right-ranged note under the lead images. */
+  leadNote?: string;
+  /** Optional. The show's page is built from these: each is a subheading,
+   *  two paragraphs set in columns, then the images that follow. */
+  sections?: ExhibitionSection[];
+};
+
+export type Shot = { src: string; caption: string };
+
+export type ExhibitionSection = {
+  heading: string;
+  body: string[];
+  images?: Shot[];
+  /** Right-ranged closing note under this section's images. */
+  note?: string;
 };
 
 // NOTE: titles, dates & venues below are real Dhoomimal Art Centre shows.
@@ -106,6 +125,40 @@ export const exhibitions: Exhibition[] = [
       "Ved Nayar",
       "Amitava Das",
       "Dinkar Kaushik",
+    ],
+    featuredCaption: "Variable Registers, Shridharani Gallery \u2022 2026",
+    leadImages: [
+      { src: "/art/ex1-a.jpg", caption: "Installation view \u2022 Shridharani Gallery" },
+      { src: "/art/ex1-b.jpg", caption: "Visitors in the upper gallery" },
+    ],
+    leadNote:
+      "The prints were hung so that technique could be compared directly \u2014 etching beside woodcut, lithograph beside serigraph \u2014 rather than grouped by artist or date.",
+    sections: [
+      {
+        heading: "Five decades of the Indian print",
+        body: [
+          "Variable Registers gathered five decades of Indian printmaking from the Dhoomimal collection, tracing the medium from the 1930s to the 1980s \u2014 a period in which the print moved from reproduction to a primary language of its own.",
+          "The show set etchings, woodcuts, lithographs and serigraphs side by side, so that the differences between them became the argument: the bitten line of an etching against the cut resistance of a woodblock, the flat deliberate colour of a serigraph against the greasy tonal range of a lithograph.",
+        ],
+        images: [
+          { src: "/art/work-1.jpg", caption: "Bhupen Khakhar \u2022 Print on paper" },
+          { src: "/art/work-9.jpg", caption: "Ved Nayar \u2022 Print on paper" },
+          { src: "/art/work-12.jpg", caption: "Laxma Goud \u2022 Print on paper" },
+        ],
+      },
+      {
+        heading: "The artists in the room",
+        body: [
+          "Among the works were Somnath Hore's pulp prints, Laxma Goud's rural figures, Akbar Padamsee's heads, Haren Das's Bengal landscapes and Jyoti Bhatt's studies of vernacular design \u2014 artists who, between them, defined what an Indian print could be.",
+          "The exhibition was staged at the Shridharani Gallery, Triveni Kala Sangam, part of Dhoomimal's continuing programme of shows beyond its Connaught Place home.",
+        ],
+        images: [
+          { src: "/art/work-11.jpg", caption: "Laxma Goud \u2022 Print on paper" },
+          { src: "/art/work-5.jpg", caption: "Mona Rai \u2022 Print on paper" },
+        ],
+        note:
+          "Together the works trace how the print in India moved from a way of reproducing an image to a way of making one \u2014 a medium with its own grain, resistance and colour.",
+      },
     ],
     body: [
       "Variable Registers gathered five decades of Indian printmaking from the Dhoomimal collection, tracing the medium from the 1930s to the 1980s \u2014 a period in which the print moved from reproduction to a primary language of its own.",
