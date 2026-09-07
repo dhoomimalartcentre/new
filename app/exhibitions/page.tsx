@@ -20,7 +20,7 @@ const groups: { id: string; label: string; status: Exhibition["status"] }[] = [
 function Card({ e, i }: { e: Exhibition; i: number }) {
   return (
     <R delay={(i % 2) * 90} as="article" className="excard">
-      <Link href="/exhibitions" className="frame frame--hover r-16-9">
+      <Link href={`/exhibitions/${e.slug}`} className="frame frame--hover r-16-9">
         <Image
           src={e.image}
           alt={e.title}
@@ -32,7 +32,7 @@ function Card({ e, i }: { e: Exhibition; i: number }) {
 
       <div className="exhibit__bar">
         <PhotoStrip photos={e.photos} title={e.title} />
-        <Link href="/exhibitions" className="pill">
+        <Link href={`/exhibitions/${e.slug}`} className="pill">
           + Read more
         </Link>
       </div>

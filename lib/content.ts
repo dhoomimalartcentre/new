@@ -63,6 +63,13 @@ export type Exhibition = {
   image: string;
   /** Two extra shots from the same show, used beside "+ Read more". */
   photos: string[];
+  /** Optional. Longer text for the exhibition's own page. Falls back to the
+   *  excerpt when absent. One string per paragraph. */
+  body?: string[];
+  /** Optional. Artists shown, listed on the exhibition page. */
+  artistsShown?: string[];
+  /** Optional. Curator credit. */
+  curator?: string;
 };
 
 // NOTE: titles, dates & venues below are real Dhoomimal Art Centre shows.
@@ -82,6 +89,30 @@ export const exhibitions: Exhibition[] = [
       "Printmaking in Modern India, 1930s to 1980s \u2014 a survey of five decades of Indian printmaking drawn from the Dhoomimal collection, with etchings, woodcuts, lithographs and serigraphs by Somnath Hore, Akbar Padamsee, Laxma Gaud, Jyoti Bhatt, Haren Das and others. Curated by Prima Kurien.",
     image: "/art/exhibition-1.jpg",
     photos: ["/art/ex1-a.jpg", "/art/ex1-b.jpg"],
+    curator: "Prima Kurien",
+    artistsShown: [
+      "Somnath Hore",
+      "Akbar Padamsee",
+      "Laxma Goud",
+      "Jyoti Bhatt",
+      "Haren Das",
+      "Bhupen Khakhar",
+      "B.C. Sanyal",
+      "Gulammohammed Sheikh",
+      "Manu Parekh",
+      "Mona Rai",
+      "Rini Dhumal",
+      "Shanti Dave",
+      "Ved Nayar",
+      "Amitava Das",
+      "Dinkar Kaushik",
+    ],
+    body: [
+      "Variable Registers gathered five decades of Indian printmaking from the Dhoomimal collection, tracing the medium from the 1930s to the 1980s \u2014 a period in which the print moved from reproduction to a primary language of its own.",
+      "The show set etchings, woodcuts, lithographs and serigraphs side by side, so that the differences between them became the argument: the bitten line of an etching against the cut resistance of a woodblock, the flat deliberate colour of a serigraph against the greasy tonal range of a lithograph.",
+      "Among the works were Somnath Hore's pulp prints, Laxma Goud's rural figures, Akbar Padamsee's heads, Haren Das's Bengal landscapes and Jyoti Bhatt's photographic and printed studies of vernacular design \u2014 artists who, between them, defined what an Indian print could be.",
+      "The exhibition was staged at the Shridharani Gallery, Triveni Kala Sangam, part of Dhoomimal's continuing programme of shows beyond its Connaught Place home.",
+    ],
   },
   {
     slug: "echoes-of-the-unseen",

@@ -97,7 +97,7 @@ export default function Home() {
                 {featured.map((e, i) => (
                   <article key={e.slug} className="exhibit">
                     <p className="exhibit__status">{e.status}</p>
-                    <Link href="/exhibitions" className="frame frame--hover r-16-9">
+                    <Link href={`/exhibitions/${e.slug}`} className="frame frame--hover r-16-9">
                       <Image
                         src={e.image}
                         alt={e.title}
@@ -110,7 +110,7 @@ export default function Home() {
 
                     <div className="exhibit__bar">
                       <PhotoStrip photos={e.photos} title={e.title} />
-                      <Link href="/exhibitions" className="pill">
+                      <Link href={`/exhibitions/${e.slug}`} className="pill">
                         + Read more
                       </Link>
                     </div>
