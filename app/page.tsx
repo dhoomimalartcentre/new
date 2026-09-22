@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { artists, awards, exhibitions, fairs, gallery, works } from "@/lib/content";
 import { Address, R } from "@/components/ui";
-import { PhotoStrip } from "@/components/PhotoStrip";
 
 /* ------------------------------------------------------------------ bits */
 
@@ -60,7 +59,7 @@ export default function Home() {
         <div className="wrap">
           <div className="col">
             <R className="hero__head">
-              <h1 className="display">India’s first ‘private’ gallery.</h1>
+              <h1 className="display">India's first gallery of modern art</h1>
             </R>
 
             <div className="hero__foot">
@@ -97,7 +96,7 @@ export default function Home() {
                 {featured.map((e, i) => (
                   <article key={e.slug} className="exhibit">
                     <p className="exhibit__status">{e.status}</p>
-                    <Link href={`/exhibitions/${e.slug}`} className="frame frame--hover r-16-9">
+                    <Link href="/exhibitions" className="frame frame--hover r-16-9">
                       <Image
                         src={e.image}
                         alt={e.title}
@@ -109,8 +108,18 @@ export default function Home() {
                     </Link>
 
                     <div className="exhibit__bar">
-                      <PhotoStrip photos={e.photos} title={e.title} />
-                      <Link href={`/exhibitions/${e.slug}`} className="pill">
+                      <div className="avatars">
+                        {artists.slice(i * 2, i * 2 + 2).map((a) => (
+                          <Image
+                            key={a.slug}
+                            src={a.image}
+                            alt={a.name}
+                            width={84}
+                            height={84}
+                          />
+                        ))}
+                      </div>
+                      <Link href="/exhibitions" className="pill">
                         + Read more
                       </Link>
                     </div>
@@ -230,11 +239,11 @@ export default function Home() {
           <div className="col awards">
             <R>
               <h2 className="h2">
-                <span className="h-grey">Awards &amp;</span>
+                <span className="h-grey">Nine Decades</span>
                 <br />
-                Accolades
+                of History
               </h2>
-              <p className="awards__sub">Won by the gallery and its artists</p>
+              <p className="awards__sub">Milestones from the Centre&rsquo;s archive</p>
             </R>
 
             <div>

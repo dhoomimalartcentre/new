@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { exhibitions, type Exhibition } from "@/lib/content";
+import { artists, exhibitions, type Exhibition } from "@/lib/content";
 import { R } from "@/components/ui";
-import { PhotoStrip } from "@/components/PhotoStrip";
 
 export const metadata: Metadata = {
   title: "Exhibitions — Dhoomimal Art Centre",
@@ -20,7 +19,7 @@ const groups: { id: string; label: string; status: Exhibition["status"] }[] = [
 function Card({ e, i }: { e: Exhibition; i: number }) {
   return (
     <R delay={(i % 2) * 90} as="article" className="excard">
-      <Link href={`/exhibitions/${e.slug}`} className="frame frame--hover r-16-9">
+      <Link href="/exhibitions" className="frame frame--hover r-16-9">
         <Image
           src={e.image}
           alt={e.title}
@@ -31,8 +30,12 @@ function Card({ e, i }: { e: Exhibition; i: number }) {
       </Link>
 
       <div className="exhibit__bar">
-        <PhotoStrip photos={e.photos} title={e.title} />
-        <Link href={`/exhibitions/${e.slug}`} className="pill">
+        <div className="avatars">
+          {artists.slice(i * 2, i * 2 + 2).map((a) => (
+            <Image key={a.slug} src={a.image} alt={a.name} width={84} height={84} />
+          ))}
+        </div>
+        <Link href="/exhibitions" className="pill">
           + Read more
         </Link>
       </div>

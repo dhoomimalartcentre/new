@@ -7,7 +7,7 @@ import { IndexHead, R } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Artists — Dhoomimal Art Centre",
   description:
-    "The modern and contemporary Indian artists Dhoomimal has shown and represented since 1936.",
+    "We are proud to represent incredibly special artists from all over the globe.",
 };
 
 export default function ArtistsPage() {
@@ -17,7 +17,7 @@ export default function ArtistsPage() {
     <>
       <IndexHead
         word="Artists"
-        lede="The modern and contemporary Indian artists we have shown and represented since 1936"
+        lede="We are proud to represent incredibly special artists from all over the globe"
         linkLabel="View all artists"
       />
 

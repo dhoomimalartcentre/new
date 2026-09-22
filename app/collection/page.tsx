@@ -10,10 +10,8 @@ export const metadata: Metadata = {
     "Below is our entire collection of curated pieces, signed by artists not necessarily represented by our gallery.",
 };
 
-// Some collection works are by artists who don't have their own page.
-// Fall back to the work's own image rather than an unrelated artist's.
-const avatar = (slug: string, fallback: string) =>
-  artists.find((a) => a.slug === slug)?.image ?? fallback;
+const avatar = (slug: string) =>
+  artists.find((a) => a.slug === slug)?.image ?? artists[0].image;
 
 export default function CollectionPage() {
   return (
@@ -70,7 +68,7 @@ export default function CollectionPage() {
                   <div className="ccap__left">
                     <Image
                       className="ccap__thumb"
-                      src={avatar(w.artistSlug, w.image)}
+                      src={avatar(w.artistSlug)}
                       alt={w.artist}
                       width={68}
                       height={68}

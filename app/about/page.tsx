@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { gallery, milestones, profile } from "@/lib/content";
+import { gallery } from "@/lib/content";
 import { R } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -10,29 +10,43 @@ export const metadata: Metadata = {
     "Dhoomimal Art Centre, established 1936 in Connaught Place, New Delhi — India's oldest gallery of modern and contemporary Indian art.",
 };
 
-const CAP_SHOW = "Variable Registers, Shridharani Gallery • 2026";
-const CAP_ARCHIVE = "From the Dhoomimal archive";
+const CREDIT = "Dhoomimal Art Centre Archive";
 
-const bodyColA = (
+const bodyColumnA = (
   <>
     <p>
-      Understanding art can be a journey, and our knowledgeable staff is here to
-      guide you through it. Whether you are a seasoned collector or a first-time
-      buyer, we offer expert advice on art investment, care, and display. Our
-      team is passionate about art and is eager to share insights about the
-      artists, their techniques, and the stories behind each piece.
+      Mahender Jain, fondly known as Miki in the art world, took to the
+      passion of his father and tried to create a global platform for
+      Indian Contemporary art by carrying exhibitions in different parts
+      of the world in the sixties besides India — working with eminent
+      artists like Shanti Dave, M F Husain and Tyeb Mehta, joined by his
+      wife Sushma.
+    </p>
+    <p>
+      He discovered many artists from all parts of India and exhibited
+      their works. Mahender also encouraged galleries like Cymroza Art
+      Gallery, Mumbai (1974) and Chitrakoot Gallery, Calcutta (1987) on
+      their onset. He passed away untimely in 1987, and Sushma continued
+      running the show with the same vision, devotion and passion.
     </p>
   </>
 );
 
-const bodyColB = (
+const bodyColumnB = (
   <>
     <p>
-      Beyond our physical gallery, Dhoomimal Art Centre also embraces the
-      digital era. We provide an online platform where art lovers can explore
-      and purchase artwork from the comfort of their homes. This digital
-      extension allows us to reach a global audience, connecting artists and
-      collectors worldwide.
+      Mohit Jain, son of Mahender &amp; Sushma and the third generation,
+      joined in 1991 and took over in 1996, with Sushma standing beside
+      him. He gave the Gallery a modern look, and with a second
+      renovation in 2007 added two floors — the Centre now runs over a
+      much larger space than what it began on.
+    </p>
+    <p>
+      He has curated many shows remembered well after the date they
+      happened, among them The Millennium Mask, Half a Foot Square,
+      Kites — A Celebration of Freedom, and Portrait of an Artist. He
+      continues running the Gallery with the same dedication and passion
+      as his elders.
     </p>
   </>
 );
@@ -73,21 +87,21 @@ export default function AboutPage() {
             <div className="frame" style={{ aspectRatio: "1700 / 1020" }}>
               <Image
                 src="/art/about-wide.jpg"
-                alt="Installation view, Variable Registers"
+                alt="The Main Pavilion"
                 width={1700}
                 height={1020}
                 priority
                 sizes="(max-width: 900px) 94vw, 62vw"
               />
             </div>
-            <figcaption className="capt">{CAP_SHOW}</figcaption>
+            <figcaption className="capt">{CREDIT}</figcaption>
           </figure>
         </R>
 
         <div className="aboutduo">
           {[
-            { src: "/art/about-a.jpg", w: 1240, h: 1240, alt: "Installation view, Variable Registers", cap: CAP_SHOW },
-            { src: "/art/about-b.jpg", w: 740, h: 740, alt: "Dhoomimal Art Centre, archive photograph", cap: CAP_ARCHIVE },
+            { src: "/art/about-a.jpg", w: 1240, h: 1215, alt: "The lower gallery" },
+            { src: "/art/about-b.jpg", w: 1280, h: 1215, alt: "Installation view" },
           ].map((im, i) => (
             <R key={im.src} delay={i * 90}>
               <figure style={{ margin: 0 }}>
@@ -100,7 +114,7 @@ export default function AboutPage() {
                     sizes="(max-width: 620px) 94vw, 31vw"
                   />
                 </div>
-                <figcaption className="capt">{im.cap}</figcaption>
+                <figcaption className="capt">{CREDIT}</figcaption>
               </figure>
             </R>
           ))}
@@ -108,112 +122,26 @@ export default function AboutPage() {
 
         <R className="aboutpara">
           <p>
-            At Dhoomimal Art Centre, we pride ourselves on our diverse
-            collection, which includes an impressive selection of oil
-            paintings, watercolours, drawings, and sculptures. Each piece in
-            our gallery is carefully curated, showcasing the work of both
-            historic masters and emerging talents in Indian art. This eclectic
-            mix not only reflects our commitment to artistic excellence but
-            also offers our clients a world of artistic expressions to choose
-            from.
+            Ram Babu, a Sunday painter himself known as one of the
+            Kagazis, ran a stationery business popular with the
+            government and diplomatic circles when he founded Dhoomimal
+            Dharam Das Gallery in Connaught Place in 1936. It was his
+            passion for art and artists that shaped the gallery into an
+            institution which stood by young artists, giving them a
+            place to show their work — a man of rare independence of
+            mind.
           </p>
         </R>
 
         {/* --------------------------------------------------------- body */}
         <R>
-          <h2 className="abouth2">India’s first ‘private’ gallery.</h2>
+          <h2 className="abouth2">India's first gallery of modern art</h2>
         </R>
 
         <div className="aboutcols">
-          <R>{bodyColA}</R>
-          <R delay={90}>{bodyColB}</R>
+          <R>{bodyColumnA}</R>
+          <R delay={90}>{bodyColumnB}</R>
         </div>
-
-
-        {/* ----------------------------------------------- gallery profile */}
-        <section className="gp" aria-labelledby="gp-head">
-          <div className="gp__text">
-            <R>
-              <p className="eyebrow" id="gp-head">
-                {profile.eyebrow}
-              </p>
-            </R>
-            <R delay={70}>
-              <p className="gp__lead">{profile.lead}</p>
-            </R>
-            <R delay={120}>
-              <div className="gp__body">
-                {profile.paragraphs.map((t) => (
-                  <p key={t.slice(0, 24)}>{t}</p>
-                ))}
-              </div>
-            </R>
-          </div>
-
-          <R delay={90} className="gp__figwrap">
-            <figure className="gp__fig">
-              <div className="frame" style={{ aspectRatio: "1200 / 888" }}>
-                <Image
-                  src={profile.image}
-                  alt={profile.caption}
-                  width={1200}
-                  height={888}
-                  sizes="(max-width: 900px) 94vw, 42vw"
-                />
-              </div>
-              <figcaption className="capt">{profile.caption}</figcaption>
-            </figure>
-          </R>
-        </section>
-
-        {/* ----------------------------------------------------- history */}
-        <section className="story" aria-labelledby="story-head">
-          <R>
-            <h2 className="abouth2" id="story-head">
-              Our history
-            </h2>
-          </R>
-
-          <R delay={80}>
-            <p className="story__lede">
-              For close to ninety years the Dhoomimal name has promoted
-              contemporary Indian art from A&#8209;8, Connaught Place. What
-              follows is the gallery&rsquo;s own record &mdash; three
-              generations, one address.
-            </p>
-          </R>
-
-          <ol className="tl">
-            {milestones.map((m, i) => (
-              <R
-                key={m.id}
-                as="li"
-                delay={(i % 2) * 80}
-                className={`tl__row ${i % 2 ? "tl__row--flip" : ""}`}
-              >
-                <figure className="tl__fig">
-                  <div className="frame" style={{ aspectRatio: "4 / 3" }}>
-                    <Image
-                      src={m.image}
-                      alt={m.caption}
-                      width={1100}
-                      height={825}
-                      sizes="(max-width: 860px) 94vw, 40vw"
-                    />
-                  </div>
-                </figure>
-
-                <div className="tl__text">
-                  <p className="tl__year">{m.year}</p>
-                  {m.heading !== "Early Years" && (
-                    <h3 className="tl__heading">{m.heading}</h3>
-                  )}
-                  <p className="tl__caption">{m.caption}</p>
-                </div>
-              </R>
-            ))}
-          </ol>
-        </section>
 
         {/* -------------------------------------------------------- visit */}
         <div className="visit">

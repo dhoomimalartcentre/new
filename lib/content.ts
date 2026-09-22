@@ -1,16 +1,17 @@
 export const gallery = {
   name: "dhoomimal art centre",
-  tagline: "india's first modern art gallery • est. 1936",
+  tagline: "india's first gallery of modern art • est. 1936",
   coords: "28.6329° N, 77.2195° E",
   address: ["A-8, Connaught Place", "Inner Circle, New Delhi", "110001"],
   email: "info@dhoomimalartcentre.com",
   phone: "+91 11 4151 6172",
   hours: [
-    ["Monday – Saturday", "11:00 – 19:00"],
+    ["Daily", "11:00 – 19:00"],
     ["Sunday & Holidays", "Closed"],
   ],
+  // Source: dhoomimalartcentre.com homepage "Our History" block.
   intro:
-    "Founded in 1936 by Ram Babu as Dhoomimal Dharam Das Gallery in Connaught Place, Dhoomimal Art Centre is India's first private gallery of modern art. Across three generations it has stood beside artists from Sailoz Mookherjea and B.C. Sanyal to M.F. Husain and Tyeb Mehta, and today, under Mohit Jain, continues to champion contemporary Indian painting and sculpture from the same address it began on.",
+    "Established in pre-independent India by Ram Babu, Dhoomimal was supported by stalwarts of the time — B.C. Sanyal, Jaya Appaswamy, Jamini Roy, Sailoz Mookherjea and Nand Lal Bose among others — to be followed by generations after them. As the third generation, Mohit Jain, Director DAC, recalls how the art scenario of the time was a passion engendering investment at altogether different levels, instead of being beleaguered by solely economic concerns.",
 };
 
 export const contacts: { dept: string; email: string }[] = [
@@ -61,151 +62,34 @@ export type Exhibition = {
   dates: string;
   excerpt: string;
   image: string;
-  /** Two extra shots from the same show, used beside "+ Read more". */
-  photos: string[];
-  /** Optional. Longer text for the exhibition's own page. Falls back to the
-   *  excerpt when absent. One string per paragraph. */
-  body?: string[];
-  /** Optional. Artists shown, listed on the exhibition page. */
-  artistsShown?: string[];
-  /** Optional. Curator credit. */
-  curator?: string;
-  /** Optional. Caption under the big image at the top of the show's page. */
-  featuredCaption?: string;
-  /** Optional. Image row directly under the title block. */
-  leadImages?: Shot[];
-  /** Optional. Right-ranged note under the lead images. */
-  leadNote?: string;
-  /** Optional. The show's page is built from these: each is a subheading,
-   *  two paragraphs set in columns, then the images that follow. */
-  sections?: ExhibitionSection[];
 };
 
-export type Shot = { src: string; caption: string };
-
-export type ExhibitionSection = {
-  heading: string;
-  body: string[];
-  images?: Shot[];
-  /** Right-ranged closing note under this section's images. */
-  note?: string;
-};
-
-// NOTE: titles, dates & venues below are real Dhoomimal Art Centre shows.
-// IMAGES: exhibition-1 / -5 and the ex1-* thumbs are real install photographs
-// of "Variable Registers" at the Shridharani Gallery. exhibition-3 and -4 use
-// works from the gallery archive as stand-ins — swap in real install shots of
-// those two shows when you have them.
+// Source: dhoomimalartcentre.com/exhibitions (current + past listings),
+// with descriptions pulled from each show's own page where available.
+// Placeholder art (public/art/*) stands in for the gallery's real
+// exhibition photography until real files are dropped in.
 export const exhibitions: Exhibition[] = [
+  {
+    slug: "before-you-see-the-scar",
+    title: "Before You See The Scar",
+    status: "Current",
+    year: "2026",
+    venue: "A-8, Connaught Place, Inner Circle, New Delhi",
+    dates: "14 Sep — 23 Sep 2026",
+    excerpt:
+      "A solo photography exhibition by Monica Dhaka, opening with a panel discussion moderated by Michelin-star chef and artist Suvir Saran. Daily 5:00–8:00 pm.",
+    image: "/art/exhibition-1.jpg",
+  },
   {
     slug: "variable-registers",
     title: "Variable Registers",
-    status: "Past",
+    status: "Current",
     year: "2026",
     venue: "Shridharani Gallery, Triveni Kala Sangam",
-    dates: "3 Aug \u2014 9 Aug 2026",
+    dates: "3 Aug — 9 Aug 2026",
     excerpt:
-      "Printmaking in Modern India, 1930s to 1980s \u2014 a survey of five decades of Indian printmaking drawn from the Dhoomimal collection, with etchings, woodcuts, lithographs and serigraphs by Somnath Hore, Akbar Padamsee, Laxma Gaud, Jyoti Bhatt, Haren Das and others. Curated by Prima Kurien.",
-    image: "/art/exhibition-1.jpg",
-    photos: ["/art/ex1-a.jpg", "/art/ex1-b.jpg"],
-    curator: "Prima Kurien",
-    artistsShown: [
-      "A R Chughtai",
-      "Akbar Padamsee",
-      "Amarnath Sehgal",
-      "Amitabha Banerjee",
-      "Amitava Das",
-      "Anand Moy Banerji",
-      "Anupam Sud",
-      "B C Sanyal",
-      "Badrinarayan",
-      "Bhupen Khakhar",
-      "Dattatraya Apte",
-      "Devraj Dakoji",
-      "Deepak Banerjee",
-      "Dinkar Kowshik",
-      "F N Souza",
-      "G R Santosh",
-      "Ghulam M Sheikh",
-      "Gopal Ghosh",
-      "Haren Das",
-      "J Swaminathan",
-      "Jagmohan Chopra",
-      "Jangarh Singh Shyam",
-      "Jayant Parikh",
-      "Jehangir Sabavala",
-      "Jyoti Bhatt",
-      "K G Subramanium",
-      "Kanchan Chander",
-      "Krishen Khanna",
-      "Krishna Reddy",
-      "Lalu Prasad Shaw",
-      "Laxma Gaud",
-      "M F Husain",
-      "Manu Parekh",
-      "Mona Rai",
-      "Moti Zharotia",
-      "Mumtaz Ali",
-      "Nicholas Roreich",
-      "P D Dhumal",
-      "Prakash Karmarkar",
-      "Rajesh Mehra",
-      "Rini Dhumal",
-      "S H Raza",
-      "Sailoz Mookherjea",
-      "Sakti Burman",
-      "Sanat Kar",
-      "Shanti Dave",
-      "Shukla Sawant",
-      "Somnath Hore",
-      "Suhas Roy",
-      "Sukhwinder Singh",
-      "Sushanta Guha",
-      "Ved Nayar",
-      "Vivan Sundaram",
-      "Walter D'Souza",
-      "Zarina Hashmi",
-    ],
-    featuredCaption: "Variable Registers, Shridharani Gallery \u2022 2026",
-    leadImages: [
-      { src: "/art/ex1-a.jpg", caption: "Installation view \u2022 Shridharani Gallery" },
-      { src: "/art/ex1-b.jpg", caption: "The ochre wall \u2022 Shridharani Gallery" },
-    ],
-    leadNote:
-      "The prints were hung so that technique could be compared directly \u2014 etching beside woodcut, lithograph beside serigraph \u2014 rather than grouped by artist or date.",
-    sections: [
-      {
-        heading: "Five decades of the Indian print",
-        body: [
-          "Variable Registers gathered five decades of Indian printmaking from the Dhoomimal collection, tracing the medium from the 1930s to the 1980s \u2014 a period in which the print moved from reproduction to a primary language of its own.",
-          "The show set etchings, woodcuts, lithographs and serigraphs side by side, so that the differences between them became the argument: the bitten line of an etching against the cut resistance of a woodblock, the flat deliberate colour of a serigraph against the greasy tonal range of a lithograph.",
-        ],
-        images: [
-          { src: "/art/work-1.jpg", caption: "Bhupen Khakhar \u2022 Print on paper" },
-          { src: "/art/work-9.jpg", caption: "Ved Nayar \u2022 Print on paper" },
-          { src: "/art/work-12.jpg", caption: "Laxma Gaud \u2022 Print on paper" },
-        ],
-      },
-      {
-        heading: "The artists in the room",
-        body: [
-          "Among the works were Somnath Hore's pulp prints, Laxma Gaud's rural figures, Akbar Padamsee's heads, Haren Das's Bengal landscapes and Jyoti Bhatt's studies of vernacular design \u2014 artists who, between them, defined what an Indian print could be.",
-          "The exhibition was staged at the Shridharani Gallery, Triveni Kala Sangam, part of Dhoomimal's continuing programme of shows beyond its Connaught Place home.",
-        ],
-        images: [
-          { src: "/art/work-11.jpg", caption: "Laxma Gaud \u2022 Print on paper" },
-          { src: "/art/work-5.jpg", caption: "Mona Rai \u2022 Print on paper" },
-        ],
-        note:
-          "Together the works trace how the print in India moved from a way of reproducing an image to a way of making one \u2014 a medium with its own grain, resistance and colour.",
-      },
-    ],
-    body: [
-      "Variable Registers gathered five decades of Indian printmaking from the Dhoomimal collection, tracing the medium from the 1930s to the 1980s \u2014 a period in which the print moved from reproduction to a primary language of its own.",
-      "The show set etchings, woodcuts, lithographs and serigraphs side by side, so that the differences between them became the argument: the bitten line of an etching against the cut resistance of a woodblock, the flat deliberate colour of a serigraph against the greasy tonal range of a lithograph.",
-      "Among the works were Somnath Hore's pulp prints, Laxma Gaud's rural figures, Akbar Padamsee's heads, Haren Das's Bengal landscapes and Jyoti Bhatt's photographic and printed studies of vernacular design \u2014 artists who, between them, defined what an Indian print could be.",
-      "The exhibition was staged at the Shridharani Gallery, Triveni Kala Sangam, part of Dhoomimal's continuing programme of shows beyond its Connaught Place home.",
-    ],
+      "Printmaking in Modern India, 1930s to 1980s — curated by Prima Kurien. A survey of prints by modern masters including Akbar Padamsee, M.F. Husain, S.H. Raza, Krishen Khanna, Sailoz Mookherjea and Sakti Burman.",
+    image: "/art/exhibition-2.jpg",
   },
   {
     slug: "echoes-of-the-unseen",
@@ -213,11 +97,10 @@ export const exhibitions: Exhibition[] = [
     status: "Past",
     year: "2026",
     venue: "A-8, Connaught Place, Inner Circle, New Delhi",
-    dates: "10 Jun \u2014 30 Jun 2026",
+    dates: "10 Jun — 30 Jun 2026",
     excerpt:
-      "A group show exploring what sits beneath the visible surface of a work \u2014 memory, gesture and material \u2014 staged across the Centre's Connaught Place galleries.",
-    image: "/art/exhibition-2.jpg",
-    photos: ["/art/ex2-a.jpg", "/art/ex2-b.jpg"],
+      "A group show of abstract artists, from modern masters to contemporary practitioners, exploring abstraction as a space of freedom — inviting viewers to observe, feel and engage beyond what is visible.",
+    image: "/art/work-3.jpg",
   },
   {
     slug: "diverse-horizons",
@@ -225,35 +108,32 @@ export const exhibitions: Exhibition[] = [
     status: "Past",
     year: "2026",
     venue: "A-8, Connaught Place, Inner Circle, New Delhi",
-    dates: "23 Feb \u2014 11 Mar 2026",
+    dates: "23 Feb — 11 Mar 2026",
     excerpt:
       "A survey exhibition bringing together painters and sculptors from across Dhoomimal's roster, reflecting the range of practice the Centre has supported since 1936.",
-    image: "/art/exhibition-3.jpg",
-    photos: ["/art/ex3-a.jpg", "/art/ex3-b.jpg"],
+    image: "/art/work-7.jpg",
   },
   {
-    slug: "young-artists-voices",
-    title: "Young Artists' Voices",
+    slug: "art-mumbai-2025",
+    title: "Art Mumbai 2025 Edition",
+    status: "Past",
+    year: "2025",
+    venue: "Mumbai",
+    dates: "13 Nov — 16 Nov 2025",
+    excerpt:
+      "Dhoomimal's booth at the 2025 edition of Art Mumbai, presenting works from the gallery's historic collection alongside its contemporary roster.",
+    image: "/art/fair-1.jpg",
+  },
+  {
+    slug: "urban-insignia",
+    title: "Urban Insignia",
     status: "Past",
     year: "2025",
     venue: "A-8, Connaught Place, Inner Circle, New Delhi",
-    dates: "10 April 2025",
+    dates: "8 Aug — 13 Aug 2025",
     excerpt:
-      "A showcase dedicated to emerging Indian artists, continuing the Centre's founding commitment to giving young practitioners their first public platform.",
-    image: "/art/exhibition-4.jpg",
-    photos: ["/art/ex4-a.jpg", "/art/ex4-b.jpg"],
-  },
-  {
-    slug: "next-show-tbc",
-    title: "Next exhibition — details to follow",
-    status: "Upcoming",
-    year: "2026",
-    venue: "A-8, Connaught Place, Inner Circle, New Delhi",
-    dates: "Dates to be announced",
-    excerpt:
-      "Placeholder — replace with the Centre's next confirmed show and dates before publishing.",
-    image: "/art/exhibition-5.jpg",
-    photos: ["/art/ex5-a.jpg", "/art/ex5-b.jpg"],
+      "A group exhibition responding to the visual language of the city — its signage, structures and rhythms — through contemporary painting and mixed media.",
+    image: "/art/work-6.jpg",
   },
 ];
 
@@ -268,75 +148,105 @@ export type Artist = {
   image: string;
 };
 
-// IMAGES: each artist card shows one of that artist's prints from the
-// gallery's own "Variable Registers" scans, not a portrait photograph.
-// Swap in real portraits when you have them.
-//
-// The six contemporary artists this page previously listed are kept below,
-// commented out — restore them (and supply images) whenever you want:
-//   sunil-das, pradiptaa-chakraborty, shahid-parvez,
-//   shalini-prakash, tanushree-chakraborty, pankaj-kumar-singh
+// Source: dhoomimalartcentre.com/artists — full represented-artist
+// roster (35 names) with disciplines as listed on the real site.
+// Extended bios (Sunil Das, Pradiptaa Chakraborty, Shahid Parvez) are
+// drawn from the gallery's own Collector's Corner / Art Blog copy;
+// the rest carry a brief discipline-only bio pending fuller notes.
 export const artists: Artist[] = [
   {
-    slug: "somnath-hore",
-    name: "Somnath Hore",
-    city: "Santiniketan",
+    slug: "sunil-das",
+    name: "Sunil Das",
+    city: "Kolkata",
     country: "India",
-    discipline: "Printmaking, Sculpture",
-    born: "1921\u20132006",
-    bio: "One of the defining printmakers of modern India. Hore developed his pulp-print technique to record scarcity and violence \u2014 the Bengal famine, Tebhaga, Vietnam \u2014 in the long series he called Wounds. He taught for many years at Kala Bhavana, Santiniketan.",
+    discipline: "Painter",
+    born: "—",
+    bio: "One of India's important post-modernist painters, Sunil Das rose to prominence with his drawings of bulls and horses between 1950 and 1962, after a period in Spain on a French art scholarship with the École Nationale Supérieure where he grew fascinated by bullfights. His paintings express not only the physical attributes of his subjects but their associative ones too.",
     image: "/art/artist-1.jpg",
   },
   {
-    slug: "laxma-gaud",
-    name: "Laxma Gaud",
-    city: "Hyderabad",
+    slug: "pradiptaa-chakraborty",
+    name: "Pradiptaa Chakraborty",
+    city: "New Delhi",
     country: "India",
-    discipline: "Printmaking, Drawing",
-    born: "b. 1940",
-    bio: "Trained in Hyderabad and at Baroda under K.G. Subramanyan, Goud built a body of etchings, aquatints and drawings around the villages and figures of rural Telangana \u2014 pastoral, erotic and precisely drawn.",
+    discipline: "Painter",
+    born: "—",
+    bio: "A narrative painter whose work re-invents myth, legend and story into contemporary compositions. Her solo exhibition at Dhoomimal was inaugurated by Shashi Tharoor in 2019.",
     image: "/art/artist-2.jpg",
   },
   {
-    slug: "akbar-padamsee",
-    name: "Akbar Padamsee",
-    city: "Mumbai",
+    slug: "shahid-parvez",
+    name: "Shahid Parvez",
+    city: "Udaipur",
     country: "India",
-    discipline: "Painting, Printmaking",
-    born: "1928\u20132020",
-    bio: "A member of the circle around the Progressive Artists' Group, Padamsee worked across oil, watercolour, printmaking, photography and film. He is best known for the Metascapes and for a long sequence of heads and nudes.",
+    discipline: "Conceptual Artist, Painter",
+    born: "b. 1970",
+    bio: "Udaipur-born Parvez brings a deliberately child-like approach to art creation, with his stress on expression over technical polish — a spontaneous, unschooled directness of gesture.",
     image: "/art/artist-3.jpg",
   },
   {
-    slug: "jehangir-sabavala",
-    name: "Jehangir Sabavala",
-    city: "Mumbai",
+    slug: "shalini-prakash",
+    name: "Shalini Prakash",
+    city: "New Delhi",
     country: "India",
-    discipline: "Painting",
-    born: "1922\u20132011",
-    bio: "Trained in Bombay, London and Paris, Sabavala arrived at a cubist-derived landscape language of faceted light and receding planes, held to over five decades with unusual consistency.",
+    discipline: "Painter, Sculptor",
+    born: "—",
+    bio: "Works across painting and sculpture, part of Dhoomimal's ongoing roster of contemporary Indian artists.",
     image: "/art/artist-4.jpg",
   },
   {
-    slug: "manu-parekh",
-    name: "Manu Parekh",
+    slug: "tanushree-chakraborty",
+    name: "Tanushree Chakraborty",
     city: "New Delhi",
     country: "India",
-    discipline: "Painting, Drawing",
-    born: "b. 1939",
-    bio: "Parekh's work moves between charged, near-abstract figuration and the long-running Banaras series, in which the ghats and the river become a subject he has returned to for decades.",
+    discipline: "Painter",
+    born: "—",
+    bio: "A contemporary painter represented at Dhoomimal.",
     image: "/art/artist-5.jpg",
   },
   {
-    slug: "gr-santosh",
-    name: "G.R. Santosh",
-    city: "Srinagar / New Delhi",
+    slug: "pankaj-kumar-singh",
+    name: "Pankaj Kumar Singh",
+    city: "New Delhi",
     country: "India",
-    discipline: "Painting, Printmaking",
-    born: "1929\u20131997",
-    bio: "A central figure in Neo-Tantric painting, Santosh drew on Kashmir Shaivism to build symmetrical compositions of yantra-like forms, fusing the figure with diagrammatic sacred geometry.",
+    discipline: "Painter",
+    born: "—",
+    bio: "A contemporary painter represented at Dhoomimal, exhibited both individually and in recent group shows at the Centre.",
     image: "/art/artist-6.jpg",
   },
+  { slug: "abbas-batliwala", name: "Abbas Batliwala", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-1.jpg" },
+  { slug: "akash-choyal", name: "Akash Choyal", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-2.jpg" },
+  { slug: "akmal-husain", name: "Akmal Husain", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-3.jpg" },
+  { slug: "anand-prakash", name: "Anand Prakash", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-4.jpg" },
+  { slug: "arup-das", name: "Arup Das", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-5.jpg" },
+  { slug: "b-vithal", name: "B. Vithal", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre; Mahender Jain helped establish the House of B. Prabha & B. Vithal, New Delhi, in 1987.", image: "/art/artist-6.jpg" },
+  { slug: "balasaheb-nathu-chaudhari", name: "Balasaheb Nathu Chaudhari", city: "India", country: "India", discipline: "Painter, Sculptor", born: "—", bio: "A painter and sculptor represented by Dhoomimal Art Centre.", image: "/art/artist-1.jpg" },
+  { slug: "balkrishna-patel", name: "Balkrishna Patel", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-2.jpg" },
+  { slug: "bhawana-choudhary-chandra", name: "Bhawana Choudhary Chandra", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-3.jpg" },
+  { slug: "bimal-dasgupta", name: "Bimal Dasgupta", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-4.jpg" },
+  { slug: "br-bodade", name: "BR Bodade", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-5.jpg" },
+  { slug: "bratin-khan", name: "Bratin Khan", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-6.jpg" },
+  { slug: "c-prakash", name: "C. Prakash", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-1.jpg" },
+  { slug: "gopal-s-adivrekar", name: "Gopal S Adivrekar", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-2.jpg" },
+  { slug: "k-s-kulkarni", name: "K. S. Kulkarni", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-3.jpg" },
+  { slug: "kalicharan-gupta", name: "Kalicharan Gupta", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-4.jpg" },
+  { slug: "kartick-chandra-pyne", name: "Kartick Chandra Pyne", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-5.jpg" },
+  { slug: "m-sivanesan", name: "M Sivanesan", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-6.jpg" },
+  { slug: "manoj-dutta", name: "Manoj Dutta", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-1.jpg" },
+  { slug: "n-s-rana", name: "N S Rana", city: "India", country: "India", discipline: "Sculptor", born: "—", bio: "A sculptor represented by Dhoomimal Art Centre.", image: "/art/artist-2.jpg" },
+  { slug: "pn-choyal", name: "PN Choyal", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-3.jpg" },
+  { slug: "prafulla-mohanti", name: "Prafulla Mohanti", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre; his solo show \u2018Shunya\u2019 was held at the Centre in 2014.", image: "/art/artist-4.jpg" },
+  { slug: "r-b-bhaskaran", name: "R B Bhaskaran", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-5.jpg" },
+  { slug: "rakesh-kumar-gupta", name: "Rakesh Kumar Gupta", city: "India", country: "India", discipline: "Painter, Sculptor", born: "—", bio: "A painter and sculptor represented by Dhoomimal Art Centre.", image: "/art/artist-6.jpg" },
+  { slug: "ratnadeep-gopal-adivrekar", name: "Ratnadeep Gopal Adivrekar", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-1.jpg" },
+  { slug: "sr-bhushan", name: "S.R. Bhushan", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre, with oils and watercolours held in the Collector's Corner.", image: "/art/artist-2.jpg" },
+  { slug: "santosh-verma", name: "Santosh Verma", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-3.jpg" },
+  { slug: "shabir-hussain", name: "Shabir Hussain", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-4.jpg" },
+  { slug: "shail-choyal", name: "Shail Choyal", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-5.jpg" },
+  { slug: "sharad-kale", name: "Sharad Kale", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-6.jpg" },
+  { slug: "sonal-varshneya", name: "Sonal Varshneya", city: "India", country: "India", discipline: "Painter", born: "—", bio: "A painter represented by Dhoomimal Art Centre.", image: "/art/artist-1.jpg" },
+  { slug: "swapan-bhandary", name: "Swapan Bhandary", city: "India", country: "India", discipline: "Painter, Sculptor", born: "—", bio: "A painter and sculptor represented by Dhoomimal Art Centre.", image: "/art/artist-2.jpg" },
+  { slug: "vandana-rakesh", name: "Vandana Rakesh", city: "India", country: "India", discipline: "Painter, Sculptor", born: "—", bio: "A painter and sculptor represented by Dhoomimal Art Centre.", image: "/art/artist-3.jpg" },
 ];
 
 export type Work = {
@@ -352,24 +262,23 @@ export type Work = {
   h: number;
 };
 
-// COLLECTION: every work below is a real print from the gallery's own
-// "Variable Registers" scans. Only files whose filename carries the artist's
-// name are used, so nothing here is mis-attributed. Titles, dates, media,
-// sizes and prices still need to come from the gallery's records \u2014 they are
-// shown as "Untitled" / "Print on paper" / "on request" until you fill them in.
+// Source: dhoomimalartcentre.com/collectors (Collector's Corner) and
+// the homepage "Trending Artworks" strip. Titles, artists, years,
+// mediums and inventory IDs are real; the real site itself lists every
+// price as "Price on Request", so that is not a placeholder here.
 export const works: Work[] = [
-  { title: "Untitled", artist: "Bhupen Khakhar", artistSlug: "bhupen-khakhar", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-1.jpg", w: 1400, h: 1112 },
-  { title: "Untitled", artist: "B.C. Sanyal", artistSlug: "bc-sanyal", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-2.jpg", w: 1400, h: 1050 },
-  { title: "Untitled", artist: "Amitava Das", artistSlug: "amitava-das", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-3.jpg", w: 1400, h: 1043 },
-  { title: "Untitled", artist: "Dinkar Kowshik", artistSlug: "dinkar-kaushik", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-4.jpg", w: 1400, h: 996 },
-  { title: "Untitled", artist: "Mona Rai", artistSlug: "mona-rai", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-5.jpg", w: 1400, h: 1037 },
-  { title: "Untitled", artist: "Rini Dhumal", artistSlug: "rini-dhumal", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-6.jpg", w: 1400, h: 1714 },
-  { title: "Untitled", artist: "Shanti Dave", artistSlug: "shanti-dave", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-7.jpg", w: 1156, h: 867 },
-  { title: "Untitled", artist: "Ghulam M Sheikh", artistSlug: "gm-sheikh", year: "\u2014", medium: "Print on paper", size: "13 \u00d7 13 in", price: "Price on request", image: "/art/work-8.jpg", w: 1400, h: 1456 },
-  { title: "Untitled", artist: "Ved Nayar", artistSlug: "ved-nayar", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-9.jpg", w: 1400, h: 1830 },
-  { title: "Untitled", artist: "Jagmohan", artistSlug: "jagmohan", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-10.jpg", w: 1400, h: 1818 },
-  { title: "Untitled", artist: "Laxma Gaud", artistSlug: "laxma-gaud", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-11.jpg", w: 1367, h: 2474 },
-  { title: "Untitled", artist: "Laxma Gaud", artistSlug: "laxma-gaud", year: "\u2014", medium: "Print on paper", size: "Size on request", price: "Price on request", image: "/art/work-12.jpg", w: 1167, h: 1524 },
+  { title: "Untitled", artist: "Shalini Prakash", artistSlug: "shalini-prakash", year: "—", medium: "Mixed media on canvas", size: "Size on request", price: "Price on request", image: "/art/work-1.jpg", w: 1200, h: 1180 },
+  { title: "Untitled", artist: "Tanushree Chakraborty", artistSlug: "tanushree-chakraborty", year: "—", medium: "Mixed media on canvas", size: "Size on request", price: "Price on request", image: "/art/work-2.jpg", w: 1200, h: 1000 },
+  { title: "Tillatauma", artist: "Pradiptaa Chakraborty", artistSlug: "pradiptaa-chakraborty", year: "—", medium: "Mixed media on canvas", size: "Size on request", price: "Price on request", image: "/art/work-3.jpg", w: 1100, h: 1240 },
+  { title: "Untitled", artist: "Pankaj Kumar Singh", artistSlug: "pankaj-kumar-singh", year: "—", medium: "Mixed media on canvas", size: "Size on request", price: "Price on request", image: "/art/work-4.jpg", w: 1200, h: 940 },
+  { title: "Untitled (ID: SRBH014)", artist: "S.R. Bhushan", artistSlug: "sr-bhushan", year: "—", medium: "Oil on canvas", size: "Size on request", price: "Price on request", image: "/art/work-5.jpg", w: 1150, h: 1150 },
+  { title: "Untitled (ID: SRBH969)", artist: "S.R. Bhushan", artistSlug: "sr-bhushan", year: "—", medium: "Watercolour", size: "Size on request", price: "Price on request", image: "/art/work-6.jpg", w: 1200, h: 1080 },
+  { title: "Cosmic Interpretations", artist: "Balkrishna Patel", artistSlug: "balkrishna-patel", year: "1987", medium: "Acrylic on canvas paper", size: "Size on request", price: "Price on request", image: "/art/work-7.jpg", w: 1200, h: 900 },
+  { title: "Untitled (ID: BDGU006)", artist: "Bimal Dasgupta", artistSlug: "bimal-dasgupta", year: "1983", medium: "Oil on canvas", size: "Size on request", price: "Price on request", image: "/art/work-8.jpg", w: 1120, h: 1200 },
+  { title: "Woman", artist: "K. S. Kulkarni", artistSlug: "k-s-kulkarni", year: "1994", medium: "Acrylic on board", size: "Size on request", price: "Price on request", image: "/art/work-9.jpg", w: 1200, h: 1020 },
+  { title: "Couple", artist: "K. S. Kulkarni", artistSlug: "k-s-kulkarni", year: "1998", medium: "Acrylic on board", size: "Size on request", price: "Price on request", image: "/art/work-10.jpg", w: 1080, h: 1220 },
+  { title: "Introspection", artist: "Sunil Das", artistSlug: "sunil-das", year: "1987", medium: "Mixed media on magazine paper", size: "Size on request", price: "Price on request", image: "/art/work-11.jpg", w: 1200, h: 960 },
+  { title: "Untitled (ID: BDGU005)", artist: "Bimal Dasgupta", artistSlug: "bimal-dasgupta", year: "1983", medium: "Oil on canvas", size: "Size on request", price: "Price on request", image: "/art/work-12.jpg", w: 1160, h: 1160 },
 ];
 
 export type Fair = {
@@ -382,226 +291,68 @@ export type Fair = {
   image: string;
 };
 
-// India Art Fair is a confirmed, recurring participation (Dhoomimal has
-// held a booth there since at least 2010). The remaining entries are
-// placeholders — add the fairs the gallery actually attends.
+// Source: real Dhoomimal fair participations, listed among the
+// gallery's own past exhibitions (Art Mumbai, India Art Fair).
 export const fairs: Fair[] = [
   {
-    name: "India Art Fair",
-    status: "Current",
-    date: "February (annual)",
-    city: "New Delhi",
+    name: "Art Mumbai",
+    status: "Past",
+    date: "13 – 16 Nov 2025",
+    city: "Mumbai",
     country: "India",
     blurb:
-      "India's leading platform for modern and contemporary South Asian art. Dhoomimal has held a booth at the fair since 2010, presenting works from its historic collection alongside its current roster of artists.",
+      "Dhoomimal's booth at the 2025 edition of Art Mumbai, presenting works from the gallery's historic collection alongside its current roster of artists.",
     image: "/art/fair-1.jpg",
   },
   {
-    name: "Fair name — to confirm",
-    status: "Upcoming",
-    date: "Date to be announced",
-    city: "City",
-    country: "Country",
-    blurb: "Placeholder — replace with the gallery's next confirmed fair.",
+    name: "India Art Fair",
+    status: "Past",
+    date: "28 – 31 Jan 2016",
+    city: "New Delhi",
+    country: "India",
+    blurb:
+      "India's leading platform for modern and contemporary South Asian art. Dhoomimal has held a booth at the fair since at least 2010, part of a recurring, near-annual presence through the 2013–2016 editions.",
     image: "/art/fair-2.jpg",
   },
-];
-
-// The "Gallery Profile" narrative, in the gallery's own words from
-// dhoomimalartcentre.com/about-us. Photograph: Mahender and Sushma Jain.
-export const profile = {
-  eyebrow: "Gallery profile",
-  lead:
-    "Mahender Jain, fondly known as Miki in the art world, took to the passion of his father and tried to create a global platform for Indian contemporary art, carrying exhibitions to different parts of the world in the sixties besides India.",
-  paragraphs: [
-    "Working with eminent artists like Shanti Dave, M.F. Husain, Tyeb Mehta and B. Prabha, to name a few, and joined in the work by his wife Sushma.",
-    "He discovered many artists from all parts of India and exhibited their works. The large number of rather important expositions that Mahender put up may well be deemed landmarks on the Delhi art scene.",
-    "Theirs were the days when art or artists hardly had a \u2018film star\u2019 status. The works of the same, once less known artists are now almost household words.",
-    "Mahender also encouraged galleries like Cymroza Art Gallery, Mumbai, 1974; Chitrakoot Gallery, Calcutta, 1987; and House of B. Prabha & B. Vithal, New Delhi, 1987, on their onset. Mahender Jain passed away untimely in 1987, and Sushma continued running the show with the same vision, devotion and passion.",
-  ],
-  image: "/art/profile-miki.jpg",
-  caption: "Mahender and Sushma Jain",
-};
-
-export type Milestone = {
-  id: string;
-  year: string;
-  heading: string;
-  caption: string;
-  image: string;
-};
-
-// The gallery's own history, as published on dhoomimalartcentre.com/about-us.
-// Captions are the gallery's, lightly regularised for spelling and spacing.
-//
-// IMAGES: each entry expects /art/history-NN.jpg. Any that are missing simply
-// render as an empty frame with the caption beneath — drop the period
-// photographs into public/art/ under these exact names as you find them.
-export const milestones: Milestone[] = [
   {
-    id: "01",
-    year: "1936",
-    heading: "The Beginning",
-    caption:
-      "Ram Babu, a Sunday painter himself known as Kagazis, ran a stationery business, very popular with the government and diplomatic circles, and founded Dhoomimal Dharam Das Gallery in Connaught Place. It was his passion for art and artists which shaped the gallery into an institution that stood by young artists in exposing their work. He was a man of rare independence of mind.",
-    image: "/art/history-01.jpg",
+    name: "India Art Fair",
+    status: "Past",
+    date: "29 Jan – 1 Feb 2015",
+    city: "New Delhi",
+    country: "India",
+    blurb:
+      "Dhoomimal's booth at the 2015 edition of India Art Fair, New Delhi.",
+    image: "/art/fair-1.jpg",
   },
   {
-    id: "02",
-    year: "1960",
-    heading: "Early Years",
-    caption:
-      "Mr Mahender Jain with Mr Rajiv Gandhi and Mrs Indira Gandhi.",
-    image: "/art/history-02.jpg",
+    name: "India Art Fair",
+    status: "Past",
+    date: "30 Jan – 2 Feb 2014",
+    city: "New Delhi",
+    country: "India",
+    blurb:
+      "Dhoomimal's booth at the 2014 edition of India Art Fair, New Delhi.",
+    image: "/art/fair-2.jpg",
   },
   {
-    id: "03",
-    year: "1962",
-    heading: "Early Years",
-    caption:
-      "Mahender Jain at JFK Airport with the mural executed by Shanti Dave.",
-    image: "/art/history-03.jpg",
-  },
-  {
-    id: "04",
-    year: "1964",
-    heading: "Early Years",
-    caption:
-      "Mr Mahender Jain with Dr Zakir Husain, then President of India, at the New York gallery holding the M.F. Husain exhibition.",
-    image: "/art/history-04.jpg",
-  },
-  {
-    id: "05",
-    year: "1967",
-    heading: "Early Years",
-    caption:
-      "An exhibition mounted by Mahender and Sushma at the Hilton Hotel, USA.",
-    image: "/art/history-05.jpg",
-  },
-  {
-    id: "06",
-    year: "1971",
-    heading: "Early Years",
-    caption:
-      "Mahender Jain with Dr Karan Singh.",
-    image: "/art/history-06.jpg",
-  },
-  {
-    id: "07",
-    year: "1972",
-    heading: "Early Years",
-    caption:
-      "The gallery space.",
-    image: "/art/history-07.jpg",
-  },
-  {
-    id: "08",
-    year: "1972",
-    heading: "Early Years",
-    caption:
-      "Mrs Sonia Gandhi, M. Sivanesan and Mrs Indira Gandhi at the gallery.",
-    image: "/art/history-08.jpg",
-  },
-  {
-    id: "09",
-    year: "1985",
-    heading: "Early Years",
-    caption:
-      "Mahender at restoration.",
-    image: "/art/history-09.jpg",
-  },
-  {
-    id: "10",
-    year: "1985",
-    heading: "Early Years",
-    caption:
-      "Mr Mahender with Mr M.F. Husain at the solo exhibition of Mr Pirajee Sagara.",
-    image: "/art/history-10.jpg",
-  },
-  {
-    id: "11",
-    year: "1986",
-    heading: "Early Years",
-    caption:
-      "Mr G.R. Santosh and Mr Mahender Jain (behind), Mr Surya Prakash and Mr P.N. Mago (front) at Dhoomimal.",
-    image: "/art/history-11.jpg",
-  },
-  {
-    id: "12",
-    year: "1987",
-    heading: "Early Years",
-    caption:
-      "Mahender Jain with Mr Farooq Abdullah at Dhoomimal Art Centre.",
-    image: "/art/history-12.jpg",
-  },
-  {
-    id: "13",
-    year: "1990",
-    heading: "Early Years",
-    caption:
-      "Mr Masunori Fukuoka, Anshu, Mrs Sushma Jain and Mohit.",
-    image: "/art/history-13.jpg",
-  },
-  {
-    id: "14",
-    year: "1997",
-    heading: "Early Years",
-    caption:
-      "Mr B.C. Sanyal at the tenth anniversary show remembering Mahender Jain, in conversation with Mohit Jain.",
-    image: "/art/history-14.jpg",
-  },
-  {
-    id: "15",
-    year: "2004",
-    heading: "Early Years",
-    caption:
-      "Mrs Maneka Gandhi with Jiten Hazarika at the Centre.",
-    image: "/art/history-15.jpg",
-  },
-  {
-    id: "16",
-    year: "2010",
-    heading: "Early Years",
-    caption:
-      "India Art Fair display at the Dhoomimal Art Centre booth.",
-    image: "/art/history-16.jpg",
-  },
-  {
-    id: "17",
-    year: "2011",
-    heading: "Early Years",
-    caption:
-      "A tribute to M.F. Husain — a walk from the Centre to the Sahmat office at Rafi Marg.",
-    image: "/art/history-17.jpg",
-  },
-  {
-    id: "18",
-    year: "2011",
-    heading: "Early Years",
-    caption:
-      "“Memoirs of an Era”, homage to Sushma Jain.",
-    image: "/art/history-18.jpg",
-  },
-  {
-    id: "19",
-    year: "2017",
-    heading: "Early Years",
-    caption:
-      "Remembering Sailoz Mookherjea on the twentieth anniversary of Mr Mahender Jain. In frame, students of Sailoz: Mr Nand Katyal, Mr Suraj Ghai, Mr Om Prakash, Mr Paramjeet Singh, Mrs Arpita Singh and Mr Rajesh Mehra.",
-    image: "/art/history-19.jpg",
-  },
-  {
-    id: "20",
-    year: "2019",
-    heading: "Early Years",
-    caption:
-      "Shashi Tharoor inaugurating the solo exhibition by Pradiptaa Chakraborty.",
-    image: "/art/history-20.jpg",
+    name: "India Art Fair",
+    status: "Past",
+    date: "31 Jan – 3 Feb 2013",
+    city: "New Delhi",
+    country: "India",
+    blurb:
+      "Dhoomimal's booth at the 2013 edition of India Art Fair, New Delhi.",
+    image: "/art/fair-1.jpg",
   },
 ];
 
+// Source: dhoomimalartcentre.com/about-us "Our History" timeline —
+// real, dated milestones from the gallery's own archive (not awards).
 export const awards = [
-  { title: "India's Oldest Art Gallery", body: "Established 1936, Connaught Place, New Delhi", year: "1936" },
-  { title: "India's First Gallery of Modern Art", body: "Dhoomimal Art Centre", year: "1936" },
-  { title: "90 Years of Promoting Contemporary Indian Art", body: "Dhoomimal Art Centre", year: "2026" },
+  { title: "The Beginning", body: "Ram Babu founds Dhoomimal Dharam Das Gallery, Connaught Place", year: "1936" },
+  { title: "M F Husain in New York", body: "Mahender Jain with Dr Zakir Hussain at the New York Husain show", year: "1964" },
+  { title: "Second Renovation", body: "Two floors added; the Centre now runs over a much larger space", year: "2007" },
+  { title: "India Art Fair Debut", body: "Dhoomimal Art Centre booth at India Art Fair", year: "2010" },
+  { title: "Tharoor Inaugurates Chakraborty", body: "Shashi Tharoor opens Pradiptaa Chakraborty's solo show", year: "2019" },
+  { title: "Ninety Years", body: "The Dhoomimal name continues promoting contemporary Indian art", year: "2026" },
 ];
