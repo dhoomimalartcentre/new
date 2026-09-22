@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { gallery } from "@/lib/content";
 
@@ -30,13 +29,6 @@ export default function Footer() {
       <div className="wrap">
         <div className="col lfooter__grid">
           <div>
-            <Image
-              src="/brand/mark.svg"
-              alt=""
-              width={34}
-              height={34}
-              className="lfooter__logo"
-            />
             <p className="lfooter__word">India&rsquo;s first gallery of modern art</p>
             <p className="lfooter__addr">
               {gallery.address.map((l) => (
@@ -62,14 +54,7 @@ export default function Footer() {
         </div>
 
         <p className="lfooter__mark">
-          <Image
-            src="/brand/mark.svg"
-            alt=""
-            width={18}
-            height={18}
-            className="lfooter__mark-icon"
-          />
-          {gallery.name}
+          dac <span aria-hidden />
         </p>
       </div>
     </footer>
