@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact — Dhoomimal Art Centre</title>
 <meta name="description" content="Visit, call or write to Dhoomimal Art Centre, A-8 Connaught Place, New Delhi.">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Newsreader:opsz,wght@6..72,400&display=swap">
@@ -42,6 +43,7 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:
 /* header */
 header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(30 * var(--u)) var(--side) 0}
 .logo{font-family:var(--logo);font-size:max(16px, calc(38 * var(--u)));letter-spacing:-.01em;line-height:1}
+.logo img{display:block;height:clamp(30px, 2.6vw, 44px);width:auto}
 nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(17 * var(--u));font-size:var(--t-nav)}
 nav.main a[aria-current]{background-size:100% 1px}
 .menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
@@ -96,7 +98,7 @@ footer{padding-top:calc(354 * var(--u))}
 <body>
 
 <header>
-  <a class="logo" href="index.html">dhoomimal art centre</a>
+  <a class="logo" href="index.html"><img src="logo.png" alt="Dhoomimal Art Centre" width="792" height="240"></a>
   <nav class="main" aria-label="Main">
     <ul>
       <li><a class="link" href="artists.html">Artists</a></li>
@@ -112,7 +114,7 @@ footer{padding-top:calc(354 * var(--u))}
 
 <div class="sheet" id="sheet" hidden>
   <div class="top">
-    <span class="logo">dhoomimal art centre</span>
+    <span class="logo"><img src="logo.png" alt="Dhoomimal Art Centre" width="792" height="240"></span>
     <button class="menu-btn" id="menu-close" style="display:block">CLOSE</button>
   </div>
   <ul>
