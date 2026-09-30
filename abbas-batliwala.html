@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>India Art Fair 2013 — Dhoomimal Art Centre</title>
-<meta name="description" content="Dhoomimal Art Centre at India Art Fair 2013, NSIC Exhibition Ground, New Delhi, 31 January – 3 February 2013.">
+<title>Abbas Batliwala — Dhoomimal Art Centre</title>
+<meta name="description" content="Abbas Batliwala, painter, born 1958 in Udaipur, Rajasthan. Works available through Dhoomimal Art Centre, New Delhi.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +104,28 @@ a:hover .frame img,.frame:hover img{transform:scale(1.02)}
 .three .desc{margin:calc(14 * var(--v)) 0 0 auto;max-width:80%;text-align:right;color:var(--muted);line-height:1.5}
 .back{display:flex;justify-content:center;padding-top:calc(46 * var(--v))}
 
+/* artist page */
+.hero.artist{grid-template-columns:calc(283 * var(--v)) minmax(0,1fr);gap:calc(30 * var(--v))}
+.hero.artist .frame{aspect-ratio:1000/1300}
+.hero.artist h1{font-size:max(40px, calc(52 * var(--v)));line-height:.95;letter-spacing:-.055em}
+.hero.artist .since{margin-top:calc(8 * var(--v));font-size:max(15px, calc(9 * var(--v)));letter-spacing:-.03em}
+.hero.artist .lede{margin-top:auto;padding-top:32px;max-width:calc(360 * var(--v))}
+.bio{display:grid;grid-template-columns:calc(283 * var(--v)) minmax(0,1fr);column-gap:calc(30 * var(--v));padding-top:calc(46 * var(--v))}
+.bio h2{font-size:max(22px, calc(16 * var(--v)));line-height:1.12;letter-spacing:-.045em}
+.bio .text{display:grid;gap:calc(10 * var(--v));max-width:calc(372 * var(--v));line-height:1.5}
+.bio .facts{margin-top:calc(16 * var(--v));max-width:calc(372 * var(--v))}
+.works-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:calc(70 * var(--v)) 0 calc(16 * var(--v))}
+.works-head h2{font-size:max(28px, calc(30 * var(--v)));letter-spacing:-.05em;line-height:1}
+.works{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:calc(10 * var(--v))}
+.work{display:block;border-bottom:1px solid var(--rule);padding-bottom:calc(6 * var(--v));min-width:0}
+.work .frame{aspect-ratio:1/1;background:var(--ph)}
+.work .frame img{object-fit:contain;padding:8%}
+.work h3{font-size:max(15px, calc(9 * var(--v)));letter-spacing:-.04em;line-height:1.2;margin-top:calc(5 * var(--v))}
+.work .meta{margin-top:2px}
+.note{margin-top:calc(16 * var(--v));color:var(--muted);font-size:var(--t-meta)}
+.three .frame.sqr{aspect-ratio:1/1}
+.three .frame.sqr img{filter:grayscale(1)}
+
 /* footer */
 footer{padding-top:calc(50 * var(--u))}
 .foot{display:grid;grid-template-columns:calc(102 * var(--u)) calc(266 * var(--u)) minmax(0,1fr)}
@@ -129,6 +151,9 @@ footer{padding-top:calc(50 * var(--u))}
   .detail{row-gap:36px}
   .parts{max-width:none}
   .photos{grid-template-columns:1fr}
+  .hero.artist,.bio{grid-template-columns:1fr;row-gap:24px}
+  .hero.artist .lede{margin-top:16px;padding-top:0}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 10px}
   .three{grid-template-columns:1fr;gap:36px}
   .three .desc{text-align:left;margin-left:0;max-width:none}
   .foot{grid-template-columns:1fr;row-gap:40px}
@@ -147,10 +172,10 @@ footer{padding-top:calc(50 * var(--u))}
   <a class="logo" href="index.html"><img src="logo.png" alt="Dhoomimal Art Centre" width="792" height="240"></a>
   <nav class="main" aria-label="Main">
     <ul>
-      <li><a class="link" href="artists.html">Artists</a></li>
+      <li><a class="link" href="artists.html" aria-current="page">Artists</a></li>
       <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
       <li><a class="link" href="collection.html">Collection</a></li>
-      <li><a class="link" href="art-fairs.html" aria-current="page">Art Fairs</a></li>
+      <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
       <li><a class="link" href="contact.html">Contact</a></li>
       <li><a class="link" href="about.html">About</a></li>
     </ul>
@@ -177,54 +202,44 @@ footer{padding-top:calc(50 * var(--u))}
 </div>
 
 <main class="wrap">
-  <section class="hero">
-    <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1752145906exb-inner-iaf2013-4.jpg" alt="Dhoomimal Art Centre at India Art Fair 2013"></div>
+  <section class="hero artist">
+    <div class="frame"><img src="images/abbas-batliwala.jpg" alt="Portrait of Abbas Batliwala"></div>
     <div class="hero-text">
-      <h1>India Art Fair 2013</h1>
-      <div class="meta">Jan 2013 • New Delhi, India</div>
-      <div class="tags"><span class="tag">art fair</span><span class="tag">modern &amp; contemporary</span><span class="tag">New Delhi</span></div>
+      <h1>Abbas<br>Batliwala</h1>
+      <div class="since">Painter • Udaipur, Rajasthan</div>
+      <p class="lede">Figures drawn from folk forms, with large eyes like kauri shells and scenes full of melodrama and wonder.</p>
     </div>
   </section>
 
-  <section class="detail">
-    <div class="stack">
-      <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1752145890exb-inner-iaf2013-3.jpg" alt="Dhoomimal booth at India Art Fair 2013" loading="lazy"></div>
-      <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1752145883exb-inner-iaf2013-2.jpg" alt="Dhoomimal booth at India Art Fair 2013" loading="lazy"></div>
-      <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1752145878exb-inner-iaf2013-1.jpg" alt="Dhoomimal booth at India Art Fair 2013" loading="lazy"></div>
-    </div>
-    <div class="story">
-      <p class="lede">In January 2013 Dhoomimal Art Centre took part in the India Art Fair, showing modern and contemporary Indian art at the NSIC Exhibition Ground in New Delhi.</p>
-      <ul class="facts">
-        <li><span class="k">Dates</span><span class="v">31 January – 3 February 2013</span></li>
-        <li><span class="k">Venue</span><span class="v">NSIC Exhibition Ground, New Delhi</span></li>
-      </ul>
-      <div class="parts">
-        <div>
-          <h2>At the fair</h2>
-          <p>The centre's booth was open to visitors over the four days of the fair, from 31 January to 3 February.</p>
-        </div>
-        <div>
-          <h2>Original works only</h2>
-          <p>As at the gallery, every work on the stand was an original. Dhoomimal does not deal in reproductions of any kind.</p>
-        </div>
-        <div>
-          <h2>The first of four years</h2>
-          <p>2013 began a run of four years in which Dhoomimal showed at the India Art Fair, ending with Expressions in 2016, a curated show of portraits of calm and stillness.</p>
-        </div>
-        <div>
-          <h2>Enquiries</h2>
-          <p>For works shown at the fair, call +91 11 4151 6172 or write to info@dhoomimalartcentre.com, or visit the <a href="contact.html">contact page</a>.</p>
-        </div>
+  <section class="bio">
+    <h2>Folk forms,<br>seen with wide eyes</h2>
+    <div>
+      <div class="text">
+        <p>Born in 1958 in Udaipur, Rajasthan, Abbas Batliwala took his postgraduate degree in Drawing and Painting from Udaipur University. His inspiration comes from folk forms, and his paintings carry an exaggerated sense of awe. Working with caricatured figures, he holds the viewer's attention through his signature large, oversized eyes, drawn and painted with care to resemble seashells, or kauri. His scenes often carry a touch of melodrama, with figures closely intertwined.</p>
+        <p>Batliwala has built a long career as an independent artist, with many awards at national and state level. He has shown in Delhi and Mumbai and at international events including the 7th International Triennale in India, the 6th Asian Art Biennale in Bangladesh, and India Month in Rotterdam and Mumbai.</p>
       </div>
+      <ul class="facts">
+        <li><span class="k">Born</span><span class="v">1958, Udaipur, Rajasthan</span></li>
+        <li><span class="k">Education</span><span class="v">Postgraduate, Drawing &amp; Painting, Udaipur University</span></li>
+        <li><span class="k">Medium</span><span class="v">Oil on canvas</span></li>
+        <li><span class="k">Collections</span><span class="v">National Gallery of Modern Art, New Delhi • Lalit Kala Akademi, New Delhi • Rajasthan Lalit Kala Akademi, Jaipur</span></li>
+      </ul>
     </div>
   </section>
+
+  <div class="works-head">
+    <h2>Works</h2>
+    <a class="link" href="collection.html">View the collection →</a>
+  </div>
+  <div class="works" id="works"></div>
+  <p class="note">All works are originals. Prices on request: call +91 11 4151 6172 or write to info@dhoomimalartcentre.com.</p>
 
   <section class="others">
-    <h2>See other fairs</h2>
+    <h2>More artists</h2>
     <div class="three" id="others"></div>
   </section>
 
-  <div class="back"><a class="btn" href="art-fairs.html">← Back to art fairs</a></div>
+  <div class="back"><a class="btn" href="artists.html">← Back to artists</a></div>
 </main>
 
 <footer>
@@ -264,31 +279,31 @@ footer{padding-top:calc(50 * var(--u))}
 </footer>
 
 <script>
-var B="https://www.dhoomimalartcentre.com/", G=B+"images/exhibitiongallery/";
-var PHOTOS=[];
+var B="https://www.dhoomimalartcentre.com/", W=B+"images/artwork/", A=B+"images/artist/";
+// Works: title, year, medium, image file, detail page slug
+var WORKS=[
+["Luring","2008","Oil on canvas","1694084767abba283-th.jpg","luring"],
+["Durga","2012","Oil on canvas","1694084622abba245-th.jpg","durga"],
+["Adam & Eve","2010","Oil on canvas","1694084462abba225-th.jpg","adam-eve"],
+["Tension","2011","Oil on canvas","1694084277abba122-th.jpg","tension"],
+["Totum","2011","Oil on canvas","1693998108abba076-th.jpg","totum"]
+];
 var OTHERS=[
-  {t:"Expressions: India Art Fair 2016",s:"india-art-fair-2016.html",img:G+"1751626883exb-inner-iaf2016-4.jpg",m:"Jan 2016 • NSIC Exhibition Ground, New Delhi",
-   d:"Curated by Mohit Jain. Artists were invited to make portraits of calm and stillness in a time of strife."},
-  {t:"India Art Fair 2015",s:"india-art-fair-2015.html",img:G+"1751627519exb-inner-iaf2015-4.jpg",m:"Jan 2015 • NSIC Exhibition Ground, New Delhi",
-   d:"Dhoomimal's booth at the 2015 India Art Fair in New Delhi, showing modern and contemporary Indian art."},
-  {t:"India Art Fair 2014",s:"india-art-fair-2014.html",img:G+"1752056139exb-inner-iaf2014-2.jpg",m:"Jan 2014 • NSIC Exhibition Ground, New Delhi",
-   d:"Dhoomimal's booth at the 2014 India Art Fair in New Delhi."}
+  {t:"Balkrishna Patel",href:B+"artists/balkrishna-patel~80",img:A+"1665740343balkrishna-patel-list.jpg",m:"Painter"},
+  {t:"Akash Choyal",href:B+"artists/akash-choyal~1",img:A+"1664272726akash-choyal-list.jpg",m:"Painter"},
+  {t:"Shahid Parvez",href:B+"artists/shahid-parvez~66",img:A+"1665647767shahid-parvez-list.jpg",m:"Conceptual artist • Painter"}
 ];
 (function(){
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
-  function url(s){if(/\.html$/.test(s))return s;var L={"expressions-india-art-fair-2016~24":"india-art-fair-2016.html","art-mumbai-2025-edition~37":"art-mumbai-2025.html","india-art-fair-2015~25":"india-art-fair-2015.html","india-art-fair-2014~30":"india-art-fair-2014.html","india-art-fair-2013~32":"india-art-fair-2013.html"};return L[s]||B+"exhibitions/"+encodeURI(s);}
-  function tgt(u){return u.indexOf("http")===0?' target="_blank" rel="noopener"':'';}
-  document.getElementById("others").innerHTML=OTHERS.map(function(e){
-    return '<article><a href="'+url(e.s)+'"'+tgt(url(e.s))+'><div class="frame"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
-      '<h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div>'+
-      '<a class="btn" href="'+url(e.s)+'"'+tgt(url(e.s))+'>+ Read more</a>'+
-      '<p class="desc">'+esc(e.d)+'</p></article>';
+  document.getElementById("works").innerHTML=WORKS.map(function(w){
+    return '<a class="work" href="'+B+"artists/abbas-batliwala~87"+'" target="_blank" rel="noopener">'+
+      '<div class="frame"><img src="'+W+w[3]+'" alt="'+esc(w[0]+" by Abbas Batliwala")+'" loading="lazy"></div>'+
+      '<h3>'+esc(w[0])+'</h3><div class="meta">'+esc(w[1]+" • "+w[2])+'</div></a>';
   }).join("");
-  if(PHOTOS.length){
-    var ph=document.getElementById("photos");
-    ph.innerHTML=PHOTOS.map(function(src){return '<div class="frame"><img src="'+esc(src)+'" alt="Dhoomimal booth at Art Mumbai 2025" loading="lazy"></div>';}).join("");
-    ph.hidden=false;
-  }
+  document.getElementById("others").innerHTML=OTHERS.map(function(e){
+    return '<article><a href="'+e.href+'" target="_blank" rel="noopener"><div class="frame sqr"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
+      '<h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div></article>';
+  }).join("");
   document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
   var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
   o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});

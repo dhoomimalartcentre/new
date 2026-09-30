@@ -172,7 +172,7 @@ footer{padding-top:calc(125 * var(--u))}
 <footer>
   <div class="wrap foot">
     <div class="foot-left">
-      <p class="display">Eighty-five years<br>of Indian art</p>
+      <p class="display">Ninety years<br>of Indian art</p>
       <address class="foot-addr">
         A-8, Connaught Place<br>
         Inner Circle – New Delhi<br>
@@ -253,11 +253,12 @@ var ARTISTS=[
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
   var grid="", names="";
   ARTISTS.forEach(function(a){
-    var href=BASE+"artists/"+a[1];
-    grid+='<a class="artist" href="'+href+'" target="_blank" rel="noopener">'+
+    var LOCAL={"abbas-batliwala~87":"abbas-batliwala.html"};
+    var href=LOCAL[a[1]]||BASE+"artists/"+a[1], ext=href.indexOf("http")===0?' target="_blank" rel="noopener"':"";
+    grid+='<a class="artist" href="'+href+'"'+ext+'>'+
       '<div class="frame"><img src="'+BASE+'images/artist/'+a[2]+'" alt="'+esc(a[0])+'" loading="lazy"></div>'+
       '<div class="foot-row"><div><h3 class="name">'+esc(a[0])+'</h3><div class="role">'+esc(a[3])+'</div></div><span class="sq" aria-hidden="true">'+PLUS+'</span></div></a>';
-    names+='<a href="'+href+'" target="_blank" rel="noopener" tabindex="-1">'+esc(a[0])+'</a>';
+    names+='<a href="'+href+'"'+ext+' tabindex="-1">'+esc(a[0])+'</a>';
   });
   document.getElementById("artists").innerHTML=grid;
   document.getElementById("track").innerHTML=names+names;
