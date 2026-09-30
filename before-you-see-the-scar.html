@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Before You See the Scar — Dhoomimal Art Centre</title>
+<meta name="description" content="Before You See the Scar, a solo photography exhibition by Monica Dhaka at Dhoomimal Art Centre, New Delhi, 14–23 September 2026.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Newsreader:opsz,wght@6..72,400&display=swap">
+<style>
+/* Layout measured from the Heynar Mastow art fairs page.
+   --u = one pixel of the 610px-wide reference capture. Sticky left column (title + jump links), fairs stacked in the right column from 209u. */
+:root{
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#4a4a4a;
+  --rule:#bdbdbd;
+  --ph:#eeeeec;
+  --btn:#111111;
+  --btn-fg:#ffffff;
+  --sans:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --logo:Newsreader,"Times New Roman",Georgia,serif;
+  --u:calc(100vw / 610);
+  --side:max(16px, calc(8 * var(--u)));
+  --t-giant:max(min(56px, 17vw), calc(62 * var(--u)));
+  --t-display:max(30px, calc(26 * var(--u)));
+  --t-lede:max(18px, calc(12.5 * var(--u)));
+  --t-label:max(17px, calc(12 * var(--u)));
+  --t-title:max(17px, calc(12.5 * var(--u)));
+  --t-jump:max(16px, calc(12 * var(--u)));
+  --t-body:max(12px, calc(5.4 * var(--u)));
+  --t-meta:max(11px, calc(5 * var(--u)));
+  --t-nav:max(12px, calc(5.6 * var(--u)));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--t-body);line-height:1.35;-webkit-font-smoothing:antialiased;animation:fade .6s ease both}
+@keyframes fade{from{opacity:.001}to{opacity:1}}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0;font-weight:400}
+a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+.link{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s ease}
+.link:hover{background-size:100% 1px}
+.wrap{padding-inline:var(--side)}
+.display{font-size:var(--t-display);line-height:1.03;letter-spacing:-.05em}
+.meta{font-size:var(--t-meta);line-height:1.3}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(10 * var(--u)) var(--side) 0}
+.logo{font-family:var(--logo);font-size:max(16px, calc(9.4 * var(--u)));letter-spacing:-.01em;line-height:1}
+.logo img{display:block;height:clamp(30px, 2.6vw, 44px);width:auto}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(4.5 * var(--u));font-size:17px}
+nav.main a[aria-current]{background-size:100% 1px}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:17px;color:var(--fg);cursor:pointer}
+.rail{position:fixed;right:calc(9 * var(--u));top:calc(76 * var(--u));writing-mode:vertical-rl;font-size:max(8px, calc(3.4 * var(--u)));letter-spacing:.02em;white-space:nowrap}
+
+/* page layout — measured from the Heynar Mastow fair detail page; --v = one pixel of its 718px-wide capture */
+:root{--v:calc(100vw / 718)}
+.btn{display:inline-flex;align-items:center;flex:none;height:max(28px, calc(19 * var(--v)));padding:0 max(9px, calc(6 * var(--v)));background:var(--btn);color:var(--btn-fg);font-size:var(--t-meta);white-space:nowrap;transition:opacity .25s}
+.btn:hover{opacity:.72}
+.frame{overflow:hidden;background:var(--ph)}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+a:hover .frame img,.frame:hover img{transform:scale(1.02)}
+
+.hero{display:grid;grid-template-columns:calc(383 * var(--v)) minmax(0,1fr);gap:calc(10 * var(--v));padding-top:calc(38 * var(--v))}
+.hero .frame{aspect-ratio:383/287}
+.hero-text{display:flex;flex-direction:column;min-width:0}
+.hero h1{font-size:max(34px, calc(30 * var(--v)));line-height:1.02;letter-spacing:-.05em}
+.hero .meta{margin-top:calc(16 * var(--v))}
+.tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:calc(3 * var(--v));padding-top:24px}
+.tag{border:1px solid var(--rule);border-radius:999px;padding:2px 8px;font-size:var(--t-meta);line-height:1.4}
+
+.detail{display:grid;grid-template-columns:calc(283 * var(--v)) minmax(0,1fr);column-gap:calc(30 * var(--v));padding-top:calc(30 * var(--v))}
+.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);align-self:start}
+.facts li{display:grid;grid-template-columns:38% 1fr;gap:12px;padding-block:calc(7 * var(--v)) calc(6 * var(--v));border-bottom:1px solid var(--rule)}
+.facts .k{font-size:var(--t-meta);color:var(--muted);padding-top:.3em}
+.facts .v{font-size:max(15px, calc(9 * var(--v)));letter-spacing:-.03em;line-height:1.25}
+.story{min-width:0}
+.lede{font-size:max(19px, calc(14 * var(--v)));line-height:1.2;letter-spacing:-.035em}
+.parts{display:grid;gap:calc(18 * var(--v));margin-top:calc(32 * var(--v));max-width:calc(372 * var(--v))}
+.parts h2{font-size:max(15px, calc(7.4 * var(--v)));letter-spacing:-.02em;font-weight:500;margin-bottom:calc(5 * var(--v))}
+.parts p{line-height:1.45}
+.parts a{border-bottom:1px solid var(--rule)}
+.parts a:hover{border-color:var(--fg)}
+
+.stack{display:grid;gap:calc(10 * var(--v));align-self:start}
+.stack .frame{aspect-ratio:16/9}
+.story-img{margin-top:calc(22 * var(--v));width:90%}
+.story-img .frame{aspect-ratio:16/9}
+.cap{margin-top:6px;font-size:var(--t-meta);color:var(--muted)}
+.parts blockquote{margin:0;padding-left:14px;border-left:1px solid var(--rule);font-style:normal}
+.story .facts{margin-top:calc(26 * var(--v))}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(10 * var(--v));padding-top:calc(40 * var(--v))}
+.photos .frame{aspect-ratio:283/211}
+
+.others{margin-top:calc(70 * var(--v));padding-top:calc(34 * var(--v));border-top:1px solid var(--rule-dark, #3a3a3a)}
+.others > h2{font-size:max(28px, calc(30 * var(--v)));letter-spacing:-.05em;line-height:1;margin-bottom:calc(20 * var(--v))}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(24 * var(--v)) calc(10 * var(--v))}
+.three article{border-bottom:1px solid var(--rule);padding-bottom:calc(8 * var(--v));min-width:0}
+.three .frame{aspect-ratio:226/148}
+.three .title{font-size:max(16px, calc(13 * var(--v)));letter-spacing:-.045em;line-height:1.2;margin-top:calc(5 * var(--v))}
+.three .meta{margin-top:calc(2 * var(--v))}
+.three .btn{margin-top:calc(10 * var(--v))}
+.three .desc{margin:calc(14 * var(--v)) 0 0 auto;max-width:80%;text-align:right;color:var(--muted);line-height:1.5}
+.back{display:flex;justify-content:center;padding-top:calc(46 * var(--v))}
+
+/* footer */
+footer{padding-top:calc(50 * var(--u))}
+.foot{display:grid;grid-template-columns:calc(102 * var(--u)) calc(266 * var(--u)) minmax(0,1fr)}
+.foot-left{grid-column:2}
+.foot-addr{margin-top:calc(20 * var(--u));font-style:normal;line-height:1.25;font-size:var(--t-meta)}
+.foot-cols{grid-column:3;display:flex;gap:calc(22 * var(--u));padding-top:calc(3 * var(--u))}
+.foot-cols ul{list-style:none;margin:0;padding:0;font-size:var(--t-meta);line-height:2.1}
+.fine{display:flex;justify-content:flex-end;gap:6px;padding:calc(80 * var(--u)) var(--side) calc(14 * var(--u));font-size:max(8px, calc(3.4 * var(--u)));letter-spacing:.04em;text-transform:uppercase}
+
+/* mobile menu */
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:10;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 40px}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
+.sheet ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:30px;letter-spacing:-.04em;font-weight:300}
+
+@media (max-width:809px){
+  :root{--u:1.6px;--t-giant:22vw}
+  header{padding:16px 16px 0}
+  nav.main,.rail{display:none}
+  .menu-btn{display:block}
+  :root{--v:1.4px}
+  .hero,.detail{grid-template-columns:1fr;row-gap:24px}
+  .tags{margin-top:16px;padding-top:0}
+  .detail{row-gap:36px}
+  .parts{max-width:none}
+  .photos{grid-template-columns:1fr}
+  .three{grid-template-columns:1fr;gap:36px}
+  .three .desc{text-align:left;margin-left:0;max-width:none}
+  .foot{grid-template-columns:1fr;row-gap:40px}
+  .foot-left,.foot-cols{grid-column:1}
+  .fine{justify-content:flex-start;flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html"><img src="logo.png" alt="Dhoomimal Art Centre" width="792" height="240"></a>
+  <nav class="main" aria-label="Main">
+    <ul>
+      <li><a class="link" href="artists.html">Artists</a></li>
+      <li><a class="link" href="exhibitions.html" aria-current="page">Exhibitions</a></li>
+      <li><a class="link" href="collection.html">Collection</a></li>
+      <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link" href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <button class="menu-btn" id="menu-open" aria-expanded="false" aria-controls="sheet">MENU</button>
+</header>
+
+<div class="rail" aria-hidden="true">28.6327° N, 77.2178° E</div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="top">
+    <span class="logo"><img src="logo.png" alt="Dhoomimal Art Centre" width="792" height="240"></span>
+    <button class="menu-btn" id="menu-close" style="display:block">CLOSE</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="art-fairs.html">Art Fairs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="frame"><img src="images/bysts-room.jpg" alt="Portraits from Before You See the Scar in the gallery at Dhoomimal Art Centre"></div>
+    <div class="hero-text">
+      <h1>Before You See the Scar</h1>
+      <div class="meta">Sep 2026 • A-8, Connaught Place, New Delhi</div>
+      <div class="tags"><span class="tag">photography</span><span class="tag">solo show</span><span class="tag">Monica Dhaka</span></div>
+    </div>
+  </section>
+
+  <section class="detail">
+    <div class="stack">
+      <figure style="margin:0"><div class="frame"><img src="images/bysts-landscapes.jpg" alt="Three close-up photographs of scarred skin that read as landscapes" loading="lazy"></div><figcaption class="cap">Scars as landscapes: close-ups kept almost unchanged, with only colour added</figcaption></figure>
+      <figure style="margin:0"><div class="frame"><img src="images/bysts-portraits-1.jpg" alt="Black and white portraits of survivors with their writing beneath" loading="lazy"></div><figcaption class="cap">Portraits of the survivors, each with writing shaped from their interviews</figcaption></figure>
+      <figure style="margin:0"><div class="frame"><img src="images/bysts-portraits-2.jpg" alt="Portraits of survivors on the gallery wall" loading="lazy"></div></figure>
+      <figure style="margin:0"><div class="frame"><img src="images/bysts-statement.jpg" alt="Artist statement by Monica Dhaka on the gallery wall" loading="lazy"></div><figcaption class="cap">Monica Dhaka's artist statement in the gallery</figcaption></figure>
+    </div>
+    <div class="story">
+      <p class="lede">A solo photography exhibition by Monica Dhaka that asks viewers to move beyond shock, pity or fear, and to see the woman before the scar.</p>
+      <figure class="story-img" style="margin-inline:0"><div class="frame"><img src="images/bysts-panel.jpg" alt="Panel discussion at the opening of Before You See the Scar" loading="lazy"></div><figcaption class="cap">The opening panel discussion, moderated by Suvir Saran, 14 September 2026</figcaption></figure>
+      <ul class="facts">
+        <li><span class="k">Dates</span><span class="v">14 – 23 September 2026</span></li>
+        <li><span class="k">Artist</span><span class="v">Monica Dhaka</span></li>
+        <li><span class="k">Medium</span><span class="v">Photography</span></li>
+        <li><span class="k">Venue</span><span class="v">A-8, Connaught Place, Inner Circle, New Delhi</span></li>
+      </ul>
+      <div class="parts">
+        <div>
+          <h2>When a woman says no</h2>
+          <p>In India, acid attacks are rarely random. They are often rooted in male entitlement and used as punishment when a woman says no: to a forced relationship, to marriage, to dowry demands, to domestic violence, to being controlled. The project looks at how acid attack survivors are seen after the attack, and how the scar often becomes the first thing people notice, before the person.</p>
+        </div>
+        <div>
+          <h2>Part one: skin as landscape</h2>
+          <p>The first part uses extreme close-up photographs of burnt and scarred skin. Through mirroring, repetition and digital manipulation, these fragments become six abstract structures and patterns, a metaphor for a life that may look ordinary from a distance but is often a daily battle up close. Alongside them are six close-ups kept almost unchanged, with only colour added. Without heavy manipulation, the scars begin to look like beautiful landscapes, asking viewers to question what they are looking at, and how.</p>
+        </div>
+        <div>
+          <h2>Part two: eight portraits</h2>
+          <p>The second part presents eight portraits of the survivors, showing the women as they want to be seen: as people with names, voices, families, work, hopes and futures. Beside each portrait is writing shaped from the interviews, using what the women want people to know.</p>
+        </div>
+        <div>
+          <h2>The artist</h2>
+          <p>Monica Dhaka's practice looks at how a first impression can become a fixed idea about a person or community. Each project begins with research, conversations and time spent with the people involved, and a photograph is often the starting point rather than the final result.</p>
+          <blockquote><p>“My purpose is not to tell people what to think. It is to draw attention to how quickly meaning is assigned to a person or image, and how that meaning can change when more of the story becomes visible.”</p></blockquote>
+        </div>
+        <div>
+          <h2>In the press</h2>
+          <p>Read Monica Dhaka's conversation with the Deccan Chronicle, <a href="https://www.deccanchronicle.com/lifestyle/booksart/monica-dhaka-on-the-gaze-that-sees-the-scar-before-the-woman-1986948" target="_blank" rel="noopener">The Scar Has Not Changed. Our Gaze Has</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="others">
+    <h2>See other exhibitions</h2>
+    <div class="three" id="others"></div>
+  </section>
+
+  <div class="back"><a class="btn" href="exhibitions.html">← Back to exhibitions</a></div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-left">
+      <p class="display">Eighty-five years<br>of Indian art</p>
+      <address class="foot-addr">
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+    <div class="foot-cols">
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="artists.html">Artists</a></li>
+        <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+        <li><a class="link" href="collection.html">Collection</a></li>
+        <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/videogallery" target="_blank" rel="noopener">Videos</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="contact.html">Contact</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/catalogues" target="_blank" rel="noopener">Catalogues</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.instagram.com/dhoomimalartcentre" target="_blank" rel="noopener">Insta</a></li>
+        <li><a class="link" href="https://www.facebook.com/dhoomimalonline" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a class="link" href="https://twitter.com/dhoomimal" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a class="link" href="https://www.pinterest.com/dhoomimalartcentre" target="_blank" rel="noopener">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fine"><span>Modern art</span><span>•</span><span>Since pre-independence</span></div>
+</footer>
+
+<script>
+var B="https://www.dhoomimalartcentre.com/", G=B+"images/exhibitiongallery/";
+var PHOTOS=[];
+var OTHERS=[
+  {t:"Variable Registers",s:"variable-registers~40",img:G+"1785752474exb-inner-variable.jpg",m:"Aug 2026 • Shridharani Gallery, Triveni Kala Sangam",
+   d:"Printmaking in Modern India, 1930s to 1980s. Curated by Prima Kurien."},
+  {t:"Echoes of the Unseen",s:"echoes-of-the-unseen~39",img:G+"1780921137exb-inner-echoes.jpg",m:"Jun 2026 • A-8, Connaught Place",
+   d:"Abstract artists from modern masters to contemporary practitioners, among them G R Santosh and Sohan Qadri."},
+  {t:"Diverse Horizons",s:"diverse-horizons~38",img:G+"1772014522exb-inner-diverse.jpg",m:"Feb 2026 • A-8, Connaught Place",
+   d:"Curated by Shobha Broota. Paintings by Indian and Korean artists across acrylic, oil and mixed media."}
+];
+(function(){
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+  function url(s){if(/\.html$/.test(s))return s;var L={"expressions-india-art-fair-2016~24":"india-art-fair-2016.html","art-mumbai-2025-edition~37":"art-mumbai-2025.html","india-art-fair-2015~25":"india-art-fair-2015.html","india-art-fair-2014~30":"india-art-fair-2014.html","india-art-fair-2013~32":"india-art-fair-2013.html"};return L[s]||B+"exhibitions/"+encodeURI(s);}
+  function tgt(u){return u.indexOf("http")===0?' target="_blank" rel="noopener"':'';}
+  document.getElementById("others").innerHTML=OTHERS.map(function(e){
+    return '<article><a href="'+url(e.s)+'"'+tgt(url(e.s))+'><div class="frame"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
+      '<h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div>'+
+      '<a class="btn" href="'+url(e.s)+'"'+tgt(url(e.s))+'>+ Read more</a>'+
+      '<p class="desc">'+esc(e.d)+'</p></article>';
+  }).join("");
+  if(PHOTOS.length){
+    var ph=document.getElementById("photos");
+    ph.innerHTML=PHOTOS.map(function(src){return '<div class="frame"><img src="'+esc(src)+'" alt="Dhoomimal booth at Art Mumbai 2025" loading="lazy"></div>';}).join("");
+    ph.hidden=false;
+  }
+  document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
+  var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
+  o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});
+  c.addEventListener("click",function(){sheet.hidden=true;o.setAttribute("aria-expanded","false");o.focus();});
+  sheet.addEventListener("click",function(e){if(e.target.closest("a")){sheet.hidden=true;}});
+})();
+</script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Art Fairs — Dhoomimal Art Centre</title>
-<meta name="description" content="Art fairs Dhoomimal Art Centre has taken part in, from India Art Fair to Art Mumbai.">
+<title>Art Mumbai 2025 — Dhoomimal Art Centre</title>
+<meta name="description" content="Dhoomimal Art Centre at Art Mumbai 2025, booth A13, Mahalaxmi Racecourse, 13–16 November 2025.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,33 +58,48 @@ nav.main a[aria-current]{background-size:100% 1px}
 .menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:17px;color:var(--fg);cursor:pointer}
 .rail{position:fixed;right:calc(9 * var(--u));top:calc(76 * var(--u));writing-mode:vertical-rl;font-size:max(8px, calc(3.4 * var(--u)));letter-spacing:.02em;white-space:nowrap}
 
-/* page layout */
-.page{display:grid;grid-template-columns:calc(209 * var(--u)) minmax(0,1fr);padding-top:calc(58 * var(--u))}
-.left{position:sticky;top:calc(20 * var(--u));align-self:start}
-.left h1{font-size:var(--t-giant);line-height:.9;letter-spacing:-.06em}
-.jumps{display:grid;gap:calc(26 * var(--u));margin-top:calc(42 * var(--u))}
-.jumps a{display:flex;align-items:center;gap:calc(9 * var(--u));font-size:var(--t-jump);letter-spacing:-.04em;width:max-content}
-.sq{flex:none;width:max(30px, calc(24 * var(--u)));height:max(30px, calc(24 * var(--u)));background:var(--btn);color:var(--btn-fg);display:grid;place-items:center;transition:opacity .25s}
-.sq svg{width:45%;height:45%}
-.jumps a:hover .sq{opacity:.75}
-.right{min-width:0}
-.lede{font-size:var(--t-lede);line-height:1.28;letter-spacing:-.04em;max-width:calc(205 * var(--u));padding-top:calc(2 * var(--u))}
-
-.section{padding-top:calc(78 * var(--u));scroll-margin-top:20px}
-.section + .section{padding-top:calc(96 * var(--u))}
-.label{font-size:var(--t-label);letter-spacing:-.04em;margin-bottom:calc(14 * var(--u))}
-.entry{border-bottom:1px solid var(--rule);padding-bottom:calc(8 * var(--u))}
-.entry + .entry{margin-top:calc(20 * var(--u))}
-.frame{overflow:hidden;background:var(--ph);aspect-ratio:387/206}
-.frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
-a:hover .frame img{transform:scale(1.02)}
-.under{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-top:calc(6 * var(--u))}
-.title{font-size:var(--t-title);line-height:1.2;letter-spacing:-.045em}
-.title + .meta{margin-top:calc(2 * var(--u))}
-.btn{display:inline-flex;align-items:center;flex:none;height:max(28px, calc(19 * var(--u)));padding:0 max(9px, calc(6 * var(--u)));background:var(--btn);color:var(--btn-fg);font-size:var(--t-meta);white-space:nowrap;transition:opacity .25s}
+/* page layout — measured from the Heynar Mastow fair detail page; --v = one pixel of its 718px-wide capture */
+:root{--v:calc(100vw / 718)}
+.btn{display:inline-flex;align-items:center;flex:none;height:max(28px, calc(19 * var(--v)));padding:0 max(9px, calc(6 * var(--v)));background:var(--btn);color:var(--btn-fg);font-size:var(--t-meta);white-space:nowrap;transition:opacity .25s}
 .btn:hover{opacity:.72}
-.desc{margin:calc(15 * var(--u)) 0 0 auto;max-width:62%;text-align:right;color:var(--muted);line-height:1.5}
-.back{padding-top:calc(58 * var(--u))}
+.frame{overflow:hidden;background:var(--ph)}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+a:hover .frame img,.frame:hover img{transform:scale(1.02)}
+
+.hero{display:grid;grid-template-columns:calc(383 * var(--v)) minmax(0,1fr);gap:calc(10 * var(--v));padding-top:calc(38 * var(--v))}
+.hero .frame{aspect-ratio:383/287}
+.hero-text{display:flex;flex-direction:column;min-width:0}
+.hero h1{font-size:max(34px, calc(30 * var(--v)));line-height:1.02;letter-spacing:-.05em}
+.hero .meta{margin-top:calc(16 * var(--v))}
+.tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:calc(3 * var(--v));padding-top:24px}
+.tag{border:1px solid var(--rule);border-radius:999px;padding:2px 8px;font-size:var(--t-meta);line-height:1.4}
+
+.detail{display:grid;grid-template-columns:calc(283 * var(--v)) minmax(0,1fr);column-gap:calc(30 * var(--v));padding-top:calc(30 * var(--v))}
+.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);align-self:start}
+.facts li{display:grid;grid-template-columns:38% 1fr;gap:12px;padding-block:calc(7 * var(--v)) calc(6 * var(--v));border-bottom:1px solid var(--rule)}
+.facts .k{font-size:var(--t-meta);color:var(--muted);padding-top:.3em}
+.facts .v{font-size:max(15px, calc(9 * var(--v)));letter-spacing:-.03em;line-height:1.25}
+.story{min-width:0}
+.lede{font-size:max(19px, calc(14 * var(--v)));line-height:1.2;letter-spacing:-.035em}
+.parts{display:grid;gap:calc(18 * var(--v));margin-top:calc(32 * var(--v));max-width:calc(372 * var(--v))}
+.parts h2{font-size:max(15px, calc(7.4 * var(--v)));letter-spacing:-.02em;font-weight:500;margin-bottom:calc(5 * var(--v))}
+.parts p{line-height:1.45}
+.parts a{border-bottom:1px solid var(--rule)}
+.parts a:hover{border-color:var(--fg)}
+
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(10 * var(--v));padding-top:calc(40 * var(--v))}
+.photos .frame{aspect-ratio:283/211}
+
+.others{margin-top:calc(70 * var(--v));padding-top:calc(34 * var(--v));border-top:1px solid var(--rule-dark, #3a3a3a)}
+.others > h2{font-size:max(28px, calc(30 * var(--v)));letter-spacing:-.05em;line-height:1;margin-bottom:calc(20 * var(--v))}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(24 * var(--v)) calc(10 * var(--v))}
+.three article{border-bottom:1px solid var(--rule);padding-bottom:calc(8 * var(--v));min-width:0}
+.three .frame{aspect-ratio:226/148}
+.three .title{font-size:max(16px, calc(13 * var(--v)));letter-spacing:-.045em;line-height:1.2;margin-top:calc(5 * var(--v))}
+.three .meta{margin-top:calc(2 * var(--v))}
+.three .btn{margin-top:calc(10 * var(--v))}
+.three .desc{margin:calc(14 * var(--v)) 0 0 auto;max-width:80%;text-align:right;color:var(--muted);line-height:1.5}
+.back{display:flex;justify-content:center;padding-top:calc(46 * var(--v))}
 
 /* footer */
 footer{padding-top:calc(50 * var(--u))}
@@ -105,10 +120,14 @@ footer{padding-top:calc(50 * var(--u))}
   header{padding:16px 16px 0}
   nav.main,.rail{display:none}
   .menu-btn{display:block}
-  .page{grid-template-columns:1fr;row-gap:28px}
-  .left{position:static}
-  .lede{max-width:none}
-  .desc{text-align:left;margin-left:0;max-width:none}
+  :root{--v:1.4px}
+  .hero,.detail{grid-template-columns:1fr;row-gap:24px}
+  .tags{margin-top:16px;padding-top:0}
+  .detail{row-gap:36px}
+  .parts{max-width:none}
+  .photos{grid-template-columns:1fr}
+  .three{grid-template-columns:1fr;gap:36px}
+  .three .desc{text-align:left;margin-left:0;max-width:none}
   .foot{grid-template-columns:1fr;row-gap:40px}
   .foot-left,.foot-cols{grid-column:1}
   .fine{justify-content:flex-start;flex-wrap:wrap}
@@ -154,30 +173,54 @@ footer{padding-top:calc(50 * var(--u))}
   </ul>
 </div>
 
-<main class="wrap page">
-  <aside class="left">
-    <h1>Art<br>fairs</h1>
-    <nav class="jumps" aria-label="On this page">
-      <a href="#latest"><span class="sq" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M5 14l7 7 7-7"/></svg></span>Latest Fair</a>
-      <a href="#past"><span class="sq" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M5 14l7 7 7-7"/></svg></span>Past Fairs</a>
-    </nav>
-  </aside>
+<main class="wrap">
+  <section class="hero">
+    <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1762943569exb-inner-artfair.jpg" alt="Dhoomimal Art Centre at Art Mumbai 2025"></div>
+    <div class="hero-text">
+      <h1>Art Mumbai 2025</h1>
+      <div class="meta">Nov 2025 • Mumbai, India</div>
+      <div class="tags"><span class="tag">art fair</span><span class="tag">booth A13</span><span class="tag">modern &amp; contemporary</span></div>
+    </div>
+  </section>
 
-  <div class="right">
-    <p class="lede">These are the art fairs where we have shown our artists, from New Delhi to Mumbai</p>
+  <section class="detail">
+    <ul class="facts">
+      <li><span class="k">Dates</span><span class="v">13 – 16 November 2025</span></li>
+      <li><span class="k">Hours</span><span class="v">11 am – 8 pm</span></li>
+      <li><span class="k">Booth</span><span class="v">A13</span></li>
+      <li><span class="k">Venue</span><span class="v">Mahalaxmi Racecourse, Mumbai</span></li>
+    </ul>
+    <div class="story">
+      <p class="lede">In November 2025 Dhoomimal Art Centre took part in Art Mumbai, bringing original works by modern and contemporary Indian artists to booth A13 at the Mahalaxmi Racecourse for four days.</p>
+      <div class="parts">
+        <div>
+          <h2>At the fair</h2>
+          <p>The centre's booth was open to visitors from 13 to 16 November, from 11 am to 8 pm each day, alongside the other galleries at the fair.</p>
+        </div>
+        <div>
+          <h2>Original works only</h2>
+          <p>As at the gallery in Connaught Place, every work on the stand was an original. Dhoomimal does not deal in reproductions of any kind.</p>
+        </div>
+        <div>
+          <h2>From Connaught Place to Mumbai</h2>
+          <p>Art fairs take the gallery beyond its home at A-8, Connaught Place. Dhoomimal showed at the India Art Fair in New Delhi from 2013 to 2016, and Art Mumbai brought its artists to collectors in Mumbai.</p>
+        </div>
+        <div>
+          <h2>Enquiries</h2>
+          <p>For works shown at the fair, call +91 11 4151 6172 or write to info@dhoomimalartcentre.com, or visit the <a href="contact.html">contact page</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="section" id="latest">
-      <h2 class="label">Latest</h2>
-      <div id="latest-list"></div>
-    </section>
+  <section class="photos" id="photos" hidden></section>
 
-    <section class="section" id="past">
-      <h2 class="label">Past</h2>
-      <div id="past-list"></div>
-    </section>
+  <section class="others">
+    <h2>See other fairs</h2>
+    <div class="three" id="others"></div>
+  </section>
 
-    <div class="back"><a class="btn" href="index.html">← Back to home</a></div>
-  </div>
+  <div class="back"><a class="btn" href="art-fairs.html">← Back to art fairs</a></div>
 </main>
 
 <footer>
@@ -218,40 +261,32 @@ footer{padding-top:calc(50 * var(--u))}
 
 <script>
 var B="https://www.dhoomimalartcentre.com/", G=B+"images/exhibitiongallery/";
-// Fairs: title, detail slug, image, meta line, description
-var LATEST=[
-  {t:"Art Mumbai 2025",s:"art-mumbai-2025-edition~37",img:G+"1762943569exb-inner-artfair.jpg",
-   m:"Nov 2025 • Booth A13, Mahalaxmi Racecourse, Mumbai",
-   d:"Dhoomimal showed original works at the 2025 edition of Art Mumbai, held over four days at the Mahalaxmi Racecourse."}
-];
-var PAST=[
-  {t:"Expressions: India Art Fair 2016",s:"expressions-india-art-fair-2016~24",img:G+"1751626883exb-inner-iaf2016-4.jpg",
-   m:"Jan 2016 • NSIC Exhibition Ground, New Delhi",
-   d:"Curated by Mohit Jain. The gallery invited artists to make portraits of calm and stillness in a time of strife, presenting the artist as a healer."},
-  {t:"India Art Fair 2015",s:"india-art-fair-2015~25",img:G+"1751627519exb-inner-iaf2015-4.jpg",
-   m:"Jan 2015 • NSIC Exhibition Ground, New Delhi",
+// Booth photographs: add image paths here (e.g. "images/art-mumbai-1.jpg") and they appear in a grid under the story.
+var PHOTOS=[];
+var OTHERS=[
+  {t:"Expressions: India Art Fair 2016",s:"expressions-india-art-fair-2016~24",img:G+"1751626883exb-inner-iaf2016-4.jpg",m:"Jan 2016 • NSIC Exhibition Ground, New Delhi",
+   d:"Curated by Mohit Jain. Artists were invited to make portraits of calm and stillness in a time of strife."},
+  {t:"India Art Fair 2015",s:"india-art-fair-2015~25",img:G+"1751627519exb-inner-iaf2015-4.jpg",m:"Jan 2015 • NSIC Exhibition Ground, New Delhi",
    d:"Dhoomimal's booth at the 2015 India Art Fair in New Delhi, showing modern and contemporary Indian art."},
-  {t:"India Art Fair 2014",s:"india-art-fair-2014~30",img:G+"1752056139exb-inner-iaf2014-2.jpg",
-   m:"Jan 2014 • NSIC Exhibition Ground, New Delhi",
-   d:"Dhoomimal's booth at the 2014 India Art Fair in New Delhi."},
-  {t:"India Art Fair 2013",s:"india-art-fair-2013~32",img:G+"1752145906exb-inner-iaf2013-4.jpg",
-   m:"Jan 2013 • NSIC Exhibition Ground, New Delhi",
-   d:"Dhoomimal's booth at the 2013 India Art Fair in New Delhi."}
+  {t:"India Art Fair 2014",s:"india-art-fair-2014~30",img:G+"1752056139exb-inner-iaf2014-2.jpg",m:"Jan 2014 • NSIC Exhibition Ground, New Delhi",
+   d:"Dhoomimal's booth at the 2014 India Art Fair in New Delhi."}
 ];
 (function(){
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
-  function url(s){var L={"expressions-india-art-fair-2016~24":"india-art-fair-2016.html","art-mumbai-2025-edition~37":"art-mumbai-2025.html","india-art-fair-2015~25":"india-art-fair-2015.html","india-art-fair-2014~30":"india-art-fair-2014.html","india-art-fair-2013~32":"india-art-fair-2013.html"};return L[s]||B+"exhibitions/"+encodeURI(s);}
-  function entry(e){
-    return '<article class="entry">'+
-      '<a href="'+url(e.s)+'"'+(url(e.s).indexOf('http')===0?' target="_blank" rel="noopener"':'')+'><div class="frame"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
-      '<div class="under"><div><h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div></div>'+
-      '<a class="btn" href="'+url(e.s)+'"'+(url(e.s).indexOf('http')===0?' target="_blank" rel="noopener"':'')+'>+ Read more</a></div>'+
+  function url(s){if(/\.html$/.test(s))return s;var L={"expressions-india-art-fair-2016~24":"india-art-fair-2016.html","art-mumbai-2025-edition~37":"art-mumbai-2025.html","india-art-fair-2015~25":"india-art-fair-2015.html","india-art-fair-2014~30":"india-art-fair-2014.html","india-art-fair-2013~32":"india-art-fair-2013.html"};return L[s]||B+"exhibitions/"+encodeURI(s);}
+  function tgt(u){return u.indexOf("http")===0?' target="_blank" rel="noopener"':'';}
+  document.getElementById("others").innerHTML=OTHERS.map(function(e){
+    return '<article><a href="'+url(e.s)+'"'+tgt(url(e.s))+'><div class="frame"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
+      '<h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div>'+
+      '<a class="btn" href="'+url(e.s)+'"'+tgt(url(e.s))+'>+ Read more</a>'+
       '<p class="desc">'+esc(e.d)+'</p></article>';
+  }).join("");
+  if(PHOTOS.length){
+    var ph=document.getElementById("photos");
+    ph.innerHTML=PHOTOS.map(function(src){return '<div class="frame"><img src="'+esc(src)+'" alt="Dhoomimal booth at Art Mumbai 2025" loading="lazy"></div>';}).join("");
+    ph.hidden=false;
   }
-  document.getElementById("latest-list").innerHTML=LATEST.map(entry).join("");
-  document.getElementById("past-list").innerHTML=PAST.map(entry).join("");
   document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
-
   var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
   o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});
   c.addEventListener("click",function(){sheet.hidden=true;o.setAttribute("aria-expanded","false");o.focus();});

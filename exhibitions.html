@@ -52,9 +52,9 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:
 header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(12 * var(--u)) var(--side) 0}
 .logo{font-family:var(--logo);font-size:max(16px, calc(11 * var(--u)));letter-spacing:-.01em;line-height:1}
 .logo img{display:block;height:clamp(30px, 2.6vw, 44px);width:auto}
-nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(5 * var(--u));font-size:var(--t-nav)}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(5 * var(--u));font-size:17px}
 nav.main a[aria-current]{background-size:100% 1px}
-.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:17px;color:var(--fg);cursor:pointer}
 .rail{position:fixed;right:calc(8 * var(--u));top:calc(88 * var(--u));writing-mode:vertical-rl;font-size:max(8px, calc(4 * var(--u)));letter-spacing:.02em;white-space:nowrap}
 
 /* intro */
@@ -77,11 +77,9 @@ nav.main a[aria-current]{background-size:100% 1px}
 .frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
 a:hover .frame img{transform:scale(1.02)}
 .under{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-top:calc(4 * var(--u))}
-.thumbs{display:flex;gap:calc(4 * var(--u))}
-.thumbs span{width:max(26px, calc(20 * var(--u)));height:max(32px, calc(26 * var(--u)));overflow:hidden;background:var(--ph)}
-.thumbs img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
 .btn{display:inline-flex;align-items:center;flex:none;height:max(28px, calc(24 * var(--u)));padding:0 max(9px, calc(7 * var(--u)));background:var(--btn);color:var(--btn-fg);font-size:var(--t-meta);white-space:nowrap;transition:opacity .25s}
 .btn:hover{opacity:.72}
+.under .btn{margin-left:auto}
 .title{font-size:var(--t-title);line-height:1.2;letter-spacing:-.045em;margin-top:calc(6 * var(--u));max-width:calc(230 * var(--u))}
 .title + .meta{margin-top:calc(3 * var(--u))}
 .desc{margin:calc(18 * var(--u)) 0 0 auto;max-width:80%;text-align:right;color:var(--muted);line-height:1.5}
@@ -238,38 +236,30 @@ var ART=B+"images/artist/", WORK=B+"images/artwork/", GAL=B+"images/exhibitionga
 
 // Featured entries: title, detail slug, main image, thumbnails, meta line, description
 var RECENT=[
-  {t:"Before You See the Scar",s:"before-you-see-the-scar~41",img:GAL+"1788870727exb-inner-bysts.jpg",
-   th:[B+"images/exhibitions/1788870704exb-list-bysts.jpg"],
+  {t:"Before You See the Scar",s:"before-you-see-the-scar~41",img:"images/bysts-room.jpg",
    m:"14 – 23 Sep 2026 • A-8, Connaught Place",
    d:"A solo photography exhibition by Monica Dhaka. It opened on 14 September with a panel discussion moderated by Michelin-star chef and artist Suvir Saran."},
   {t:"Variable Registers: Printmaking in Modern India",s:"variable-registers~40",img:GAL+"1785752474exb-inner-variable.jpg",
-   th:[WORK+"1785753666apad003-th.jpg",WORK+"1786010712shra001-th.jpg"],
    m:"3 – 9 Aug 2026 • Shridharani Gallery, Triveni Kala Sangam",
    d:"Curated by Prima Kurien, five decades of Indian printmaking from the 1930s to the 1980s: etchings, woodcuts, lithographs and serigraphs by Akbar Padamsee, Krishen Khanna, S. H. Raza, J Swaminathan, Jyoti Bhatt, Sakti Burman and others."}
 ];
 var PAST=[
   {t:"Echoes of the Unseen",s:"echoes-of-the-unseen~39",img:GAL+"1780921137exb-inner-echoes.jpg",
-   th:[ART+"1664792279gopal-s-adivrekar-list.jpg",ART+"1665474889pankaj-kumar-singh-list.jpg"],
    m:"10 – 30 Jun 2026 • A-8, Connaught Place",
    d:"Abstract artists from modern masters to contemporary practitioners, among them G R Santosh, Sohan Qadri, Prafulla Mohanti and Kalicharan Gupta. The show treated abstraction as a space of freedom, where meaning is felt rather than fixed."},
   {t:"Diverse Horizons",s:"diverse-horizons~38",img:GAL+"1772014522exb-inner-diverse.jpg",
-   th:[ART+"1694150088kalicharan-gupta-list.jpg",ART+"1665647542santosh-verma-list.jpg"],
    m:"23 Feb – 11 Mar 2026 • A-8, Connaught Place",
    d:"Curated by Shobha Broota, paintings by Indian and Korean artists in acrylic, oil, mixed media and experimental materials, with work by Niren Sen Gupta, Meena Deora, Kalicharan Gupta, Santosh Verma, Seung Eun Lee and Changrae Kim."},
   {t:"Urban Insignia",s:"urban-insignia~36",img:GAL+"1753525105exb-inner-urban-1.jpg",
-   th:[ART+"1665739426swapan-bhandary-list.jpg"],
    m:"8 – 13 Aug 2025 • Bikaner House, New Delhi",
    d:"Recent work by Swapan Bhandary on women's freedom, the exploitation of nature and the effects of urban life, in acrylic, watercolour, reverse painting on acrylic sheet and painted fibreglass sculpture."},
   {t:"Myths & Memories",s:"myths-memories~18",img:GAL+"1750759398exb-inner-myths-4.jpg",
-   th:[ART+"1694774375tanushree-list.jpg",ART+"1665647767shahid-parvez-list.jpg"],
    m:"12 – 17 Apr 2025 • Bikaner House, New Delhi",
    d:"Curated by Mohit Jain. Tanushree Chakraborty and Shahid Parvez start from the same ground in folk art and arrive somewhere very different: her detailed, mythological storytelling against his loose, spontaneous mixed media."},
   {t:"Beyond Form",s:"beyond-form~17",img:GAL+"1750845482exb-inner-beyondform-4.jpg",
-   th:[ART+"1665740343balkrishna-patel-list.jpg",ART+"1665741004sr-bhushan-list.jpg"],
    m:"11 Mar – 16 Apr 2025 • A-8, Connaught Place",
    d:"Curated by Mohit Jain. Three approaches to abstraction: Balkrishna Patel's spare colour blocks, S.R. Bhushan's collages of everyday objects, and Vivek Tembe's dreamlike work at the edge of form."},
   {t:"I Remember You From Tomorrow",s:"i-remember-you-from-tomorrow~16",img:GAL+"1750844741exb-inner-iryft-5.jpg",
-   th:[ART+"1665647326ratnadeep-gopal-adivrekar-list.jpg"],
    m:"4 – 28 Feb 2025 • A-8, Connaught Place",
    d:"Curated by Abhijeet Gondkar. Ratnadeep Gopal Adivrekar's layered, brightly coloured paintings move between abstraction and figuration, drawing on art history, mythology and the cyclical time of the Atharva Veda."}
 ];
@@ -310,20 +300,20 @@ var ARCHIVE=[
 
 (function(){
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
-  function url(s){return B+"exhibitions/"+encodeURI(s);}
+  function url(s){var L={"before-you-see-the-scar~41":"before-you-see-the-scar.html"};return L[s]||B+"exhibitions/"+encodeURI(s);}
+  function tgt(u){return u.indexOf("http")===0?' target="_blank" rel="noopener"':"";}
   function entry(e){
-    var th=e.th.map(function(src){return '<span><img src="'+src+'" alt="" loading="lazy"></span>';}).join("");
     return '<article class="entry">'+
-      '<a href="'+url(e.s)+'" target="_blank" rel="noopener"><div class="frame"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
-      '<div class="under"><div class="thumbs" aria-hidden="true">'+th+'</div>'+
-      '<a class="btn" href="'+url(e.s)+'" target="_blank" rel="noopener">+ Read more</a></div>'+
+      '<a href="'+url(e.s)+'"'+tgt(url(e.s))+'><div class="frame"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
+      '<div class="under">'+
+      '<a class="btn" href="'+url(e.s)+'"'+tgt(url(e.s))+'>+ Read more</a></div>'+
       '<h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div>'+
       '<p class="desc">'+esc(e.d)+'</p></article>';
   }
   document.getElementById("recent-list").innerHTML=RECENT.map(entry).join("");
   document.getElementById("past-list").innerHTML=PAST.map(entry).join("");
   document.getElementById("archive-list").innerHTML=ARCHIVE.map(function(a){
-    return '<li><a href="'+url(a[1])+'" target="_blank" rel="noopener"><h3>'+esc(a[0])+'</h3><span class="meta">'+esc(a[2])+'</span></a></li>';
+    return '<li><a href="'+url(a[1])+'"'+tgt(url(a[1]))+'><h3>'+esc(a[0])+'</h3><span class="meta">'+esc(a[2])+'</span></a></li>';
   }).join("");
   document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
 

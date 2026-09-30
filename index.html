@@ -54,8 +54,8 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:
 header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(8 * var(--u)) calc(4 * var(--u)) 0 var(--left)}
 .logo{font-family:var(--logo);font-size:max(15px, calc(6.6 * var(--u)));letter-spacing:-.01em;line-height:1}
 .logo img{display:block;height:clamp(30px, 2.6vw, 44px);width:auto}
-nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(3.4 * var(--u));font-size:var(--t-nav)}
-.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(3.4 * var(--u));font-size:17px}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:17px;color:var(--fg);cursor:pointer}
 
 /* vertical label in the right strip */
 .rail{position:fixed;right:calc(3.5 * var(--u));top:calc(64 * var(--u));writing-mode:vertical-rl;font-size:max(7px, calc(2.6 * var(--u)));letter-spacing:.02em;white-space:nowrap}
@@ -82,11 +82,9 @@ nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(3.4 * var(-
 a:hover .frame img{transform:scale(1.02)}
 .ex-img{aspect-ratio:308/174}
 .under{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-top:calc(5 * var(--u))}
-.thumbs{display:flex;gap:calc(4 * var(--u))}
-.thumbs span{width:calc(16 * var(--u));height:calc(20 * var(--u));min-width:26px;min-height:32px;overflow:hidden;background:var(--ph)}
-.thumbs img{width:100%;height:100%;object-fit:cover}
 .btn{display:inline-flex;align-items:center;flex:none;height:max(28px, calc(17 * var(--u)));padding:0 max(9px, calc(6.5 * var(--u)));background:var(--btn);color:var(--btn-fg);font-size:var(--t-meta);white-space:nowrap;transition:opacity .25s}
 .btn:hover{opacity:.72}
+.under .btn{margin-left:auto}
 .title{font-size:var(--t-title);line-height:1.2;letter-spacing:-.035em;font-weight:400}
 .entry .title{margin-top:calc(6 * var(--u));max-width:calc(222 * var(--u))}
 .title + .meta{margin-top:calc(2.5 * var(--u))}
@@ -110,7 +108,11 @@ a:hover .frame img{transform:scale(1.02)}
 .sq{flex:none;width:max(28px, calc(21 * var(--u)));height:max(28px, calc(20 * var(--u)));background:var(--btn);color:var(--btn-fg);display:grid;place-items:center;font-size:max(14px, calc(8 * var(--u)));font-weight:300;line-height:1;transition:opacity .25s}
 .artist:hover .sq{opacity:.75}
 
-/* journal (art fairs slot) */
+/* art fairs */
+#fairs{padding-top:calc(35 * var(--u))}
+#fairs .row-head{margin-bottom:calc(7 * var(--u))}
+
+/* journal */
 #journal{padding-top:calc(34 * var(--u))}
 #journal .row-head{margin-bottom:calc(7 * var(--u))}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(32 * var(--u)) calc(8 * var(--u))}
@@ -228,14 +230,11 @@ footer{padding-top:calc(56 * var(--u))}
 
         <article class="entry">
           <div class="label">Latest</div>
-          <a href="https://www.dhoomimalartcentre.com/exhibitions/before-you-see-the-scar~41" target="_blank" rel="noopener">
-            <div class="frame ex-img"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1788870727exb-inner-bysts.jpg" alt="Before You See the Scar, photography by Monica Dhaka" loading="lazy"></div>
+          <a href="before-you-see-the-scar.html">
+            <div class="frame ex-img"><img src="images/bysts-room.jpg" alt="Before You See the Scar, photography by Monica Dhaka" loading="lazy"></div>
           </a>
           <div class="under">
-            <div class="thumbs" aria-hidden="true">
-              <span><img src="https://www.dhoomimalartcentre.com/images/exhibitions/1788870704exb-list-bysts.jpg" alt="" loading="lazy"></span>
-            </div>
-            <a class="btn" href="https://www.dhoomimalartcentre.com/exhibitions/before-you-see-the-scar~41" target="_blank" rel="noopener">+ Read more</a>
+            <a class="btn" href="before-you-see-the-scar.html">+ Read more</a>
           </div>
           <h3 class="title">Before You See the Scar: A Solo Exhibition by Monica Dhaka</h3>
           <div class="meta">2026 • A-8, Connaught Place</div>
@@ -248,10 +247,6 @@ footer{padding-top:calc(56 * var(--u))}
             <div class="frame ex-img"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1785752474exb-inner-variable.jpg" alt="Variable Registers: Printmaking in Modern India" loading="lazy"></div>
           </a>
           <div class="under">
-            <div class="thumbs" aria-hidden="true">
-              <span><img src="https://www.dhoomimalartcentre.com/images/artwork/1785753666apad003-th.jpg" alt="" loading="lazy"></span>
-              <span><img src="https://www.dhoomimalartcentre.com/images/artwork/1786010712shra001-th.jpg" alt="" loading="lazy"></span>
-            </div>
             <a class="btn" href="https://www.dhoomimalartcentre.com/exhibitions/variable-registers~40" target="_blank" rel="noopener">+ Read more</a>
           </div>
           <h3 class="title">Variable Registers: Printmaking in Modern India</h3>
@@ -263,24 +258,38 @@ footer{padding-top:calc(56 * var(--u))}
     </div>
   </section>
 
-  <section class="wrap" id="artists">
+  <section class="wrap" id="fairs">
     <div class="row-head">
-      <h2 class="display">Artists we<br>represent</h2>
-      <a class="view link" href="artists.html">View all →</a>
+      <h2 class="display">Latest<br>Art Fairs</h2>
+      <a class="view link" href="art-fairs.html">View all →</a>
     </div>
-    <div class="artists">
-      <a class="artist" href="https://www.dhoomimalartcentre.com/artists/sunil-das~86" target="_blank" rel="noopener">
-        <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/artist/1665741110sunil-das-list.jpg" alt="Sunil Das" loading="lazy"></div>
-        <div class="artist-foot"><div><div class="title">Sunil Das</div><div class="meta">Painter</div></div><span class="sq" aria-hidden="true">+</span></div>
-      </a>
-      <a class="artist" href="https://www.dhoomimalartcentre.com/artists/shahid-parvez~66" target="_blank" rel="noopener">
-        <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/artist/1665647767shahid-parvez-list.jpg" alt="Shahid Parvez" loading="lazy"></div>
-        <div class="artist-foot"><div><div class="title">Shahid Parvez</div><div class="meta">Conceptual artist, painter</div></div><span class="sq" aria-hidden="true">+</span></div>
-      </a>
-      <a class="artist" href="https://www.dhoomimalartcentre.com/artists/pradiptaa-chakraborty~57" target="_blank" rel="noopener">
-        <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/artist/1665475455pradipta-chakroborty-list.jpg" alt="Pradiptaa Chakraborty" loading="lazy"></div>
-        <div class="artist-foot"><div><div class="title">Pradiptaa Chakraborty</div><div class="meta">Painter</div></div><span class="sq" aria-hidden="true">+</span></div>
-      </a>
+    <div class="two">
+      <article>
+        <a href="art-mumbai-2025.html">
+          <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1762943569exb-inner-artfair.jpg" alt="Dhoomimal at Art Mumbai 2025" loading="lazy"></div>
+        </a>
+        <div class="under">
+          <div>
+            <h3 class="title">Art Mumbai 2025</h3>
+            <div class="meta">Nov 2025 • Mahalaxmi Racecourse, Mumbai</div>
+          </div>
+          <a class="btn" href="art-mumbai-2025.html">+ Read more</a>
+        </div>
+        <p class="desc">Dhoomimal showed original works at booth A13 during the 2025 edition of Art Mumbai, held over four days at the Mahalaxmi Racecourse.</p>
+      </article>
+      <article>
+        <a href="india-art-fair-2016.html">
+          <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1751626883exb-inner-iaf2016-4.jpg" alt="Expressions at India Art Fair 2016" loading="lazy"></div>
+        </a>
+        <div class="under">
+          <div>
+            <h3 class="title">Expressions: India Art Fair 2016</h3>
+            <div class="meta">Jan 2016 • NSIC Exhibition Ground, New Delhi</div>
+          </div>
+          <a class="btn" href="india-art-fair-2016.html">+ Read more</a>
+        </div>
+        <p class="desc">Curated by Mohit Jain. The gallery invited artists to make portraits of calm and stillness in a time of strife, presenting the artist as a healer.</p>
+      </article>
     </div>
   </section>
 
@@ -326,6 +335,7 @@ footer{padding-top:calc(56 * var(--u))}
         <p>Coverage of the centre and its exhibitions</p>
       </div>
       <ul class="list">
+        <li><a href="https://www.deccanchronicle.com/lifestyle/booksart/monica-dhaka-on-the-gaze-that-sees-the-scar-before-the-woman-1986948" target="_blank" rel="noopener"><h3>The Scar Has Not Changed. Our Gaze Has</h3><span class="meta">– Deccan Chronicle, 2026</span></a></li>
         <li><a href="https://thepatriot.in/listicle/exhibition-marking-fn-souzas-centenary-starts-at-dhoomimal-art-centre-59114" target="_blank" rel="noopener"><h3>F. N. Souza Centenary Exhibition</h3><span class="meta">– The Patriot</span></a></li>
         <li><a href="https://www.thehindu.com/news/cities/Delhi/delhi-hosts-a-unique-christmas-ornaments-art-exhibition-by-49-renouned-artists/article67627182.ece" target="_blank" rel="noopener"><h3>Christmas Ornaments by 49 Artists</h3><span class="meta">– The Hindu</span></a></li>
         <li><a href="https://timesofindia.indiatimes.com/blogs/plumage/in-delhi-an-art-gallery-creates-a-christmas-ensemble/" target="_blank" rel="noopener"><h3>A Christmas Ensemble in Delhi</h3><span class="meta">– The Times of India</span></a></li>
