@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact — Dhoomimal Art Centre</title>
+<meta name="description" content="Visit, call or write to Dhoomimal Art Centre, A-8 Connaught Place, New Delhi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Newsreader:opsz,wght@6..72,400&display=swap">
+<style>
+/* Layout measured from the Heynar Mastow contact page.
+   --u = one pixel of the 2000px-wide reference capture. Heading block from 164u, contact rows from 1125u to the right gutter. */
+:root{
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#4a4a4a;
+  --rule:#bdbdbd;
+  --rule-dark:#1c1c1c;
+  --sans:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --logo:Newsreader,"Times New Roman",Georgia,serif;
+  --u:calc(100vw / 2000);
+  --side:max(16px, calc(28 * var(--u)));
+  --t-giant:max(min(64px, 17vw), calc(212 * var(--u)));
+  --t-display:max(30px, calc(96 * var(--u)));
+  --t-row:max(22px, calc(46 * var(--u)));
+  --t-body:max(13px, calc(22 * var(--u)));
+  --t-nav:max(12px, calc(22 * var(--u)));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--t-body);line-height:1.3;-webkit-font-smoothing:antialiased;animation:fade .6s ease both}
+@keyframes fade{from{opacity:.001}to{opacity:1}}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0;font-weight:400}
+a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+.link{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s ease}
+.link:hover{background-size:100% 1px}
+.wrap{padding-inline:var(--side)}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(30 * var(--u)) var(--side) 0}
+.logo{font-family:var(--logo);font-size:max(16px, calc(38 * var(--u)));letter-spacing:-.01em;line-height:1}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(17 * var(--u));font-size:var(--t-nav)}
+nav.main a[aria-current]{background-size:100% 1px}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
+
+/* contact */
+.contact{display:grid;grid-template-columns:calc(164 * var(--u)) calc(961 * var(--u)) minmax(0,1fr);padding-top:calc(232 * var(--u));align-items:start}
+.hello{grid-column:2}
+.hello h1{font-size:var(--t-giant);line-height:.85;letter-spacing:-.06em}
+.hello p{margin-top:calc(20 * var(--u))}
+.rows{grid-column:3;list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:calc(350 * var(--u)) minmax(0,1fr);align-items:center;gap:16px;border-bottom:1px solid var(--rule-dark);min-height:calc(123 * var(--u));padding-block:calc(14 * var(--u))}
+.rows li:first-child{min-height:calc(94 * var(--u));padding-top:0}
+.rows h2{font-size:var(--t-row);line-height:1.1;letter-spacing:-.05em}
+.val{min-width:0;line-height:1.3}
+.val a,.val span.u{display:inline;padding-bottom:3px;border-bottom:1px solid var(--rule);transition:border-color .3s}
+.val a:hover{border-color:var(--fg)}
+.val small{display:block;font-size:inherit;color:var(--muted);margin-top:4px}
+
+/* footer */
+footer{padding-top:calc(354 * var(--u))}
+.foot{display:grid;grid-template-columns:calc(330 * var(--u)) calc(870 * var(--u)) minmax(0,1fr)}
+.foot-left{grid-column:2}
+.foot-left .display{font-size:var(--t-display);line-height:.92;letter-spacing:-.05em}
+.foot-addr{margin-top:calc(70 * var(--u));font-style:normal;line-height:1.2}
+.foot-cols{grid-column:3;display:flex;gap:calc(42 * var(--u));padding-top:calc(8 * var(--u))}
+.foot-cols ul{list-style:none;margin:0;padding:0;line-height:1.9}
+.fine{display:flex;justify-content:flex-end;gap:6px;padding:calc(240 * var(--u)) var(--side) calc(24 * var(--u));font-size:max(8px, calc(12 * var(--u)));letter-spacing:.04em;text-transform:uppercase}
+
+/* mobile menu */
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:10;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 40px}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
+.sheet ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:30px;letter-spacing:-.04em;font-weight:300}
+
+@media (max-width:809px){
+  :root{--u:0.8px;--t-giant:22vw}
+  header{padding:16px 16px 0}
+  nav.main{display:none}
+  .menu-btn{display:block}
+  .contact{grid-template-columns:1fr;row-gap:64px;padding-top:80px}
+  .hello,.rows{grid-column:1}
+  .rows li{grid-template-columns:1fr;gap:8px;min-height:0;padding-block:18px}
+  .rows li:first-child{padding-top:0}
+  .foot{grid-template-columns:1fr;row-gap:40px}
+  .foot-left,.foot-cols{grid-column:1}
+  .fine{justify-content:flex-start;flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">dhoomimal art centre</a>
+  <nav class="main" aria-label="Main">
+    <ul>
+      <li><a class="link" href="artists.html">Artists</a></li>
+      <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+      <li><a class="link" href="collection.html">Collection</a></li>
+      <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      <li><a class="link" href="contact.html" aria-current="page">Contact</a></li>
+      <li><a class="link" href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <button class="menu-btn" id="menu-open" aria-expanded="false" aria-controls="sheet">MENU</button>
+</header>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="top">
+    <span class="logo">dhoomimal art centre</span>
+    <button class="menu-btn" id="menu-close" style="display:block">CLOSE</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="art-fairs.html">Art Fairs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<main class="wrap contact">
+  <div class="hello">
+    <h1>Drop us<br>a line</h1>
+    <p>We’ll get back to you as soon as possible</p>
+  </div>
+
+  <ul class="rows">
+    <li>
+      <h2>Write</h2>
+      <div class="val"><a href="mailto:info@dhoomimalartcentre.com">info@dhoomimalartcentre.com</a></div>
+    </li>
+    <li>
+      <h2>Call</h2>
+      <div class="val"><a href="tel:+911141516172">+91 11 4151 6172</a></div>
+    </li>
+    <li>
+      <h2>Visit</h2>
+      <div class="val"><a href="https://www.google.com/maps/search/?api=1&amp;query=Dhoomimal+Art+Centre+Connaught+Place+New+Delhi" target="_blank" rel="noopener">A-8, Connaught Place, Inner Circle, New Delhi 110001</a></div>
+    </li>
+    <li>
+      <h2>Open hours</h2>
+      <div class="val"><span class="u">Daily, 11 am – 7 pm</span><small>Closed on Sundays and holidays</small></div>
+    </li>
+    <li>
+      <h2>Follow</h2>
+      <div class="val"><a href="https://www.instagram.com/dhoomimalartcentre" target="_blank" rel="noopener">@dhoomimalartcentre</a></div>
+    </li>
+  </ul>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-left">
+      <p class="display">Eighty-five years<br>of Indian art</p>
+      <address class="foot-addr">
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+    <div class="foot-cols">
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="artists.html">Artists</a></li>
+        <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+        <li><a class="link" href="collection.html">Collection</a></li>
+        <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/videogallery" target="_blank" rel="noopener">Videos</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="contact.html">Contact</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/catalogues" target="_blank" rel="noopener">Catalogues</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.instagram.com/dhoomimalartcentre" target="_blank" rel="noopener">Insta</a></li>
+        <li><a class="link" href="https://www.facebook.com/dhoomimalonline" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a class="link" href="https://twitter.com/dhoomimal" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a class="link" href="https://www.pinterest.com/dhoomimalartcentre" target="_blank" rel="noopener">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fine"><span>Modern art</span><span>•</span><span>Since pre-independence</span></div>
+</footer>
+
+<script>
+(function(){
+  var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
+  o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});
+  c.addEventListener("click",function(){sheet.hidden=true;o.setAttribute("aria-expanded","false");o.focus();});
+})();
+</script>
+</body>
+</html>

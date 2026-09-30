@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Artists — Dhoomimal Art Centre</title>
+<meta name="description" content="Artists represented by Dhoomimal Art Centre, New Delhi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Newsreader:opsz,wght@6..72,400&display=swap">
+<style>
+/* Layout measured from the Heynar Mastow artists page.
+   --u = one pixel of the 1208px-wide reference capture. Full-width page, 17u side gutters. */
+:root{
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#4a4a4a;
+  --rule:#bdbdbd;
+  --ph:#eeeeec;
+  --btn:#111111;
+  --btn-fg:#ffffff;
+  --sans:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --logo:Newsreader,"Times New Roman",Georgia,serif;
+  --u:calc(100vw / 1208);
+  --side:max(16px, calc(17 * var(--u)));
+  --t-giant:max(min(64px, 17vw), calc(128 * var(--u)));
+  --t-display:max(30px, calc(52 * var(--u)));
+  --t-marquee:max(20px, calc(28 * var(--u)));
+  --t-name:max(19px, calc(27 * var(--u)));
+  --t-body:max(12px, calc(14 * var(--u)));
+  --t-meta:max(11px, calc(13 * var(--u)));
+  --t-nav:max(12px, calc(14 * var(--u)));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--t-body);line-height:1.35;-webkit-font-smoothing:antialiased;animation:fade .6s ease both;overflow-x:hidden}
+@keyframes fade{from{opacity:.001}to{opacity:1}}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0;font-weight:400}
+a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+.link{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s ease}
+.link:hover{background-size:100% 1px}
+.wrap{padding-inline:var(--side)}
+.display{font-size:var(--t-display);line-height:1.03;letter-spacing:-.05em;font-weight:400}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(18 * var(--u)) var(--side) 0}
+.logo{font-family:var(--logo);font-size:max(16px, calc(23 * var(--u)));letter-spacing:-.01em;line-height:1}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(10 * var(--u));font-size:var(--t-nav)}
+nav.main a[aria-current]{background-size:100% 1px}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
+.rail{position:fixed;right:calc(12 * var(--u));top:calc(152 * var(--u));writing-mode:vertical-rl;font-size:max(8px, calc(8 * var(--u)));letter-spacing:.02em;white-space:nowrap}
+
+/* intro */
+.intro{display:grid;grid-template-columns:calc(553 * var(--u)) minmax(0,1fr);padding-top:calc(102 * var(--u))}
+.intro h1{font-size:var(--t-giant);line-height:.9;letter-spacing:-.055em;font-weight:400;margin-top:calc(8 * var(--u))}
+.intro-right{max-width:calc(440 * var(--u))}
+.jump{display:inline-flex;gap:6px;margin-top:calc(34 * var(--u));padding-bottom:4px;border-bottom:1px solid var(--rule);font-size:var(--t-body);transition:border-color .3s}
+.jump:hover{border-color:var(--fg)}
+
+/* marquee */
+.marquee{margin-top:calc(100 * var(--u));overflow:hidden;white-space:nowrap}
+.track{display:inline-flex;gap:calc(25 * var(--u));padding-right:calc(25 * var(--u));font-size:var(--t-marquee);letter-spacing:-.04em;line-height:1.2;animation:slide 90s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track a{transition:opacity .25s}
+.track a:hover{opacity:.5}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* grid */
+.grid-wrap{padding-top:calc(34 * var(--u))}
+.artists{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(35 * var(--u)) calc(17 * var(--u))}
+.artist{display:block;border-bottom:1px solid var(--rule);padding-bottom:calc(10 * var(--u))}
+.frame{aspect-ratio:1/1;overflow:hidden;background:var(--ph)}
+.frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform .8s cubic-bezier(.2,.6,.2,1),filter .6s}
+.artist:hover .frame img{transform:scale(1.02);filter:grayscale(0)}
+.foot-row > div{min-width:0}
+.foot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-top:calc(8 * var(--u))}
+.name{font-size:var(--t-name);line-height:1.15;letter-spacing:-.045em;margin-top:calc(3 * var(--u))}
+.role{font-size:var(--t-meta);margin-top:calc(4 * var(--u))}
+.sq{flex:none;width:max(32px, calc(48 * var(--u)));height:max(32px, calc(47 * var(--u)));background:var(--btn);color:var(--btn-fg);display:grid;place-items:center;transition:opacity .25s}
+.sq svg{width:45%;height:45%}
+.artist:hover .sq{opacity:.75}
+
+/* footer */
+footer{padding-top:calc(125 * var(--u))}
+.foot{display:grid;grid-template-columns:calc(200 * var(--u)) calc(524 * var(--u)) minmax(0,1fr)}
+.foot-left{grid-column:2}
+.foot-addr{margin-top:calc(40 * var(--u));font-style:normal;line-height:1.2}
+.foot-cols{grid-column:3;display:flex;gap:calc(52 * var(--u));padding-top:calc(4 * var(--u))}
+.foot-cols ul{list-style:none;margin:0;padding:0;font-size:var(--t-nav);line-height:1.8}
+.fine{display:flex;justify-content:flex-end;gap:6px;padding:calc(140 * var(--u)) var(--side) calc(18 * var(--u));font-size:max(8px, calc(7 * var(--u)));letter-spacing:.04em;text-transform:uppercase}
+
+/* mobile menu */
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:10;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 40px}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
+.sheet ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:30px;letter-spacing:-.04em;font-weight:300}
+
+@media (max-width:809px){
+  :root{--u:1.2px;--t-giant:24vw;--t-name:17px}
+  .sq{width:30px;height:30px}
+  header{padding:16px 16px 0}
+  nav.main,.rail{display:none}
+  .menu-btn{display:block}
+  .intro{grid-template-columns:1fr;row-gap:32px}
+  .intro-right{max-width:none}
+  .artists{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 10px}
+  .foot{grid-template-columns:1fr;row-gap:40px}
+  .foot-left,.foot-cols{grid-column:1}
+  .fine{justify-content:flex-start;flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .marquee{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">dhoomimal art centre</a>
+  <nav class="main" aria-label="Main">
+    <ul>
+      <li><a class="link" href="artists.html" aria-current="page">Artists</a></li>
+      <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+      <li><a class="link" href="collection.html">Collection</a></li>
+      <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link" href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <button class="menu-btn" id="menu-open" aria-expanded="false" aria-controls="sheet">MENU</button>
+</header>
+
+<div class="rail" aria-hidden="true">28.6327° N, 77.2178° E</div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="top">
+    <span class="logo">dhoomimal art centre</span>
+    <button class="menu-btn" id="menu-close" style="display:block">CLOSE</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="art-fairs.html">Art Fairs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<main>
+  <section class="wrap intro">
+    <h1>Artists</h1>
+    <div class="intro-right">
+      <p class="display">We are proud to work with generations of Indian artists</p>
+      <a class="jump" href="#all">↓ View all artists</a>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+  <section class="wrap grid-wrap" id="all">
+    <div class="artists" id="artists"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-left">
+      <p class="display">Eighty-five years<br>of Indian art</p>
+      <address class="foot-addr">
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+    <div class="foot-cols">
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="artists.html">Artists</a></li>
+        <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+        <li><a class="link" href="collection.html">Collection</a></li>
+        <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/videogallery" target="_blank" rel="noopener">Videos</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="contact.html">Contact</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/catalogues" target="_blank" rel="noopener">Catalogues</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.instagram.com/dhoomimalartcentre" target="_blank" rel="noopener">Insta</a></li>
+        <li><a class="link" href="https://www.facebook.com/dhoomimalonline" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a class="link" href="https://twitter.com/dhoomimal" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a class="link" href="https://www.pinterest.com/dhoomimalartcentre" target="_blank" rel="noopener">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fine"><span>Modern art</span><span>•</span><span>Since pre-independence</span></div>
+</footer>
+
+<script>
+// Artist list from dhoomimalartcentre.com/artists — [name, profile slug, image file, role]
+var ARTISTS=[
+["Abbas Batliwala","abbas-batliwala~87","1693997810abbas-batliwala-list.jpg","Painter"],
+["Akash Choyal","akash-choyal~1","1664272726akash-choyal-list.jpg","Painter"],
+["Akmal Husain","akmal-husain~30","1664273062akmal-husain-list.jpg","Painter"],
+["Anand Prakash","anand-prakash~32","1664274061anand-prakash-list.jpg","Painter"],
+["Arup Das","arup-das~79","1665740209arup-das-list.jpg","Painter"],
+["B. Vithal","b.-vithal~82","1665740617bvithal-list.jpg","Painter"],
+["Balasaheb Nathu Chaudhari","balasaheb-nathu-chaudhari~36","1664790331balasaheb-nathu-chaudhari-list.jpg","Painter • Sculptor"],
+["Balkrishna Patel","balkrishna-patel~80","1665740343balkrishna-patel-list.jpg","Painter"],
+["Bhawana Choudhary Chandra","bhawana-choudhary-chandra~37","1664790502bhawana-choudhary-chandra-list.jpg","Painter"],
+["Bimal Dasgupta","bimal-dasgupta~81","1665740455bimaldasgupta-list.jpg","Painter"],
+["BR Bodade","br-bodade~39","1664790719brbodade-list.jpg","Painter"],
+["Bratin Khan","bratin-khan~40","1664790816bratin-khan-list.jpg","Painter"],
+["C. Prakash","c.-prakash~92","1694429938cprakash-list.jpg","Painter"],
+["Gopal S Adivrekar","gopal-s-adivrekar~47","1664792279gopal-s-adivrekar-list.jpg","Painter"],
+["K. S. Kulkarni","k.-s.-kulkarni~84","1665740884ks-kulkarni-list.jpg","Painter"],
+["Kalicharan Gupta","kalicharan-gupta~90","1694150088kalicharan-gupta-list.jpg","Painter"],
+["Kartick Chandra Pyne","kartick-chandra-pyne~83","1665740740kartick-chandra-pyne-list.jpg","Painter"],
+["M Sivanesan","m-sivanesan~49","1664792480m-sivanesan-list.jpg","Painter"],
+["Manoj Dutta","manoj-dutta~95","1694599726manoj-dutta-list.jpg","Painter"],
+["N S Rana","n-s-rana~52","1665474598ns-rana-list.jpg","Sculptor"],
+["Pankaj Kumar Singh","pankaj-kumar-singh~55","1665474889pankaj-kumar-singh-list.jpg","Painter"],
+["PN Choyal","pn-choyal~56","1665475352pn-choyal-list.jpg","Painter"],
+["Pradiptaa Chakraborty","pradiptaa-chakraborty~57","1665475455pradipta-chakroborty-list.jpg","Painter"],
+["Prafulla Mohanti","prafulla-mohanti~99","1694686935prafulla-mohanti-list.jpg","Painter"],
+["R B Bhaskaran","r-b-bhaskaran~59","1665646982rb-bhaskaran-list.jpg","Painter"],
+["Rakesh Kumar Gupta","rakesh-kumar-gupta~60","1665647121rakesh-kumar-gupta-list.jpg","Painter • Sculptor"],
+["Ratnadeep Gopal Adivrekar","ratnadeep-gopal-adivrekar~62","1665647326ratnadeep-gopal-adivrekar-list.jpg","Painter"],
+["S.R. Bhushan","s.r.-bhushan~85","1665741004sr-bhushan-list.jpg","Painter"],
+["Santosh Verma","santosh-verma~64","1665647542santosh-verma-list.jpg","Painter"],
+["Shabir Hussain","shabir-hussain~138","1714733646shabir-hussain-list.jpg","Painter"],
+["Shahid Parvez","shahid-parvez~66","1665647767shahid-parvez-list.jpg","Conceptual artist • Painter"],
+["Shail Choyal","shail-choyal~67","1665738854shail-choyal-list.jpg","Painter"],
+["Shalini Prakash","shalini-prakash~68","1665738997shalini-prakash-list.jpg","Painter • Sculptor"],
+["Sharad Kale","sharad-kale~69","1665739109sharad-kale-list.jpg","Painter"],
+["Sonal Varshneya","sonal-varshneya~89","1694147886sonal-varshneya-list.jpg","Painter"],
+["Sunil Das","sunil-das~86","1665741110sunil-das-list.jpg","Painter"],
+["Swapan Bhandary","swapan-bhandary~72","1665739426swapan-bhandary-list.jpg","Painter • Sculptor"],
+["Tanushree Chakraborty","tanushree-chakraborty~102","1694774375tanushree-list.jpg","Painter"],
+["Vandana Rakesh","vandana-rakesh~73","1665739545vandana-rakesh-list.jpg","Painter • Sculptor"]
+];
+(function(){
+  var BASE="https://www.dhoomimalartcentre.com/", PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v20M2 12h20"/></svg>';
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+  var grid="", names="";
+  ARTISTS.forEach(function(a){
+    var href=BASE+"artists/"+a[1];
+    grid+='<a class="artist" href="'+href+'" target="_blank" rel="noopener">'+
+      '<div class="frame"><img src="'+BASE+'images/artist/'+a[2]+'" alt="'+esc(a[0])+'" loading="lazy"></div>'+
+      '<div class="foot-row"><div><h3 class="name">'+esc(a[0])+'</h3><div class="role">'+esc(a[3])+'</div></div><span class="sq" aria-hidden="true">'+PLUS+'</span></div></a>';
+    names+='<a href="'+href+'" target="_blank" rel="noopener" tabindex="-1">'+esc(a[0])+'</a>';
+  });
+  document.getElementById("artists").innerHTML=grid;
+  document.getElementById("track").innerHTML=names+names;
+  document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
+
+  var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
+  o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});
+  c.addEventListener("click",function(){sheet.hidden=true;o.setAttribute("aria-expanded","false");o.focus();});
+})();
+</script>
+</body>
+</html>

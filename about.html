@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About — Dhoomimal Art Centre</title>
+<meta name="description" content="The story of Dhoomimal Art Centre, Connaught Place, New Delhi, from 1936 to today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Newsreader:opsz,wght@6..72,400&display=swap">
+<style>
+/* Layout measured from the Heynar Mastow about page.
+   --u = one pixel of the 790px-wide reference capture. One column starting 76u from the left and 493u wide; the right of the page stays empty. */
+:root{
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#4a4a4a;
+  --rule:#bdbdbd;
+  --rule-dark:#3a3a3a;
+  --ph:#eeeeec;
+  --btn:#111111;
+  --btn-fg:#ffffff;
+  --sans:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --logo:Newsreader,"Times New Roman",Georgia,serif;
+  --u:calc(100vw / 790);
+  --side:max(16px, calc(11 * var(--u)));
+  --col-left:calc(76 * var(--u));
+  --col-w:calc(493 * var(--u));
+  --t-giant:max(min(56px, 17vw), calc(78 * var(--u)));
+  --t-h2:max(28px, calc(33 * var(--u)));
+  --t-h3:max(18px, calc(16 * var(--u)));
+  --t-body:max(12px, calc(7.4 * var(--u)));
+  --t-cap:max(8px, calc(3.8 * var(--u)));
+  --t-nav:max(12px, calc(7.4 * var(--u)));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--t-body);line-height:1.38;-webkit-font-smoothing:antialiased;animation:fade .6s ease both}
+@keyframes fade{from{opacity:.001}to{opacity:1}}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0;font-weight:400}
+a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+.link{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s ease}
+.link:hover{background-size:100% 1px}
+.cap{font-size:var(--t-cap);letter-spacing:.04em;text-transform:uppercase;line-height:1.3}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(12 * var(--u)) var(--side) 0}
+.logo{font-family:var(--logo);font-size:max(16px, calc(13 * var(--u)));letter-spacing:-.01em;line-height:1}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(6 * var(--u));font-size:var(--t-nav)}
+nav.main a[aria-current]{background-size:100% 1px}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
+
+/* single editorial column */
+.col{margin-left:var(--col-left);width:var(--col-w);max-width:calc(100% - var(--col-left) - var(--side))}
+
+.intro{padding-top:calc(78 * var(--u))}
+.intro h1{font-size:var(--t-giant);line-height:.9;letter-spacing:-.055em}
+.intro-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:calc(30 * var(--u))}
+.intro-foot p{max-width:calc(245 * var(--u));min-width:0}
+.intro-foot address{font-style:normal;text-align:right;flex:none}
+.intro-foot .cap{margin-bottom:calc(4 * var(--u))}
+
+/* photos */
+.photos{margin-top:calc(66 * var(--u))}
+figure{margin:0}
+.ph{overflow:hidden;background:var(--ph)}
+.ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform .8s cubic-bezier(.2,.6,.2,1),filter .6s}
+figure:hover .ph img{transform:scale(1.02);filter:grayscale(0)}
+figcaption{margin-top:calc(3 * var(--u))}
+.big .ph{aspect-ratio:493/301}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(11 * var(--u));margin-top:calc(12 * var(--u))}
+.pair .ph{aspect-ratio:1/1}
+.side-text{margin:calc(12 * var(--u)) 0 0 auto;width:calc(50% - var(--u) * 5.5);text-align:right}
+
+/* story */
+.story{padding-top:calc(68 * var(--u))}
+.story h2{font-size:var(--t-h2);line-height:1.06;letter-spacing:-.05em;max-width:calc(320 * var(--u))}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(11 * var(--u));margin-top:calc(46 * var(--u))}
+.cols div{display:grid;gap:calc(10 * var(--u));align-content:start;min-width:0}
+
+/* visit block */
+.visit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(11 * var(--u));margin-top:calc(66 * var(--u))}
+.visit .ph{aspect-ratio:1/1}
+.cta{display:grid;grid-template-rows:1fr 1fr;padding-right:calc(49 * var(--u))}
+.cta section{border-top:1px solid var(--rule-dark);padding-top:calc(12 * var(--u))}
+.cta h3{font-size:var(--t-h3);line-height:1.2;letter-spacing:-.045em}
+.btns{display:flex;flex-wrap:wrap;gap:calc(11 * var(--u));margin-top:calc(12 * var(--u))}
+.btn{display:inline-flex;align-items:center;height:max(30px, calc(26 * var(--u)));padding:0 max(10px, calc(7 * var(--u)));font-size:var(--t-body);white-space:nowrap;border:1px solid var(--btn);transition:opacity .25s,background .25s,color .25s}
+.btn.solid{background:var(--btn);color:var(--btn-fg)}
+.btn.solid:hover{opacity:.72}
+.btn.line{background:var(--bg);color:var(--fg);border-color:var(--rule)}
+.btn.line:hover{border-color:var(--fg)}
+
+/* footer */
+footer{padding-top:calc(88 * var(--u))}
+.foot{display:grid;grid-template-columns:calc(196 * var(--u)) calc(302 * var(--u)) minmax(0,1fr);padding-inline:0}
+.foot-left{grid-column:2}
+.foot-left .display{font-size:var(--t-h2);line-height:1.04;letter-spacing:-.05em}
+.foot-addr{margin-top:calc(22 * var(--u));font-style:normal;line-height:1.25}
+.foot-cols{grid-column:3;display:flex;gap:calc(22 * var(--u));padding-top:calc(3 * var(--u))}
+.foot-cols ul{list-style:none;margin:0;padding:0;line-height:1.95}
+.fine{display:flex;justify-content:flex-end;gap:6px;padding:calc(90 * var(--u)) var(--side) calc(14 * var(--u));font-size:max(8px, calc(3.6 * var(--u)));letter-spacing:.04em;text-transform:uppercase}
+
+/* mobile menu */
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:10;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 40px}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
+.sheet ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:30px;letter-spacing:-.04em;font-weight:300}
+
+@media (max-width:809px){
+  :root{--u:1.6px;--col-left:16px;--t-giant:17vw}
+  header{padding:16px 16px 0}
+  nav.main{display:none}
+  .menu-btn{display:block}
+  .col{width:auto;margin-inline:16px;max-width:none}
+  .intro-foot{flex-direction:column;align-items:flex-start}
+  .intro-foot address{text-align:left}
+  .side-text{width:auto;text-align:left}
+  .cols,.visit{grid-template-columns:1fr;gap:24px}
+  .cta{padding-right:0;gap:32px}
+  .foot{grid-template-columns:1fr;row-gap:40px;padding-inline:16px}
+  .foot-left,.foot-cols{grid-column:1}
+  .fine{justify-content:flex-start;flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">dhoomimal art centre</a>
+  <nav class="main" aria-label="Main">
+    <ul>
+      <li><a class="link" href="artists.html">Artists</a></li>
+      <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+      <li><a class="link" href="collection.html">Collection</a></li>
+      <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link" href="about.html" aria-current="page">About</a></li>
+    </ul>
+  </nav>
+  <button class="menu-btn" id="menu-open" aria-expanded="false" aria-controls="sheet">MENU</button>
+</header>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="top">
+    <span class="logo">dhoomimal art centre</span>
+    <button class="menu-btn" id="menu-close" style="display:block">CLOSE</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="art-fairs.html">Art Fairs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<main>
+  <section class="col intro">
+    <h1>About<br>Dhoomimal</h1>
+    <div class="intro-foot">
+      <p>Dhoomimal began in 1936, when Ram Babu, a Sunday painter whose family ran a stationery business in Connaught Place, opened the Dhoomimal Dharam Das Gallery. Known to the city as the Kagazis, the family turned a paper shop into a meeting place for artists, supported by B C Sanyal, Jaya Appaswamy, Jamini Roy, Sailoz Mukherjee and Nand Lal Bose.</p>
+      <address>
+        <div class="cap">Come visit us</div>
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+  </section>
+
+  <section class="col photos">
+    <figure class="big">
+      <div class="ph"><img src="https://www.dhoomimalartcentre.com/assest/front/images/history/about-1972-a.jpg" alt="The Dhoomimal gallery interior, 1972" loading="lazy"></div>
+      <figcaption class="cap">1972 • The gallery at Connaught Place</figcaption>
+    </figure>
+    <div class="pair">
+      <figure>
+        <div class="ph"><img src="https://www.dhoomimalartcentre.com/assest/front/images/history/about-1964.jpg" alt="Mahender Jain with President Zakir Hussain, 1964" loading="lazy"></div>
+        <figcaption class="cap">1964 • Mahender Jain with President Zakir Hussain at the M F Husain exhibition, New York</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><img src="https://www.dhoomimalartcentre.com/assest/front/images/history/about-1986.jpg" alt="G R Santosh, Mahender Jain, Surya Prakash and P N Mago, 1986" loading="lazy"></div>
+        <figcaption class="cap">1986 • G R Santosh, Mahender Jain, Surya Prakash &amp; P N Mago</figcaption>
+      </figure>
+    </div>
+    <p class="side-text">In the sixties Ram Babu's son Mahender Jain took the gallery abroad, showing Indian contemporary art in New York and across the United States. With his wife Sushma he worked closely with Shanti Dave, M F Husain, Tyeb Mehta and B Prabha, and helped set up Cymroza Art Gallery in Mumbai in 1974, and Chitrakoot Gallery in Calcutta and the House of B. Prabha &amp; B. Vithal in New Delhi in 1987.</p>
+  </section>
+
+  <section class="col story">
+    <h2>Three generations in Connaught Place</h2>
+    <div class="cols">
+      <div>
+        <p>Mahender Jain died in 1987. Sushma Jain carried the gallery on with the same vision and devotion, keeping its doors open to the older masters and to younger artists finding their way.</p>
+        <p>Their son Mohit Jain joined in 1991 and took over in 1996, with his mother beside him. The centre's archive of photographs, from Indira Gandhi's visits to B C Sanyal's tribute in 1997, records how closely the gallery has grown with Delhi's art world.</p>
+      </div>
+      <div>
+        <p>Under Mohit Jain the gallery was renovated in 2007 and has shown at the India Art Fair and Art Mumbai. His curated exhibitions include The Millennium Mask, Half a Foot Square, Kites: A Celebration of Freedom and Portrait of an Artist.</p>
+        <p>Today the centre shows modern and contemporary Indian art in Connaught Place and beyond, publishes catalogues of its exhibitions, and offers art restoration services.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="col visit">
+    <figure>
+      <div class="ph"><img src="https://www.dhoomimalartcentre.com/assest/front/images/history/about-director.jpg" alt="Mohit Jain, Director of Dhoomimal Art Centre" loading="lazy"></div>
+    </figure>
+    <div class="cta">
+      <section>
+        <h3>Come visit us</h3>
+        <div class="btns">
+          <a class="btn solid" href="https://www.google.com/maps/search/?api=1&amp;query=Dhoomimal+Art+Centre+Connaught+Place+New+Delhi" target="_blank" rel="noopener">+ See Route</a>
+          <a class="btn line" href="contact.html">+ Contact Us</a>
+        </div>
+      </section>
+      <section>
+        <h3>Restoration services<br>for artworks</h3>
+        <div class="btns">
+          <a class="btn solid" href="http://restorationbyad.com/" target="_blank" rel="noopener">+ Learn More</a>
+          <a class="btn line" href="https://www.dhoomimalartcentre.com/catalogues" target="_blank" rel="noopener">+ Catalogues</a>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div class="foot-left">
+      <p class="display">Eighty-five years<br>of Indian art</p>
+      <address class="foot-addr">
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+    <div class="foot-cols">
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="artists.html">Artists</a></li>
+        <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+        <li><a class="link" href="collection.html">Collection</a></li>
+        <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/videogallery" target="_blank" rel="noopener">Videos</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="contact.html">Contact</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/catalogues" target="_blank" rel="noopener">Catalogues</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.instagram.com/dhoomimalartcentre" target="_blank" rel="noopener">Insta</a></li>
+        <li><a class="link" href="https://www.facebook.com/dhoomimalonline" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a class="link" href="https://twitter.com/dhoomimal" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a class="link" href="https://www.pinterest.com/dhoomimalartcentre" target="_blank" rel="noopener">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fine"><span>Modern art</span><span>•</span><span>Since pre-independence</span></div>
+</footer>
+
+<script>
+(function(){
+  document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
+  var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
+  o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});
+  c.addEventListener("click",function(){sheet.hidden=true;o.setAttribute("aria-expanded","false");o.focus();});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dhoomimal Art Centre</title>
+<meta name="description" content="Dhoomimal Art Centre, A-8 Connaught Place, New Delhi. Promoting modern and contemporary Indian art for eighty-five years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Newsreader:opsz,wght@6..72,400&display=swap">
+<style>
+/* Layout measured from the Heynar Mastow reference.
+   --u = one pixel of the 545px-wide reference capture, so every size scales with the viewport.
+   Content column: starts 8u from the left edge, ends at 450u (about 82.6vw); the right strip holds only the nav end and a vertical label. */
+:root{
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#4a4a4a;
+  --rule:#bdbdbd;
+  --ph:#eeeeec;
+  --btn:#111111;
+  --btn-fg:#ffffff;
+  --sans:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --logo:Newsreader,"Times New Roman",Georgia,serif;
+  --u:calc(100vw / 545);
+  --left:calc(8 * var(--u));
+  --right:calc(95 * var(--u));
+  --t-display:max(30px, calc(20.5 * var(--u)));
+  --t-label:max(20px, calc(11.5 * var(--u)));
+  --t-title:max(17px, calc(10.2 * var(--u)));
+  --t-row:max(17px, calc(11.5 * var(--u)));
+  --t-body:max(12px, calc(5.2 * var(--u)));
+  --t-meta:max(10px, calc(4.4 * var(--u)));
+  --t-nav:max(11px, calc(4.9 * var(--u)));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--t-body);line-height:1.35;font-weight:400;-webkit-font-smoothing:antialiased;animation:fade .6s ease both}
+@keyframes fade{from{opacity:.001}to{opacity:1}}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0;font-weight:400}
+a:focus-visible,button:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+.link{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s ease}
+.link:hover{background-size:100% 1px}
+
+.wrap{padding-left:var(--left);padding-right:var(--right)}
+.display{font-size:var(--t-display);line-height:1.04;letter-spacing:-.045em;font-weight:300}
+.meta{font-size:var(--t-meta);line-height:1.3}
+
+/* header — full width */
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:calc(8 * var(--u)) calc(4 * var(--u)) 0 var(--left)}
+.logo{font-family:var(--logo);font-size:max(15px, calc(6.6 * var(--u)));letter-spacing:-.01em;line-height:1}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:calc(3.4 * var(--u));font-size:var(--t-nav)}
+.menu-btn{display:none;background:none;border:0;padding:0;font:inherit;font-size:var(--t-nav);color:var(--fg);cursor:pointer}
+
+/* vertical label in the right strip */
+.rail{position:fixed;right:calc(3.5 * var(--u));top:calc(64 * var(--u));writing-mode:vertical-rl;font-size:max(7px, calc(2.6 * var(--u)));letter-spacing:.02em;white-space:nowrap}
+
+/* intro */
+.intro{padding-top:calc(41 * var(--u))}
+.intro h1{text-align:right}
+.intro-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:calc(42 * var(--u));padding-bottom:calc(5 * var(--u));border-bottom:1px solid var(--rule)}
+.intro-foot p{max-width:calc(172 * var(--u));min-width:0}
+.intro-foot address{font-style:normal;text-align:right;flex:none}
+
+/* split sections: heading left, content right */
+.split{display:grid;grid-template-columns:calc(134 * var(--u)) minmax(0,1fr)}
+.side .view{display:inline-block;margin-top:calc(11 * var(--u))}
+
+/* exhibitions */
+#exhibitions{padding-top:calc(31 * var(--u))}
+#exhibitions .body{padding-top:calc(34 * var(--u))}
+.entry{padding-bottom:calc(8 * var(--u));border-bottom:1px solid var(--rule)}
+.entry + .entry{margin-top:calc(52 * var(--u))}
+.label{font-size:var(--t-label);line-height:1;letter-spacing:-.035em;font-weight:300;text-align:right;margin-bottom:calc(12 * var(--u))}
+.frame{overflow:hidden;background:var(--ph)}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+a:hover .frame img{transform:scale(1.02)}
+.ex-img{aspect-ratio:308/174}
+.under{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-top:calc(5 * var(--u))}
+.thumbs{display:flex;gap:calc(4 * var(--u))}
+.thumbs span{width:calc(16 * var(--u));height:calc(20 * var(--u));min-width:26px;min-height:32px;overflow:hidden;background:var(--ph)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.btn{display:inline-flex;align-items:center;flex:none;height:max(28px, calc(17 * var(--u)));padding:0 max(9px, calc(6.5 * var(--u)));background:var(--btn);color:var(--btn-fg);font-size:var(--t-meta);white-space:nowrap;transition:opacity .25s}
+.btn:hover{opacity:.72}
+.title{font-size:var(--t-title);line-height:1.2;letter-spacing:-.035em;font-weight:400}
+.entry .title{margin-top:calc(6 * var(--u));max-width:calc(222 * var(--u))}
+.title + .meta{margin-top:calc(2.5 * var(--u))}
+.desc{margin:calc(14 * var(--u)) 0 0 auto;text-align:right;color:var(--muted);line-height:1.45}
+.entry .desc{max-width:calc(196 * var(--u))}
+
+/* heading row for full-width sections */
+.row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.row-head .view{flex:none;padding-bottom:calc(1 * var(--u))}
+
+/* artists */
+#artists{padding-top:calc(35 * var(--u))}
+#artists .row-head{margin-bottom:calc(6 * var(--u))}
+.artists{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(24 * var(--u)) calc(8 * var(--u))}
+.artist{display:block;border-bottom:1px solid var(--rule);padding-bottom:calc(4 * var(--u))}
+.artist .frame{aspect-ratio:1/1}
+.artist .frame img{filter:grayscale(1);transition:transform .8s cubic-bezier(.2,.6,.2,1),filter .6s}
+.artist:hover .frame img{filter:grayscale(0)}
+.artist-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-top:calc(3 * var(--u))}
+.artist .meta{margin-top:calc(2 * var(--u))}
+.sq{flex:none;width:max(28px, calc(21 * var(--u)));height:max(28px, calc(20 * var(--u)));background:var(--btn);color:var(--btn-fg);display:grid;place-items:center;font-size:max(14px, calc(8 * var(--u)));font-weight:300;line-height:1;transition:opacity .25s}
+.artist:hover .sq{opacity:.75}
+
+/* journal (art fairs slot) */
+#journal{padding-top:calc(34 * var(--u))}
+#journal .row-head{margin-bottom:calc(7 * var(--u))}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(32 * var(--u)) calc(8 * var(--u))}
+.two article{border-bottom:1px solid var(--rule);padding-bottom:calc(8 * var(--u));min-width:0}
+.two .frame{aspect-ratio:217/143}
+.two .under{margin-top:calc(4 * var(--u))}
+.two .desc{max-width:78%}
+
+/* press (awards slot) */
+#press{padding-top:calc(48 * var(--u))}
+#press .split{grid-template-columns:calc(152 * var(--u)) minmax(0,1fr)}
+#press .side p{margin-top:calc(4 * var(--u));font-size:var(--t-meta)}
+.list{list-style:none;margin:0;padding:0}
+.list li{border-bottom:1px solid var(--rule)}
+.list a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-block:calc(9 * var(--u)) calc(7 * var(--u))}
+.list li:first-child a{padding-top:0}
+.list h3{font-size:var(--t-row);line-height:1.2;letter-spacing:-.035em;min-width:0;transition:opacity .25s}
+.list a:hover h3{opacity:.6}
+.list .meta{flex:none;text-align:right}
+
+/* footer */
+footer{padding-top:calc(56 * var(--u))}
+.foot{display:grid;grid-template-columns:calc(90 * var(--u)) calc(238 * var(--u)) minmax(0,1fr)}
+.foot-left{grid-column:2}
+.foot-addr{margin-top:calc(14 * var(--u));font-style:normal}
+.foot-cols{grid-column:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding-top:calc(1 * var(--u))}
+.foot-cols ul{list-style:none;margin:0;padding:0;font-size:var(--t-meta);line-height:2.55}
+.fine{display:flex;justify-content:flex-end;gap:calc(4 * var(--u));padding:calc(58 * var(--u)) calc(4 * var(--u)) calc(12 * var(--u)) var(--left);font-size:max(8px, calc(2.4 * var(--u)));letter-spacing:.04em;text-transform:uppercase}
+
+/* mobile menu */
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:10;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 40px}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
+.sheet ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:30px;letter-spacing:-.04em;font-weight:300}
+
+@media (max-width:809px){
+  :root{--u:1.6px;--left:16px;--right:16px}
+  header{padding:16px 16px 0}
+  nav.main,.rail{display:none}
+  .menu-btn{display:block}
+  .intro-foot{flex-direction:column;align-items:flex-start}
+  .intro-foot address{text-align:left}
+  .split,#press .split{grid-template-columns:1fr}
+  .side{margin-bottom:24px}
+  #exhibitions .body{padding-top:0}
+  .label{text-align:left}
+  .desc,.entry .desc,.two .desc{text-align:left;margin-left:0;max-width:none}
+  .artists{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 10px}
+  .two{grid-template-columns:1fr}
+  .list a{flex-direction:column;gap:4px}
+  .list .meta{text-align:left}
+  .foot{grid-template-columns:1fr;row-gap:40px}
+  .foot-left,.foot-cols{grid-column:1}
+  .fine{justify-content:flex-start;flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="https://www.dhoomimalartcentre.com/" target="_blank" rel="noopener">dhoomimal art centre</a>
+  <nav class="main" aria-label="Main">
+    <ul>
+      <li><a class="link" href="artists.html">Artists</a></li>
+      <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+      <li><a class="link" href="collection.html">Collection</a></li>
+      <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link" href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <button class="menu-btn" id="menu-open" aria-expanded="false" aria-controls="sheet">MENU</button>
+</header>
+
+<div class="rail" aria-hidden="true">modern art • since pre-independence</div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="top">
+    <span class="logo">dhoomimal art centre</span>
+    <button class="menu-btn" id="menu-close" style="display:block">CLOSE</button>
+  </div>
+  <ul>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="art-fairs.html">Art Fairs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<main>
+
+  <section class="intro wrap">
+    <h1 class="display">Eighty-five years<br>of Indian art</h1>
+    <div class="intro-foot">
+      <p>Established in pre-independent India by Ram Babu, Dhoomimal was supported by the stalwarts of the time, B C Sanyal, Jaya Appaswamy, Jamini Roy, Sailoz Mukherjee and Nand Lal Bose, followed by generations of artists after them. Today the centre is run by the third generation, with Mohit Jain as Director.</p>
+      <address>
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+  </section>
+
+  <section class="wrap" id="exhibitions">
+    <div class="split">
+      <div class="side">
+        <h2 class="display">Highlighted<br>Exhibitions</h2>
+        <a class="view link" href="exhibitions.html">View all exhibitions →</a>
+      </div>
+      <div class="body">
+
+        <article class="entry">
+          <div class="label">Latest</div>
+          <a href="https://www.dhoomimalartcentre.com/exhibitions/before-you-see-the-scar~41" target="_blank" rel="noopener">
+            <div class="frame ex-img"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1788870727exb-inner-bysts.jpg" alt="Before You See the Scar, photography by Monica Dhaka" loading="lazy"></div>
+          </a>
+          <div class="under">
+            <div class="thumbs" aria-hidden="true">
+              <span><img src="https://www.dhoomimalartcentre.com/images/exhibitions/1788870704exb-list-bysts.jpg" alt="" loading="lazy"></span>
+            </div>
+            <a class="btn" href="https://www.dhoomimalartcentre.com/exhibitions/before-you-see-the-scar~41" target="_blank" rel="noopener">+ Read more</a>
+          </div>
+          <h3 class="title">Before You See the Scar: A Solo Exhibition by Monica Dhaka</h3>
+          <div class="meta">2026 • A-8, Connaught Place</div>
+          <p class="desc">A solo photography exhibition by Monica Dhaka. The show opened on 14 September with a panel discussion moderated by Michelin-star chef and artist Suvir Saran, and was on view at the centre through 23 September.</p>
+        </article>
+
+        <article class="entry">
+          <div class="label">Past</div>
+          <a href="https://www.dhoomimalartcentre.com/exhibitions/variable-registers~40" target="_blank" rel="noopener">
+            <div class="frame ex-img"><img src="https://www.dhoomimalartcentre.com/images/exhibitiongallery/1785752474exb-inner-variable.jpg" alt="Variable Registers: Printmaking in Modern India" loading="lazy"></div>
+          </a>
+          <div class="under">
+            <div class="thumbs" aria-hidden="true">
+              <span><img src="https://www.dhoomimalartcentre.com/images/artwork/1785753666apad003-th.jpg" alt="" loading="lazy"></span>
+              <span><img src="https://www.dhoomimalartcentre.com/images/artwork/1786010712shra001-th.jpg" alt="" loading="lazy"></span>
+            </div>
+            <a class="btn" href="https://www.dhoomimalartcentre.com/exhibitions/variable-registers~40" target="_blank" rel="noopener">+ Read more</a>
+          </div>
+          <h3 class="title">Variable Registers: Printmaking in Modern India</h3>
+          <div class="meta">2026 • Shridharani Gallery, Triveni Kala Sangam</div>
+          <p class="desc">Curated by Prima Kurien, the exhibition traced five decades of Indian printmaking, from the 1930s to the 1980s, through etchings, woodcuts, lithographs and serigraphs by Akbar Padamsee, Krishen Khanna, S. H. Raza, J Swaminathan, Jyoti Bhatt, Sakti Burman, Haren Das and others.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="artists">
+    <div class="row-head">
+      <h2 class="display">Artists we<br>represent</h2>
+      <a class="view link" href="artists.html">View all →</a>
+    </div>
+    <div class="artists">
+      <a class="artist" href="https://www.dhoomimalartcentre.com/artists/sunil-das~86" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/artist/1665741110sunil-das-list.jpg" alt="Sunil Das" loading="lazy"></div>
+        <div class="artist-foot"><div><div class="title">Sunil Das</div><div class="meta">Painter</div></div><span class="sq" aria-hidden="true">+</span></div>
+      </a>
+      <a class="artist" href="https://www.dhoomimalartcentre.com/artists/shahid-parvez~66" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/artist/1665647767shahid-parvez-list.jpg" alt="Shahid Parvez" loading="lazy"></div>
+        <div class="artist-foot"><div><div class="title">Shahid Parvez</div><div class="meta">Conceptual artist, painter</div></div><span class="sq" aria-hidden="true">+</span></div>
+      </a>
+      <a class="artist" href="https://www.dhoomimalartcentre.com/artists/pradiptaa-chakraborty~57" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/artist/1665475455pradipta-chakroborty-list.jpg" alt="Pradiptaa Chakraborty" loading="lazy"></div>
+        <div class="artist-foot"><div><div class="title">Pradiptaa Chakraborty</div><div class="meta">Painter</div></div><span class="sq" aria-hidden="true">+</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap" id="journal">
+    <div class="row-head">
+      <h2 class="display">Latest<br>from the Blog</h2>
+      <a class="view link" href="https://www.dhoomimalartcentre.com/blog" target="_blank" rel="noopener">View all →</a>
+    </div>
+    <div class="two">
+      <article>
+        <a href="https://www.dhoomimalartcentre.com/blog/chronicle-of-humanism~5" target="_blank" rel="noopener">
+          <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/blog/1714816612blog-list-pradiptaa.jpg" alt="Work by Pradiptaa Chakraborty" loading="lazy"></div>
+        </a>
+        <div class="under">
+          <div>
+            <h3 class="title">Chronicle of Humanism</h3>
+            <div class="meta">Nov 2019 • Aaruna Bhowmick</div>
+          </div>
+          <a class="btn" href="https://www.dhoomimalartcentre.com/blog/chronicle-of-humanism~5" target="_blank" rel="noopener">+ Read more</a>
+        </div>
+        <p class="desc">On Pradiptaa Chakraborty, whose paintings take up old lore and legend and turn them into stories of their own, told with a steady interest in people and their inner lives.</p>
+      </article>
+      <article>
+        <a href="https://www.dhoomimalartcentre.com/blog/the-world-of-sailoz-mookherjea~7" target="_blank" rel="noopener">
+          <div class="frame"><img src="https://www.dhoomimalartcentre.com/images/blog/1718016503blog-list-sailoz.jpg" alt="Work by Sailoz Mookherjea" loading="lazy"></div>
+        </a>
+        <div class="under">
+          <div>
+            <h3 class="title">The World of Sailoz Mookherjea</h3>
+            <div class="meta">Jun 2024 • R. L. Bartholomew</div>
+          </div>
+          <a class="btn" href="https://www.dhoomimalartcentre.com/blog/the-world-of-sailoz-mookherjea~7" target="_blank" rel="noopener">+ Read more</a>
+        </div>
+        <p class="desc">A critic's remembrance of Sailoz Mookherjea, one of the painters who stood by Dhoomimal in its earliest years.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="press">
+    <div class="split">
+      <div class="side">
+        <h2 class="display">In the<br>Press</h2>
+        <p>Coverage of the centre and its exhibitions</p>
+      </div>
+      <ul class="list">
+        <li><a href="https://thepatriot.in/listicle/exhibition-marking-fn-souzas-centenary-starts-at-dhoomimal-art-centre-59114" target="_blank" rel="noopener"><h3>F. N. Souza Centenary Exhibition</h3><span class="meta">– The Patriot</span></a></li>
+        <li><a href="https://www.thehindu.com/news/cities/Delhi/delhi-hosts-a-unique-christmas-ornaments-art-exhibition-by-49-renouned-artists/article67627182.ece" target="_blank" rel="noopener"><h3>Christmas Ornaments by 49 Artists</h3><span class="meta">– The Hindu</span></a></li>
+        <li><a href="https://timesofindia.indiatimes.com/blogs/plumage/in-delhi-an-art-gallery-creates-a-christmas-ensemble/" target="_blank" rel="noopener"><h3>A Christmas Ensemble in Delhi</h3><span class="meta">– The Times of India</span></a></li>
+        <li><a href="https://www.dhoomimalartcentre.com/inmedia/media-artlife.html" target="_blank" rel="noopener"><h3>Dhoomimal Art Centre Feature</h3><span class="meta">– Art &amp; Life</span></a></li>
+        <li><a href="https://www.dhoomimalartcentre.com/blog/shahid-parvez-a-brief-encounter~6" target="_blank" rel="noopener"><h3>Shahid Parvez: A Brief Encounter</h3><span class="meta">– R S Yadav, 2009</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-left">
+      <p class="display">Eighty-five years<br>of Indian art</p>
+      <address class="foot-addr">
+        A-8, Connaught Place<br>
+        Inner Circle – New Delhi<br>
+        110001
+      </address>
+    </div>
+    <div class="foot-cols">
+      <ul>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/" target="_blank" rel="noopener">Home</a></li>
+        <li><a class="link" href="artists.html">Artists</a></li>
+        <li><a class="link" href="exhibitions.html">Exhibitions</a></li>
+        <li><a class="link" href="collection.html">Collection</a></li>
+        <li><a class="link" href="art-fairs.html">Art Fairs</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/videogallery" target="_blank" rel="noopener">Videos</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="contact.html">Contact</a></li>
+        <li><a class="link" href="https://www.dhoomimalartcentre.com/catalogues" target="_blank" rel="noopener">Catalogues</a></li>
+      </ul>
+      <ul>
+        <li><a class="link" href="https://www.instagram.com/dhoomimalartcentre" target="_blank" rel="noopener">Insta</a></li>
+        <li><a class="link" href="https://www.facebook.com/dhoomimalonline" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a class="link" href="https://twitter.com/dhoomimal" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a class="link" href="https://www.pinterest.com/dhoomimalartcentre" target="_blank" rel="noopener">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fine">
+    <span>+91 11 4151 6172</span><span>•</span><span>info@dhoomimalartcentre.com</span><span>•</span><span>Daily 11–7, closed Sundays</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sheet=document.getElementById('sheet'),o=document.getElementById('menu-open'),c=document.getElementById('menu-close');
+  o.addEventListener('click',function(){sheet.hidden=false;o.setAttribute('aria-expanded','true');c.focus();});
+  c.addEventListener('click',function(){sheet.hidden=true;o.setAttribute('aria-expanded','false');o.focus();});
+  sheet.addEventListener('click',function(e){if(e.target.closest('a')){sheet.hidden=true;}});
+  document.querySelectorAll('img').forEach(function(img){img.addEventListener('error',function(){img.style.opacity=0;});});
+})();
+</script>
+</body>
+</html>
