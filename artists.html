@@ -253,7 +253,7 @@ var ARTISTS=[
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
   var grid="", names="";
   ARTISTS.forEach(function(a){
-    var LOCAL={"abbas-batliwala~87":"abbas-batliwala.html"};
+    var LOCAL={"abbas-batliwala~87":"abbas-batliwala.html","akash-choyal~1":"akash-choyal.html","akmal-husain~30":"akmal-husain.html","anand-prakash~32":"anand-prakash.html","arup-das~79":"arup-das.html","b.-vithal~82":"b-vithal.html","balasaheb-nathu-chaudhari~36":"balasaheb-nathu-chaudhari.html","balkrishna-patel~80":"balkrishna-patel.html","bhawana-choudhary-chandra~37":"bhawana-choudhary-chandra.html","bimal-dasgupta~81":"bimal-dasgupta.html","br-bodade~39":"br-bodade.html"};
     var href=LOCAL[a[1]]||BASE+"artists/"+a[1], ext=href.indexOf("http")===0?' target="_blank" rel="noopener"':"";
     grid+='<a class="artist" href="'+href+'"'+ext+'>'+
       '<div class="frame"><img src="'+BASE+'images/artist/'+a[2]+'" alt="'+esc(a[0])+'" loading="lazy"></div>'+
