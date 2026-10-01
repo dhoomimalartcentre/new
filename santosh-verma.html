@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Abbas Batliwala — Dhoomimal Art Centre</title>
-<meta name="description" content="Abbas Batliwala, painter, born 1958 in Udaipur, Rajasthan. Works available through Dhoomimal Art Centre, New Delhi.">
+<title>Santosh Verma — Dhoomimal Art Centre</title>
+<meta name="description" content="Santosh Verma, abstract painter, born 1956 in Varanasi. Works available through Dhoomimal Art Centre, New Delhi.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +84,7 @@ a:hover .frame img,.frame:hover img{transform:scale(1.02)}
 .parts{display:grid;gap:calc(18 * var(--v));margin-top:calc(32 * var(--v));max-width:calc(372 * var(--v))}
 .parts h2{font-size:max(15px, calc(7.4 * var(--v)));letter-spacing:-.02em;font-weight:500;margin-bottom:calc(5 * var(--v))}
 .parts p{line-height:1.45}
-.parts a{border-bottom:1px solid var(--rule)}
+.parts a,.facts a{border-bottom:1px solid var(--rule)}
 .parts a:hover{border-color:var(--fg)}
 
 .stack{display:grid;gap:calc(10 * var(--v));align-self:start}
@@ -107,6 +107,10 @@ a:hover .frame img,.frame:hover img{transform:scale(1.02)}
 /* artist page */
 .hero.artist{grid-template-columns:calc(283 * var(--v)) minmax(0,1fr);gap:calc(30 * var(--v))}
 .hero.artist .frame{aspect-ratio:1000/1300}
+.works.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.works.trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.works.duo{grid-template-columns:repeat(2,minmax(0,1fr));max-width:calc(576 * var(--v))}
+.bio blockquote{margin:0;padding-left:14px;border-left:1px solid var(--rule);font-size:max(16px, calc(10 * var(--v)));letter-spacing:-.03em;line-height:1.3}
 .hero.artist h1{font-size:max(40px, calc(52 * var(--v)));line-height:.95;letter-spacing:-.055em}
 .hero.artist .since{margin-top:calc(8 * var(--v));font-size:max(15px, calc(9 * var(--v)));letter-spacing:-.03em}
 .hero.artist .lede{margin-top:auto;padding-top:32px;max-width:calc(360 * var(--v))}
@@ -153,7 +157,7 @@ footer{padding-top:calc(50 * var(--u))}
   .photos{grid-template-columns:1fr}
   .hero.artist,.bio{grid-template-columns:1fr;row-gap:24px}
   .hero.artist .lede{margin-top:16px;padding-top:0}
-  .works{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 10px}
+  .works,.works.four,.works.trio,.works.duo{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 10px}
   .three{grid-template-columns:1fr;gap:36px}
   .three .desc{text-align:left;margin-left:0;max-width:none}
   .foot{grid-template-columns:1fr;row-gap:40px}
@@ -203,26 +207,28 @@ footer{padding-top:calc(50 * var(--u))}
 
 <main class="wrap">
   <section class="hero artist">
-    <div class="frame"><img src="images/abbas-batliwala.jpg" alt="Portrait of Abbas Batliwala"></div>
+    <div class="frame"><img src="images/santosh-verma.jpg" alt="Portrait of Santosh Verma"></div>
     <div class="hero-text">
-      <h1>Abbas<br>Batliwala</h1>
-      <div class="since">Painter • Udaipur, Rajasthan</div>
-      <p class="lede">Figures drawn from folk forms, with large eyes like kauri shells and scenes full of melodrama and wonder.</p>
+      <h1>Santosh<br>Verma</h1>
+      <div class="since">Painter • Varanasi</div>
+      <p class="lede">Colourful, playful abstraction drawn from a childhood among the folk tales, motifs and light of the Varanasi countryside.</p>
     </div>
   </section>
 
   <section class="bio">
-    <h2>Folk forms,<br>seen with wide eyes</h2>
+    <h2>A child's<br>world, abstracted</h2>
     <div>
       <div class="text">
-        <p>Born in 1958 in Udaipur, Rajasthan, Abbas Batliwala took his postgraduate degree in Drawing and Painting from Udaipur University. His inspiration comes from folk forms, and his paintings carry an exaggerated sense of awe. Working with caricatured figures, he holds the viewer's attention through his signature large, oversized eyes, drawn and painted with care to resemble seashells, or kauri. His scenes often carry a touch of melodrama, with figures closely intertwined.</p>
-        <p>Batliwala has built a long career as an independent artist, with many awards at national and state level. He has shown in Delhi and Mumbai and at international events including the 7th International Triennale in India, the 6th Asian Art Biennale in Bangladesh, and India Month in Rotterdam and Mumbai.</p>
+        <blockquote><p>“My paintings reflect the colourful and playful world of an exploring child, which in totality metamorphoses into a new reality.”</p></blockquote>
+        <p>Born in 1956, Santosh Verma grew up in the countryside around Varanasi, among regional tales, folklore and the religious myths of an ancient city. In village culture, religious figures and stories were often turned into simple, line-based abstract forms, and the light, shadow and colour of nature filled his childhood.</p>
+        <p>Those motifs and symbols stayed with him. Working in abstraction over the years, he found himself drawn back into those memories, and now abstracts from them, consciously and unconsciously. He took his MFA from the Faculty of Visual Arts, Banaras Hindu University.</p>
+        <p>He has held eight solo exhibitions in Delhi, Mumbai and Baroda, including Rewarding Journey of a Deep and Lonely Patience at Dhoomimal in 2017, and has shown internationally in Syria, Korea and Sri Lanka. His work is in the National Gallery of Modern Art, the Lalit Kala Akademi, Bharat Bhavan and the Sahitya Kala Parishad, among other collections in India and abroad.</p>
       </div>
       <ul class="facts">
-        <li><span class="k">Born</span><span class="v">1958, Udaipur, Rajasthan</span></li>
-        <li><span class="k">Education</span><span class="v">Postgraduate, Drawing &amp; Painting, Udaipur University</span></li>
-        <li><span class="k">Medium</span><span class="v">Oil on canvas</span></li>
-        <li><span class="k">Collections</span><span class="v">National Gallery of Modern Art, New Delhi • Lalit Kala Akademi, New Delhi • Rajasthan Lalit Kala Akademi, Jaipur</span></li>
+        <li><span class="k">Born</span><span class="v">1956, Varanasi</span></li>
+        <li><span class="k">Education</span><span class="v">MFA, Faculty of Visual Arts, Banaras Hindu University</span></li>
+        <li><span class="k">Awards</span><span class="v">National Award, Lalit Kala Akademi • Senior Fellowship, Ministry of Culture • AIFACS (2000, 2001) • Sahitya Kala Parishad (1994) • Bharat Bhavan (1992)</span></li>
+        <li><span class="k">At Dhoomimal</span><span class="v">Solo show (2017) • Diverse Horizons (2026) • Echoes of the Unseen (2026)</span></li>
       </ul>
     </div>
   </section>
@@ -231,7 +237,7 @@ footer{padding-top:calc(50 * var(--u))}
     <h2>Works</h2>
     <a class="link" href="collection.html">View the collection →</a>
   </div>
-  <div class="works" id="works"></div>
+  <div class="works trio" id="works"></div>
   <p class="note">All works are originals. Prices on request: call +91 11 4151 6172 or write to info@dhoomimalartcentre.com.</p>
 
   <section class="others">
@@ -280,31 +286,33 @@ footer{padding-top:calc(50 * var(--u))}
 
 <script>
 var B="https://www.dhoomimalartcentre.com/", W=B+"images/artwork/", A=B+"images/artist/";
-// Works: title, year, medium, image file, detail page slug
+// Works: title, year, medium, image file
+var SELF="artists/santosh-verma~64", NAME="Santosh Verma";
 var WORKS=[
-["Luring","2008","Oil on canvas","1694084767abba283-th.jpg","luring"],
-["Durga","2012","Oil on canvas","1694084622abba245-th.jpg","durga"],
-["Adam & Eve","2010","Oil on canvas","1694084462abba225-th.jpg","adam-eve"],
-["Tension","2011","Oil on canvas","1694084277abba122-th.jpg","tension"],
-["Totum","2011","Oil on canvas","1693998108abba076-th.jpg","totum"]
+["Untitled","2016","Acrylic on canvas","1780925450save108-th.jpg"],
+["Untitled","","Acrylic on canvas","1665816580save204-th.jpg"],
+["Untitled","","Acrylic on canvas","1665816499save202-th.jpg"],
+["Untitled","","Acrylic on canvas","1665816399save203-th.jpg"],
+["Untitled","","Acrylic on canvas","1665816313save201-th.jpg"],
+["Untitled","","Acrylic on canvas","1665816196save200-th.jpg"]
 ];
 var OTHERS=[
-  {t:"Balkrishna Patel",href:"balkrishna-patel.html",img:"images/balkrishna-patel.jpg",m:"Painter"},
-  {t:"Akash Choyal",href:"akash-choyal.html",img:"images/akash-choyal.jpg",m:"Painter"},
-  {t:"Shahid Parvez",href:"shahid-parvez.html",img:"images/shahid-parvez.jpg",m:"Conceptual artist • Painter"}
+  {t:"S.R. Bhushan",href:"s-r-bhushan.html",img:"images/s-r-bhushan.jpg",m:"Painter"},
+  {t:"Anand Prakash",href:"anand-prakash.html",img:"images/anand-prakash.jpg",m:"Painter"},
+  {t:"Shabir Hussain",href:"shabir-hussain.html",img:"images/shabir-hussain.jpg",m:"Painter"}
 ];
 (function(){
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
   document.getElementById("works").innerHTML=WORKS.map(function(w){
-    return '<a class="work" href="'+B+"artists/abbas-batliwala~87"+'" target="_blank" rel="noopener">'+
-      '<div class="frame"><img src="'+W+w[3]+'" alt="'+esc(w[0]+" by Abbas Batliwala")+'" loading="lazy"></div>'+
-      '<h3>'+esc(w[0])+'</h3><div class="meta">'+esc(w[1]+" • "+w[2])+'</div></a>';
+    return '<a class="work" href="'+B+SELF+'" target="_blank" rel="noopener">'+
+      '<div class="frame"><img src="'+W+w[3]+'" alt="'+esc(w[0]+" by "+NAME)+'" loading="lazy"></div>'+
+      '<h3>'+esc(w[0])+'</h3><div class="meta">'+esc([w[1],w[2]].filter(Boolean).join(" • "))+'</div></a>';
   }).join("");
   document.getElementById("others").innerHTML=OTHERS.map(function(e){
     return '<article><a href="'+e.href+'"'+(e.href.indexOf("http")===0?' target="_blank" rel="noopener"':'')+'><div class="frame sqr"><img src="'+e.img+'" alt="'+esc(e.t)+'" loading="lazy"></div></a>'+
       '<h3 class="title">'+esc(e.t)+'</h3><div class="meta">'+esc(e.m)+'</div></article>';
   }).join("");
-  document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){img.style.opacity=0;});});
+  document.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){if(img.src.indexOf("-bl.jpg")>-1){img.src=img.src.replace("-bl.jpg","-th.jpg");}else{img.style.opacity=0;}});});
   var sheet=document.getElementById("sheet"),o=document.getElementById("menu-open"),c=document.getElementById("menu-close");
   o.addEventListener("click",function(){sheet.hidden=false;o.setAttribute("aria-expanded","true");c.focus();});
   c.addEventListener("click",function(){sheet.hidden=true;o.setAttribute("aria-expanded","false");o.focus();});
